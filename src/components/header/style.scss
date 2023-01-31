@@ -1,0 +1,52 @@
+.header-container {
+    background-color: #ffba00;
+    width: 100vw;
+    height: 6em;
+
+
+    .header-navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .container-logo {
+            width: 70px;
+            height: 30px;
+            background-color: red;
+            margin-top: 15px;
+
+            .logo {}
+        }
+
+        .container-nav {
+            display: flex;
+            padding-left: 30px;
+
+            .nav-group {
+                margin-top: 10px;
+                padding: 5px 15px;
+                font-size: inherit;
+            }
+
+            .home {}
+
+            .management {}
+
+            .order {}
+
+            .chat {}
+
+            .notification {}
+
+            .see-more {}
+        }
+    }
+
+    .header-search {
+        .search {}
+
+        .account {}
+
+        .post {}
+    }
+}
