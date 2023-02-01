@@ -1,52 +1,85 @@
 .header-container {
-    background-color: #ffba00;
+  background-color: #ffba00;
+  width: 100vw;
+  height: 5.5em;
+
+  .header-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
-    height: 6em;
 
+    .container-logo {
+      width: 70px;
+      height: 30px;
+      background-color: red;
+      margin-top: 15px;
 
-    .header-navbar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .container-logo {
-            width: 70px;
-            height: 30px;
-            background-color: red;
-            margin-top: 15px;
-
-            .logo {}
-        }
-
-        .container-nav {
-            display: flex;
-            padding-left: 30px;
-
-            .nav-group {
-                margin-top: 10px;
-                padding: 5px 15px;
-                font-size: inherit;
-            }
-
-            .home {}
-
-            .management {}
-
-            .order {}
-
-            .chat {}
-
-            .notification {}
-
-            .see-more {}
-        }
+      .logo {
+      }
     }
 
-    .header-search {
-        .search {}
+    .container-nav {
+      display: flex;
+      padding-left: 30px;
 
-        .account {}
+      .nav-group {
+        margin-top: 10px;
+        padding: 5px 15px;
+        font-size: 13px;
+        border: none;
+        background-color: #ffba00;
+      }
 
-        .post {}
+      .home {
+      }
+
+      .management {
+      }
+
+      .order {
+      }
+
+      .chat {
+      }
+
+      .notification {
+      }
+
+      .see-more {
+      }
     }
+  }
+
+  .header-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .button-gruop {
+      padding: 5px 15px;
+      font-size: 13px;
+      border: none;
+      background-color: #ffba00;
+    }
+
+    input {
+      width: 200px;
+    }
+
+    .search {
+    }
+
+    .account {
+    }
+
+    .posts {
+      .post {
+        width: 125px;
+        height: 30px;
+        background-color: #ff8800;
+        border-radius: 5px;
+      }
+    }
+  }
 }
