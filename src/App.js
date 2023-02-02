@@ -2,8 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import { Header } from './components/Header/Header';
 import { DatePicker } from 'antd';
+import { Layout } from './components/Layout/HomeLayout';
 
-import { Layout } from './components/Layout/Layout';
+
+
+
 
 function App() {
   return (
