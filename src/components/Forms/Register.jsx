@@ -88,7 +88,7 @@ const Register = () => {
                     width: 70,
                 }}
             >
-                <Option value="86">+86</Option>
+                <Option value="84">+84</Option>
                 <Option value="87">+87</Option>
             </Select>
         </Form.Item>
@@ -125,7 +125,7 @@ const Register = () => {
             onFinish={onFinish}
             initialValues={{
                 residence: ['zhejiang', 'hangzhou', 'xihu'],
-                prefix: '86',
+                prefix: '84',
             }}
             style={{
                 maxWidth: 600,

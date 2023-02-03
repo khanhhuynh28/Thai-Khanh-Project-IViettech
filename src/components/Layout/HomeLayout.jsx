@@ -5,6 +5,6 @@ import "./style/home-layout.scss";
 export function Layout() {
     return <div className="containerLayout">
         <Login />
-        <Register />
+        {/* <Register /> */}
     </div>
 }
