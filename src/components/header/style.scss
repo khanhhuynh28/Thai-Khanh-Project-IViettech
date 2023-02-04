@@ -15,8 +15,7 @@
       background-color: red;
       margin-top: 15px;
 
-      .logo {
-      }
+      .logo {}
     }
 
     .container-nav {
@@ -25,29 +24,23 @@
 
       .nav-group {
         margin-top: 10px;
-        padding: 5px 15px;
+        padding: 5px 25px 0 5px;
         font-size: 13px;
         border: none;
         background-color: #ffba00;
       }
 
-      .home {
-      }
+      .home {}
 
-      .management {
-      }
+      .management {}
 
-      .order {
-      }
+      .order {}
 
-      .chat {
-      }
+      .chat {}
 
-      .notification {
-      }
+      .notification {}
 
-      .see-more {
-      }
+      .see-more {}
     }
   }
 
@@ -55,30 +48,47 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 5px 185px 0 0;
 
-    .button-gruop {
+    .button-group {
       padding: 5px 15px;
       font-size: 13px;
       border: none;
       background-color: #ffba00;
     }
 
-    input {
-      width: 200px;
-    }
-
     .search {
-    }
+      position: relative;
+      margin-right: 3px;
 
-    .account {
+      .search-button {
+        background-color: #ff8800;
+        border-radius: 5px;
+        height: 25px;
+        position: absolute;
+        right: 2px;
+        bottom: 2px;
+      }
+
+      input {
+        width: 500px;
+        padding: 7px;
+        border: none;
+        border-radius: 5px;
+        left: 30px;
+      }
     }
 
     .posts {
+      position: absolute;
+      right: 276px;
+
       .post {
-        width: 125px;
+        width: 110px;
         height: 30px;
         background-color: #ff8800;
         border-radius: 5px;
+        margin-left: 20px;
       }
     }
   }

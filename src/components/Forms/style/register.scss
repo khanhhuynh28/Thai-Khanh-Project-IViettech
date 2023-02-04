@@ -1,0 +1,25 @@
+.containerRegister {
+    width: 330px;
+    height: 430px;
+    box-shadow: 1px 1px 5px 2px gray;
+    border: 1px solid gray;
+    border-radius: 5px;
+
+
+    .register {
+        margin: 20px 10px 10px 10px;
+
+
+        .titleRegister {
+
+            color: #ffba10;
+        }
+
+        .form-submit-register {
+            background-color: #fe9900;
+            color: white;
+            width: 100px;
+            position: relative;
+        }
+    }
+}
