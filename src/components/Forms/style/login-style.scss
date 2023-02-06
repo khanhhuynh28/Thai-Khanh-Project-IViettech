@@ -1,17 +1,48 @@
 .containerLogin {
-  display: flex;
-  // align-self: center;
-  width: 250px;
-  height: 400px;
-  box-shadow: 1px 1px 5px 2px gray;
-  border: 1px solid gray;
-  border-radius: 3px;
+    width: 330px;
+    height: 430px;
+    box-shadow: 1px 1px 5px 2px gray;
+    border: 1px solid gray;
+    border-radius: 5px;
 
-  .login {
-    margin: 20px 10px 10px 10px;
+    .login {
+        margin: 20px 10px 10px 10px;
 
-    .title {
-      color: #ffba10;
+        .title {
+            color: #ffba10;
+        }
+
+        .or {
+            font-size: 14px;
+            color: gray;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .login-form-forgot {
+            font-size: 12px;
+        }
+
+        .login-form-button {
+            background-color: #fe9900;
+            margin: 0px 10px 0 40px;
+            color: white;
+        }
     }
-  }
+
+    .icon {
+        ul {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 27px 0 0;
+
+            li {
+                list-style: none;
+            }
+
+            .apple {
+                margin-top: -4px;
+            }
+        }
+    }
 }
