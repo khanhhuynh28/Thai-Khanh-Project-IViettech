@@ -1,14 +1,13 @@
-
-import "./style/login-style.scss";
+import './style/login-style.scss';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
-import { useState } from "react";
+// import { useState } from 'react';
 const Login = () => {
-    const [getData, setGetData] = useState();
+    // const [getData, setGetData] = useState();
 
-    const getDataFormInput = () => {
-        e.prevenDefault()
-    }
+    // const getDataFormInput = () => {
+    // e.prevenDefault();
+    // };
 
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
@@ -36,7 +35,11 @@ const Login = () => {
                                 },
                             ]}
                         >
-                            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Tên đăng nhập" onChange={e => setGetData(e.target.value)} />
+                            <Input
+                                prefix={<UserOutlined className="site-form-item-icon" />}
+                                placeholder="Tên đăng nhập"
+                                // onChange={(e) => setGetData(e.target.value)}
+                            />
                         </Form.Item>
                         <Form.Item
                             name="password"
@@ -67,7 +70,7 @@ const Login = () => {
                             <Button type="primary" htmlType="submit" className="login-form-button">
                                 Đăng Nhập
                             </Button>
-                            Hoặc <a href="./Re">Đăng ký!</a>
+                            Hoặc <a href="http://localhost:3000/register">Đăng ký!</a>
                         </Form.Item>
                     </Form>
                 </div>

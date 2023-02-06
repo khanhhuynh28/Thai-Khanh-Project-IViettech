@@ -1,85 +1,91 @@
 .header-container {
-  background-color: #ffba00;
-  width: 100vw;
-  height: 5.5em;
-
-  .header-navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #ffba00;
     width: 100vw;
+    height: 5.5em;
 
-    .container-logo {
-      width: 70px;
-      height: 30px;
-      background-color: red;
-      margin-top: 15px;
+    .header-navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
 
-      .logo {
-      }
+        .container-logo {
+            width: 70px;
+            height: 30px;
+            background-color: red;
+            margin-top: 15px;
+
+            .logo {
+            }
+        }
+
+        .container-nav {
+            display: flex;
+            padding-left: 30px;
+
+            .nav-group {
+                margin-top: 10px;
+                padding: 5px 15px;
+                font-size: 13px;
+                border: none;
+                background-color: #ffba00;
+            }
+
+            .home {
+            }
+
+            .management {
+            }
+
+            .order {
+            }
+
+            .chat {
+            }
+
+            .notification {
+            }
+
+            .see-more {
+            }
+        }
     }
 
-    .container-nav {
-      display: flex;
-      padding-left: 30px;
+    .header-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-      .nav-group {
-        margin-top: 10px;
-        padding: 5px 15px;
-        font-size: 13px;
-        border: none;
-        background-color: #ffba00;
-      }
+        .button-gruop {
+            padding: 5px 15px;
+            font-size: 13px;
+            border: none;
+            background-color: #ffba00;
+        }
 
-      .home {
-      }
+        input {
+            width: 200px;
+        }
 
-      .management {
-      }
+        .search {
+        }
 
-      .order {
-      }
+        .account {
+        }
 
-      .chat {
-      }
-
-      .notification {
-      }
-
-      .see-more {
-      }
+        .posts {
+            .post {
+                width: 125px;
+                height: 30px;
+                background-color: #ff8800;
+                border-radius: 5px;
+            }
+        }
     }
-  }
-
-  .header-search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .button-gruop {
-      padding: 5px 15px;
-      font-size: 13px;
-      border: none;
-      background-color: #ffba00;
+    //style cho các thẻ Link từ route-dom
+    a {
+        text-decoration: none;
+        color: #333;
+        cursor: pointer;
     }
-
-    input {
-      width: 200px;
-    }
-
-    .search {
-    }
-
-    .account {
-    }
-
-    .posts {
-      .post {
-        width: 125px;
-        height: 30px;
-        background-color: #ff8800;
-        border-radius: 5px;
-      }
-    }
-  }
 }

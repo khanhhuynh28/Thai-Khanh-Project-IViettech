@@ -1,0 +1,17 @@
+.container-footer {
+    background-color: #ccc;
+    height: 200px;
+    padding: 5px;
+}
+
+.section {
+    display: flex;
+    justify-content: space-around;
+    .section-item {
+        width: 22%;
+        height: 200px;
+    }
+    li {
+        list-style: none;
+    }
+}

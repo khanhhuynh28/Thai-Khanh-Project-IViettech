@@ -1,15 +1,17 @@
 .containerLogin {
-    width: 250px;
-    height: 400px;
-    box-shadow: 1px 1px 5px 2px gray;
-    border: 1px solid gray;
-    border-radius: 3px;
+  display: flex;
+  // align-self: center;
+  width: 250px;
+  height: 400px;
+  box-shadow: 1px 1px 5px 2px gray;
+  border: 1px solid gray;
+  border-radius: 3px;
 
-    .login {
-        margin: 20px 10px 10px 10px;
+  .login {
+    margin: 20px 10px 10px 10px;
 
-        .title {
-            color: #ffba10;
-        }
+    .title {
+      color: #ffba10;
     }
+  }
 }
