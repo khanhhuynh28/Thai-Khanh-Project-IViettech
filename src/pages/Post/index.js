@@ -1,11 +1,12 @@
-import { Header } from "../../components/Header/Header";
+import PostNews from '../../components/Forms/PostNews';
+import { Header } from '../../components/Header/Header';
 
 function Post() {
-  return (
-    <div>
-      <Header />
-      <h2>Đăng Tin</h2>
-    </div>
-  );
+    return (
+        <div>
+            <Header />
+            <PostNews />
+        </div>
+    );
 }
 export default Post;

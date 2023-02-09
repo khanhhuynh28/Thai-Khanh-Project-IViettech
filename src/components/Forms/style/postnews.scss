@@ -1,0 +1,19 @@
+.container-postnews {
+    display: flex;
+    // flex-direction: column;
+    width: 100%;
+}
+
+.select-photo {
+    flex: 1;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    width: 222px;
+    height: 222px;
+}
+
+.data-input {
+    flex: 2;
+    background-color: greenyellow;
+}
