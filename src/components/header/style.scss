@@ -1,96 +1,119 @@
 .header-container {
-  background-color: #ffba00;
-  width: 100vw;
-  height: 200px;
-
-
-  .header-navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #ffba00;
     width: 100vw;
+    height: 5em;
 
-    .container-logo {
-      width: 70px;
-      height: 30px;
-      background-color: red;
-      margin-top: 15px;
 
-      .logo {}
+    .header-navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+
+        .container-logo {
+            width: 70px;
+            height: 30px;
+            background-color: red;
+            margin: 5px 0 5px 0;
+
+            .logo {}
+        }
+
+        .container-nav {
+            display: flex;
+            padding-left: 30px;
+
+            .nav-group {
+                margin-top: 10px;
+                padding: 5px 18px 0 7px;
+                font-size: 13px;
+                border: none;
+                background-color: #ffba00;
+            }
+
+            .home-logo {
+                .home {}
+            }
+
+            .management-logo {
+                .management {}
+            }
+
+            .order-logo {
+                .order {}
+            }
+
+            .chat-logo {
+                .chat {}
+            }
+
+            .notification-logo {
+                .notification {}
+            }
+
+            .account-logo {
+                .account {
+                    background-color: #ffba00;
+                    border: none;
+                    font-size: 13px;
+                }
+            }
+        }
     }
 
-    .container-nav {
-      display: flex;
-      padding-left: 30px;
+    .header-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-      .nav-group {
-        margin-top: 10px;
-        padding: 5px 25px 0 5px;
-        font-size: 13px;
-        border: none;
-        background-color: #ffba00;
-      }
+        .search {
+            width: auto;
+            position: relative;
 
-      .home {}
+            .search-button {
+                position: absolute;
+                border: none;
+                border-radius: 5px;
+                background-color: #ff8800;
+                right: 17px;
+                bottom: 2px;
+            }
 
-      .management {}
+            input {
+                margin-right: 15px;
+                width: 530px;
+                border: none;
+                padding: 3px 0;
+                border-radius: 5px;
+                outline: none;
+            }
+        }
 
-      .order {}
+        .account {}
 
-      .chat {}
+        .posts {
+            .post {
+                width: 100px;
+                height: 28px;
+                background-color: #ff8800;
+                border-radius: 5px;
+                border: none;
+                left: 135px;
+                right: 100px;
 
-      .notification {}
-
-      .see-more {}
-    }
-  }
-
-  .header-search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 185px 0 0;
-
-    .button-group {
-      padding: 5px 15px;
-      font-size: 13px;
-      border: none;
-      background-color: #ffba00;
-    }
-
-    .search {
-      position: relative;
-      margin-right: 3px;
-
-      .search-button {
-        background-color: #ff8800;
-        border-radius: 5px;
-        height: 25px;
-        position: absolute;
-        right: 2px;
-        bottom: 2px;
-      }
-
-      input {
-        width: 500px;
-        padding: 7px;
-        border: none;
-        border-radius: 5px;
-        left: 30px;
-      }
+                .title {
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+            }
+        }
     }
 
-    .posts {
-      position: absolute;
-      right: 276px;
-
-      .post {
-        width: 110px;
-        height: 30px;
-        background-color: #ff8800;
-        border-radius: 5px;
-        margin-left: 20px;
-      }
+    //style cho các thẻ Link từ route-dom
+    a {
+        text-decoration: none;
+        color: #333;
+        cursor: pointer;
     }
-  }
 }

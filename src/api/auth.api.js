@@ -1,10 +1,8 @@
-import { API, BASE_URL } from "./constants.api";
+import { API, BASE_URL } from "./constants.api"
 
 export const authApi = {
-    // {
-    //    username: "abcd",
-    //    password: "abcdef"
-    // }
-    login: (data) => API.post(`${BASE_URL}/api/auth/login`, data),
-    register: (data) => API.post(`${BASE_URL}/api/auth/users`, data),
+  login: (data) => API.post(`${BASE_URL}/auth/login `, data),
+  register: (data) => API.post(`${BASE_URL}/auth/users`, data),
 };
+//  gọi lấy dữ liệu về lưu vào state
+// cho vào redux -> slice -action, -reducer

@@ -1,0 +1,71 @@
+.containerNavBar {
+  width: 100vw;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  right: 6px;
+
+  .navBar {
+    width: 650px;
+    height: 130px;
+    margin-top: 10px;
+    background-color: white;
+
+    .nav {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 10px 0;
+
+      .cards {
+        border: none;
+        background-color: white;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 70px;
+        height: 80px;
+
+        .card {
+          width: 60px;
+          height: 60px;
+          font-size: 13px;
+          border: none;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .car {
+          background-image: url("https://live.staticflickr.com/65535/49932658111_30214a4229_b.jpg");
+        }
+
+        .electronic {
+          background-image: url("https://www.digitaltrends.com/wp-content/uploads/2022/07/Nothing-Phone-1-Apps.jpg?p=1");
+        }
+
+        .pet {
+          background-image: url("https://blog.dktcdn.net/files/kinh-nghiem-kinh-doanh-danh-cho-shop-thu-cung-online-1.jpg");
+        }
+
+        .food {
+          background-image: url("https://tuyenquang.dcs.vn/Image/Large/2021106144524_51808.jpg");
+        }
+
+        .houseware {
+          background-image: url("https://giadungsato.com/Uploads/images/giadungsato(2).jpg");
+        }
+
+        .fridge {
+          background-image: url("https://cafefcdn.com/thumb_w/650/203337114487263232/2022/10/17/photo1665991016470-16659910166031635359667.jpg");
+        }
+
+        p {
+          text-align: center;
+          font-size: 13px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+}

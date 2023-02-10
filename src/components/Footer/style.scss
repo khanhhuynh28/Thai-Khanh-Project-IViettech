@@ -1,0 +1,29 @@
+.container-footer {
+    background-color: #ccc;
+    padding: 5px;
+    font-weight: bold;
+    height: 200px;
+    line-height: 30px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    top: 100%;
+
+    .section {
+        display: flex;
+        justify-content: space-around;
+
+        .section-item {
+            width: 22%;
+        }
+
+        li {
+            list-style: none;
+            color: gray;
+            font-weight: normal;
+        }
+    }
+}

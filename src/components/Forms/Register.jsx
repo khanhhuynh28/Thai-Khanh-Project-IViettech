@@ -1,4 +1,5 @@
-import "./style/register.scss";
+import './style/register.scss';
+
 import {
     Button,
     Checkbox,
@@ -41,8 +42,6 @@ const Register = () => {
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
     };
-
-
     return (
         <div className="containerRegister">
             <div className="register">
@@ -53,7 +52,6 @@ const Register = () => {
                     name="register"
                     onFinish={onFinish}
                     initialValues={{
-                        residence: [],
                         prefix: '84',
                     }}
                     style={{
@@ -121,7 +119,9 @@ const Register = () => {
                                     if (!value || getFieldValue('password') === value) {
                                         return Promise.resolve();
                                     }
-                                    return Promise.reject(new Error('Hai mật khẩu bạn đã nhập không khớp!'));
+                                    return Promise.reject(
+                                        new Error('The two passwords that you entered do not match!')
+                                    );
                                 },
                             }),
                         ]}
@@ -135,17 +135,19 @@ const Register = () => {
                         rules={[
                             {
                                 validator: (_, value) =>
-                                    value ? Promise.resolve() : Promise.reject(new Error('Hãy chấp nhận điều khoản sử dụng.')),
+                                    value
+                                        ? Promise.resolve()
+                                        : Promise.reject(new Error('Hãy chấp nhận điều khoản')),
                             },
                         ]}
                         {...tailFormItemLayout}
                     >
                         <Checkbox>
-                            Tôi đã đọc <a href="">điều khoản sử dụng</a>
+                            Tôi đã đọc <a href="">điều khoản</a>
                         </Checkbox>
                     </Form.Item>
                     <Form.Item {...tailFormItemLayout}>
-                        <Button htmlType="submit" className="form-submit-register">
+                        <Button className='form-submit-register' htmlType="submit">
                             Đăng ký
                         </Button>
                     </Form.Item>

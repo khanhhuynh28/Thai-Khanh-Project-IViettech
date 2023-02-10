@@ -1,15 +1,20 @@
 .containerLogin {
-    width: 330px;
+    width: 350px;
     height: 430px;
     box-shadow: 1px 1px 5px 2px gray;
     border: 1px solid gray;
     border-radius: 5px;
+    margin: 10px 0;
 
-    .login {
+    .formLogin {
         margin: 20px 10px 10px 10px;
 
         .title {
             color: #ffba10;
+        }
+
+        .login {
+            margin-top: 15px;
         }
 
         .or {
@@ -44,5 +49,9 @@
                 margin-top: -4px;
             }
         }
+    }
+
+    a {
+        text-decoration: none;
     }
 }

@@ -1,0 +1,23 @@
+.containerShop {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+  .home-section {
+    .row {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      right: 5px;
+    }
+
+    .img-wrap {
+      background-image: url("https://cdn01.dienmaycholon.vn/filewebdmclnew/public//userupload/images/dien-thoai-Samsung-Galaxy-S10-Plus-1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 150px;
+    }
+  }
+
+
+}
