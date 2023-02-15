@@ -1,0 +1,58 @@
+.container-postnews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    max-height: 800px;
+    background-color: #ccc;
+}
+.main-postnews {
+    display: flex;
+    width: 900px;
+    height: 500px;
+    background-color: #fff;
+    margin: 50px;
+    border-radius: 12px;
+}
+
+.select-photo {
+    display: flex;
+    justify-content: center;
+    flex: 2;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.data-input {
+    flex: 5;
+    padding: 30px;
+    label {
+        padding-right: 50px;
+    }
+}
+.ant-upload-select {
+    background-color: red;
+    padding: 10px 20px;
+    width: 200px !important;
+    height: 200px !important;
+    border-color: orangered !important;
+}
+.post-news-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .post-news-btn-item {
+        background-color: rgb(255, 186, 0);
+        padding: 4px 36px;
+        color: #fff;
+        &:hover {
+            opacity: 0.8;
+            border-color: #fff;
+            color: #fff;
+        }
+    }
+}
+.ant-picker,
+.ant-input-number {
+    width: 264px !important;
+}
