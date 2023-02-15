@@ -1,13 +1,13 @@
 .containerRegister {
-    width: 330px;
+    width: 350px;
     height: 430px;
     box-shadow: 1px 1px 5px 2px gray;
     border: 1px solid gray;
     border-radius: 5px;
-
+    margin: 10px 0;
 
     .register {
-        margin: 20px 10px 10px 10px;
+        margin: 20px 30px 10px;
 
 
         .titleRegister {
@@ -21,5 +21,9 @@
             width: 100px;
             position: relative;
         }
+    }
+
+    a {
+        text-decoration: none;
     }
 }

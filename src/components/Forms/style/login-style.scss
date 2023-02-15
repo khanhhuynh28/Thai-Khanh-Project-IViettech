@@ -1,22 +1,27 @@
 .containerLogin {
-    width: 330px;
+    width: 350px;
     height: 430px;
     box-shadow: 1px 1px 5px 2px gray;
     border: 1px solid gray;
     border-radius: 5px;
+    margin: 10px 0;
 
-    .login {
-        margin: 20px 10px 10px 10px;
+    .formLogin {
+        margin: 20px 30px 10px;
 
         .title {
             color: #ffba10;
+        }
+
+        .login {
+            margin-top: 15px;
         }
 
         .or {
             font-size: 14px;
             color: gray;
             text-align: center;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .login-form-forgot {
@@ -34,7 +39,7 @@
         ul {
             display: flex;
             justify-content: space-around;
-            margin: 40px 27px 0 0;
+            margin: 10px 27px 0 0;
 
             li {
                 list-style: none;
@@ -44,5 +49,9 @@
                 margin-top: -4px;
             }
         }
+    }
+
+    a {
+        text-decoration: none;
     }
 }

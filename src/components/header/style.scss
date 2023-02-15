@@ -1,7 +1,8 @@
 .header-container {
     background-color: #ffba00;
     width: 100vw;
-    height: 5.5em;
+    height: 6em;
+
 
     .header-navbar {
         display: flex;
@@ -10,13 +11,13 @@
         width: 100vw;
 
         .container-logo {
-            width: 70px;
-            height: 30px;
+            width: 90px;
+            height: 35px;
             background-color: red;
-            margin-top: 15px;
+            margin: 5px 45px 5px 0;
 
-            .logo {
-            }
+
+            .logo {}
         }
 
         .container-nav {
@@ -25,28 +26,38 @@
 
             .nav-group {
                 margin-top: 10px;
-                padding: 5px 15px;
-                font-size: 13px;
+                padding: 5px 25px 0 7px;
+                font-size: 16px;
                 border: none;
                 background-color: #ffba00;
             }
 
-            .home {
+            .home-logo {
+                .home {}
             }
 
-            .management {
+            .management-logo {
+                .management {}
             }
 
-            .order {
+            .order-logo {
+                .order {}
             }
 
-            .chat {
+            .chat-logo {
+                .chat {}
             }
 
-            .notification {
+            .notification-logo {
+                .notification {}
             }
 
-            .see-more {
+            .account-logo {
+                .account {
+                    background-color: #ffba00;
+                    border: none;
+                    font-size: 16px;
+                }
             }
         }
     }
@@ -55,33 +66,51 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
-        .button-gruop {
-            padding: 5px 15px;
-            font-size: 13px;
-            border: none;
-            background-color: #ffba00;
-        }
-
-        input {
-            width: 200px;
-        }
+        position: relative;
+        top: 7px;
 
         .search {
-        }
+            width: auto;
+            position: relative;
 
-        .account {
+            .search-button {
+                position: absolute;
+                border: none;
+                border-radius: 5px;
+                background-color: #ff8800;
+                right: 19px;
+                bottom: 4px;
+            }
+
+            input {
+                margin-right: 15px;
+                width: 710px;
+                border: none;
+                padding: 5px 0;
+                border-radius: 5px;
+                outline: none;
+            }
         }
 
         .posts {
             .post {
-                width: 125px;
-                height: 30px;
+                width: 100px;
+                height: 32px;
                 background-color: #ff8800;
                 border-radius: 5px;
+                border: none;
+                left: 135px;
+                right: 100px;
+
+                .title {
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
             }
         }
     }
+
     //style cho các thẻ Link từ route-dom
     a {
         text-decoration: none;

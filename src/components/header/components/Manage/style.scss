@@ -1,0 +1,90 @@
+.container-manage {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+
+  .manage {
+    margin: 20px 0;
+    width: 650px;
+
+    .title {
+      border-bottom: 1px solid gainsboro;
+      padding-bottom: 10px;
+    }
+
+    .my-self {
+      border-bottom: 1px solid gainsboro;
+
+      .advertisement {}
+
+      .personally {
+        display: flex;
+        margin: 10px 0;
+
+        .avatar {
+          background-color: red;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          margin: 0 20px;
+        }
+
+        .username {
+          .name {
+            font-size: 21px;
+            font-weight: 600;
+          }
+
+          .link {
+            .personal-page {}
+
+            .wallet-link {
+              margin-left: 10px;
+            }
+
+            button {
+              border: #5f8ab7 solid 1px;
+              border-radius: 5px;
+              color: #5f8ab7;
+              background-color: white;
+              padding: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    .navbar {
+      width: 100%;
+      margin-top: -8px;
+      padding-bottom: 3px;
+
+      .container {
+        border-bottom: 1px solid gainsboro;
+      }
+
+      .nav-link {
+        margin-left: 15px;
+        font-size: 13px;
+        font-weight: 400;
+      }
+
+      .nav-link:hover {
+        color: gainsboro;
+      }
+    }
+
+    .todoList {
+      background-color: #fcf8e3;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-weight: 200;
+      }
+    }
+  }
+}
