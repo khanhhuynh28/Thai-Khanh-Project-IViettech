@@ -1,5 +1,4 @@
-import { Manage } from "../../components/Header/components/Manage/Manage";
-import { PersonalPage } from "../../components/Header/components/PersonalPage/PersonalPage";
+import React from "react";
 import Carousel from "../../components/navigation/Carousel";
 import { NavBar } from "../../components/navigation/NavBar";
 import Shop from "../../components/shop/Shop";
