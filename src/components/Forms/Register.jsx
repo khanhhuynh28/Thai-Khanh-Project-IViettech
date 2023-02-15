@@ -6,6 +6,11 @@ import {
     Form,
     Input,
 } from 'antd';
+import { useState } from 'react';
+import { registerAction } from '../../stores/action/auth.action';
+import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { appRoute } from '../../const/routes.const';
 
 const formItemLayout = {
     labelCol: {
@@ -21,7 +26,7 @@ const formItemLayout = {
             span: 24,
         },
         sm: {
-            span: 16,
+            span: 24,
         },
     },
 };
@@ -38,9 +43,41 @@ const tailFormItemLayout = {
     },
 };
 const Register = () => {
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.auth.user);
+    const [getDataRegister, setGetDataRegister] = useState({
+        nickname: "",
+        email: "",
+        id: "",
+        password: "",
+    })
     const [form] = Form.useForm();
-    const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+
+    if (user) return <Navigate to={"./login"} />
+
+    const handleChangeRegister = (e) => {
+        const { value, name } = e.target;
+        setGetDataRegister({
+            ...getDataRegister,
+            [name]: value,
+
+        });
+    };
+
+    const onFinish = () => {
+        const { nickname, email, id, password } = getDataRegister;
+        dispatch(
+            registerAction({
+                nickname: nickname,
+                email: email,
+                id: id,
+                password: password,
+            })
+        )
+        console.log(nickname)
+        console.log(email)
+        console.log(id)
+        console.log(password)
     };
     return (
         <div className="containerRegister">
@@ -61,7 +98,6 @@ const Register = () => {
                 >
                     <Form.Item
                         name="nickname"
-                        label="Họ và tên"
                         tooltip="What do you want others to call you?"
                         rules={[
                             {
@@ -71,9 +107,46 @@ const Register = () => {
                             },
                         ]}
                     >
-                        <Input />
+                        <Input
+                            placeholder='Họ và tên'
+                            name="nickname"
+                            onChange={handleChangeRegister}
+                            width="100%"
+                        />
                     </Form.Item>
                     <Form.Item
+                        name="email"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Vui lòng nhập email!',
+                                whitespace: true,
+                            },
+                        ]}
+                    >
+                        <Input
+                            placeholder='Email'
+                            name="email"
+                            onChange={handleChangeRegister}
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        name="id"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Vui lòng nhập địa chỉ!',
+                                whitespace: true,
+                            },
+                        ]}
+                    >
+                        <Input
+                            placeholder='Địa chỉ'
+                            name="id"
+                            onChange={handleChangeRegister}
+                        />
+                    </Form.Item>
+                    {/* <Form.Item
                         name="phone"
                         label="Số điện thoại"
                         rules={[
@@ -88,11 +161,10 @@ const Register = () => {
                                 width: '100%',
                             }}
                         />
-                    </Form.Item>
+                    </Form.Item> */}
 
                     <Form.Item
                         name="password"
-                        label="Mật khẩu"
                         rules={[
                             {
                                 required: true,
@@ -101,10 +173,14 @@ const Register = () => {
                         ]}
                         hasFeedback
                     >
-                        <Input.Password />
+                        <Input.Password
+                            placeholder='Mật khẩu'
+                            name="password"
+                            onChange={handleChangeRegister}
+                        />
                     </Form.Item>
 
-                    <Form.Item
+                    {/* <Form.Item
                         name="confirm"
                         label="Xác nhận"
                         dependencies={['password']}
@@ -127,7 +203,7 @@ const Register = () => {
                         ]}
                     >
                         <Input.Password />
-                    </Form.Item>
+                    </Form.Item> */}
 
                     <Form.Item
                         name="agreement"

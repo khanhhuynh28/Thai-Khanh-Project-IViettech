@@ -1,7 +1,7 @@
 .header-container {
     background-color: #ffba00;
     width: 100vw;
-    height: 5em;
+    height: 6em;
 
 
     .header-navbar {
@@ -11,10 +11,11 @@
         width: 100vw;
 
         .container-logo {
-            width: 70px;
-            height: 30px;
+            width: 90px;
+            height: 35px;
             background-color: red;
-            margin: 5px 0 5px 0;
+            margin: 5px 45px 5px 0;
+
 
             .logo {}
         }
@@ -25,8 +26,8 @@
 
             .nav-group {
                 margin-top: 10px;
-                padding: 5px 18px 0 7px;
-                font-size: 13px;
+                padding: 5px 25px 0 7px;
+                font-size: 16px;
                 border: none;
                 background-color: #ffba00;
             }
@@ -55,7 +56,7 @@
                 .account {
                     background-color: #ffba00;
                     border: none;
-                    font-size: 13px;
+                    font-size: 16px;
                 }
             }
         }
@@ -65,6 +66,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+        top: 7px;
 
         .search {
             width: auto;
@@ -75,26 +78,24 @@
                 border: none;
                 border-radius: 5px;
                 background-color: #ff8800;
-                right: 17px;
-                bottom: 2px;
+                right: 19px;
+                bottom: 4px;
             }
 
             input {
                 margin-right: 15px;
-                width: 530px;
+                width: 710px;
                 border: none;
-                padding: 3px 0;
+                padding: 5px 0;
                 border-radius: 5px;
                 outline: none;
             }
         }
 
-        .account {}
-
         .posts {
             .post {
                 width: 100px;
-                height: 28px;
+                height: 32px;
                 background-color: #ff8800;
                 border-radius: 5px;
                 border: none;

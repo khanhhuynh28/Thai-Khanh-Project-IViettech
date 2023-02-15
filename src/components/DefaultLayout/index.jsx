@@ -8,9 +8,10 @@ function DefaultLayout({ children }) {
       <Header />
       <div className="containerContent">
         <div className="content">{children}</div>
-        {/* <Footer /> */}
       </div>
+      <Footer />
     </div>
+
   );
 }
 

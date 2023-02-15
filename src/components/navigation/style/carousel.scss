@@ -5,13 +5,19 @@
   .carousels {
     display: flex;
     justify-content: center;
-    width: 650px;
-    height: 300px;
+    width: 52.2em;
+    height: 25em;
     background-color: white;
 
     .carousel {
-      width: 630px;
+      width: 48em;
       margin-top: 10px;
+    }
+
+    .d-block {
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 20em;
     }
   }
 }

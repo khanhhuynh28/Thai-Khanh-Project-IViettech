@@ -1,11 +1,11 @@
 import './style/login-style.scss';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { LockOutlined, UserOutlined, MailOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginAction } from '../../stores/action/auth.action';
 import { Navigate } from 'react-router-dom';
-import { publicRoutes } from '../../routes';
+import { appRoute } from '../../const/routes.const';
 const Login = () => {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.auth.user);
@@ -15,7 +15,7 @@ const Login = () => {
     })
 
 
-    if (user) return <Navigate to={publicRoutes.home} />
+    if (user) return <Navigate to={"/"} />
 
     const handleChangeLogin = (e) => {
         const { value, name } = e.target;
@@ -62,8 +62,24 @@ const Login = () => {
                         >
                             <Input
                                 name="email"
-                                prefix={<UserOutlined className="site-form-item-icon" />}
+                                prefix={<MailOutlined />}
                                 placeholder="Email"
+                                onChange={handleChangeLogin}
+                            />
+                        </Form.Item>
+                        <Form.Item
+                            name="username"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Vui lòng nhập họ và tên!',
+                                },
+                            ]}
+                        >
+                            <Input
+                                name="username"
+                                prefix={<UserOutlined className="site-form-item-icon" />}
+                                placeholder="Họ và tên"
                                 onChange={handleChangeLogin}
                             />
                         </Form.Item>

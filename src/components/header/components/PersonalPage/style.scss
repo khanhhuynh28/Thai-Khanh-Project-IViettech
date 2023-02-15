@@ -1,0 +1,89 @@
+.container-personal-page {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+
+  .personal-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .personally {
+      width: 53.5em;
+      height: 14em;
+      background-color: white;
+      display: flex;
+
+      .personally-left {
+        display: flex;
+
+
+        .avatar {
+          width: 90px;
+          height: 90px;
+          margin: 20px 20px 0;
+          border-radius: 50%;
+          background-color: red;
+        }
+
+        .nickname {
+          margin-top: 20px;
+
+          .name {
+            font-size: 24px;
+          }
+
+          .follow {
+            font-size: 14px;
+            margin: 10px 0 20px;
+
+            a {
+              text-decoration: none;
+            }
+
+            .followers {
+              margin-right: 80px;
+            }
+
+            .watching {}
+          }
+
+          .links {
+            button {
+              border: 1px solid rgb(218, 218, 230);
+              background-color: white;
+              border-radius: 10px;
+              padding: 5px;
+            }
+
+            .edit-page {
+              margin-right: 20px;
+            }
+
+            .link {}
+          }
+        }
+      }
+
+      .personally-right {
+        position: relative;
+        left: 60px;
+        margin-top: 20px;
+        color: #adb5bd;
+      }
+    }
+
+    .new-post {
+      margin: 10px 0;
+      background-color: white;
+      height: 15em;
+      width: 53.5em;
+    }
+
+    .job-application {
+      background-color: white;
+      height: 20em;
+      width: 53.5em;
+    }
+  }
+}
