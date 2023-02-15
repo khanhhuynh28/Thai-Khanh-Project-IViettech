@@ -24,7 +24,6 @@ const authSlice = createSlice({
     });
     builder.addCase(registerAction.fulfilled, (state, action) => {
       state.loadingRegister = false;
-
     });
 
     builder.addCase(loginAction.rejected, (state, action) => {
