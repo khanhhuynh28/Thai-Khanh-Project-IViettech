@@ -13,8 +13,6 @@ function Shop() {
                 <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
                   <strong class="d-block py-2">Tin đăng mới</strong>
                 </header>
-
-
                 <div class="row">
                   <div class="col-lg-3 col-md-3 col-sm-3">
                     <figure class="card card-product-grid">

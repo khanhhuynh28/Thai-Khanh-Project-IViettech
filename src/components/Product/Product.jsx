@@ -9,18 +9,22 @@ function Product() {
                     <img className="image" src={productApp.srcImage} alt={productApp.srcImage} />
                 </a>
             </div>
-            <div>
-                <p className="name">{productApp.name}</p>
+            <div className="name">
+                <p>{productApp.name}</p>
             </div>
-            <div>
-                <p className="price">{productApp.price}</p>
+            <div className="price">
+                <p>{productApp.price}</p>
             </div>
-            <div>
-                <h2 className="status">{productApp.status}</h2>
+            <div className="status">
+                <p>{productApp.status}</p>
             </div>
-            <div>
-                <button>Buy Now</button>
-                <button>Trả góp 0%</button>
+            <div className="btn-buy">
+                <button>
+                    <p>Buy Now</p>
+                </button>
+                <button>
+                    <p>Trả góp 0%</p>
+                </button>
             </div>
         </div>
     );

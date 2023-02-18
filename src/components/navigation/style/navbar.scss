@@ -1,58 +1,57 @@
 .containerNavBar {
-  width: 100vw;
-  height: 13.3em;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  right: 6px;
+    width: 100vw;
+    height: 13.3em;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 6px;
 
-  .navBar {
-    width: 52.2em;
-    height: 12.7em;
-    margin-top: 10px;
-    background-color: white;
-
-    .nav {
-      display: flex;
-      justify-content: space-evenly;
-      margin: 10px 0;
-
-      .cards {
-        border: none;
+    .navBar {
+        width: 960px;
+        height: 12.7em;
+        margin-top: 10px;
         background-color: white;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        width: 8em;
-        height: 10em;
-        flex: 1;
-        transition: .3s all ease;
-        margin: 5px;
 
-        .card {
-          width: 100%;
-          height: auto;
-          font-size: 13px;
-          border: none;
+        .nav {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 10px 0;
 
-          img {
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 140px;
-          }
+            .cards {
+                border: none;
+                background-color: white;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                width: 8em;
+                height: 10em;
+                flex: 1;
+                transition: 0.3s all ease;
+                margin: 5px;
+
+                .card {
+                    width: 100%;
+                    height: auto;
+                    font-size: 13px;
+                    border: none;
+
+                    img {
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        height: 140px;
+                    }
+                }
+
+                p {
+                    text-align: center;
+                    font-size: 13px;
+                    margin-bottom: 0;
+                }
+            }
+
+            .cards:hover {
+                flex: 2;
+            }
         }
-
-        p {
-          text-align: center;
-          font-size: 13px;
-          margin-bottom: 0;
-        }
-      }
-
-      .cards:hover {
-        flex: 2;
-      }
     }
-  }
-
 }

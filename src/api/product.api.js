@@ -1,4 +1,4 @@
-// import { API, BASE_URL } from './constants.api';
+import { API, BASE_URL } from './constants.api';
 
 export const productApi = [
     {
@@ -10,3 +10,5 @@ export const productApi = [
         status: 'NEW',
     },
 ];
+
+export const productsApi = {};

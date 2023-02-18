@@ -1,8 +1,31 @@
-.containerHome {
-
-  .home {
+.container-home {
+    .home {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        background-color: #fff;
+    }
+}
+.container-product {
+    width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-  }
+    .main-product {
+        width: 960px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        .newsfeed {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+        .product-list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 960px;
+        }
+    }
 }
