@@ -1,4 +1,5 @@
-import { Manage } from '../../components/Header/components/Manage/Manage';
+import React from 'react';
+import { Manage } from '../../components/header/components/Manage/Manage';
 import './style.scss';
 function ManagerPosts() {
     return (

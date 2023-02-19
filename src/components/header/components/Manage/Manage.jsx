@@ -1,5 +1,6 @@
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import './style.scss';
+
 export function Manage() {
     return (
         <div className="container-manage">

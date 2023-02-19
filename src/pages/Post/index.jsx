@@ -1,5 +1,6 @@
+import React from 'react';
 import PostNews from '../../components/Forms/PostNews';
-import { Header } from '../../components/Header/Header';
+import { Header } from '../../components/header/Header';
 // import Product from '../../components/Product/Product';
 import './style.scss';
 
