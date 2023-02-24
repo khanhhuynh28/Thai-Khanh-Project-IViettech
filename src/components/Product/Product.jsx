@@ -1,34 +1,45 @@
 import './style.scss';
-import { productApp } from '../../const/product.const';
-import img from "../../assets/images/can-ho.jpg"
+import { useSelector } from 'react-redux';
 
 function Product() {
+    const productList = useSelector((state) => state.product.product);
+
+    console.log(productList);
     return (
-        <>
-            <div className="container-product_item">
-                <div>
-                    <a href="">
-                        <img className="image" src={productApp.srcImage} alt={productApp.srcImage} />
-                    </a>
-                </div>
-                <div>
-                    <p className="name">{productApp.name}</p>
-                </div>
-                <div>
-                    <p className="price">{productApp.price}</p>
-                </div>
-                <div>
-                    <h2 className="status">{productApp.status}</h2>
-                </div>
-                <div>
-                    <button>Buy Now</button>
-                    <button>Trả góp 0%</button>
-                </div>
-                <div>
-                    <img src={img} alt="" />
-                </div>
-            </div>
-        </>
+        <div className="product-list">
+            {productList.map((item, index) => {
+                return (
+                    <div className="container-product_item" key={index}>
+                        <div className="image">
+                            <a href="">
+                                <img
+                                    className="image-item"
+                                    src={item.srcImage}
+                                    alt={item.srcImage}
+                                />
+                            </a>
+                        </div>
+                        <div className="name">
+                            <p>{item.title}</p>
+                        </div>
+                        <div className="price">
+                            <p>{item.price}</p>
+                        </div>
+                        <div className="status">
+                            <p>{item.status}</p>
+                        </div>
+                        <div className="btn-buy">
+                            <button>
+                                <p>Buy Now</p>
+                            </button>
+                            <button>
+                                <p>Trả góp 0%</p>
+                            </button>
+                        </div>
+                    </div>
+                );
+            })}
+        </div>
     );
 }
 

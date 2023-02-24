@@ -1,10 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './style.scss';
 
 export function Header() {
-    const username = useSelector((state) => state.auth.isLogin);
-    console.log(username)
+
 
     return (
         <div className="header-container">
@@ -135,7 +133,9 @@ export function Header() {
                 </div>
                 <div className="posts">
                     <button className="post">
-                        <Link to={'/post'} className="title">ĐĂNG TIN</Link>
+                        <Link to={'/post'} className="title">
+                            ĐĂNG TIN
+                        </Link>
                     </button>
                 </div>
             </div>

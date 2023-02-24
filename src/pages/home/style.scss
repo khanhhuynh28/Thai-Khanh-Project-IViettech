@@ -1,8 +1,27 @@
-.containerHome {
-
-  .home {
+.container-home {
+    
+    .home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // background-color: #fff;
+        background-color: rgb(234, 197, 127);
+    }
+}
+.container-product {
+    width: 960px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-  }
+    justify-content: center;
+    .newsfeed {
+        font-size: 17px;
+        font-weight: bold;
+        margin: 0px;
+        padding: 12px;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.41;
+        letter-spacing: normal;
+        color: rgb(34, 34, 34);
+    }
 }

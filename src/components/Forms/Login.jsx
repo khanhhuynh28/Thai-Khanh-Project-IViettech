@@ -23,7 +23,6 @@ const Login = () => {
         setFormLogin({
             ...formLogin,
             [name]: value,
-
         });
     };
 
@@ -42,7 +41,7 @@ const Login = () => {
         <div className="containerLogin">
             <div className="formLogin">
                 <h3 className="title">Đăng nhập</h3>
-                <div className='login'>
+                <div className="login">
                     <Form
                         onFinish={onFinish}
                         name="normal_login"
@@ -52,7 +51,7 @@ const Login = () => {
                         }}
                     >
                         <Form.Item
-                            // name="email"
+                            name="email"
                             rules={[
                                 {
                                     required: true,
@@ -68,7 +67,7 @@ const Login = () => {
                             />
                         </Form.Item>
                         <Form.Item
-                            // name="username"
+                            name="username"
                             rules={[
                                 {
                                     required: true,
@@ -84,7 +83,7 @@ const Login = () => {
                             />
                         </Form.Item>
                         <Form.Item
-                            // name="password"
+                            name="password"
                             rules={[
                                 {
                                     required: true,
@@ -131,10 +130,10 @@ const Login = () => {
                         <li className="apple">
                             <img src="https://static.chotot.com/storage/assets/LOGIN/apple.svg" alt="" />
                         </li>
-                    </ul >
-                </div >
-            </div >
-        </div >
+                    </ul>
+                </div>
+            </div>
+        </div>
     );
 };
 export default Login;

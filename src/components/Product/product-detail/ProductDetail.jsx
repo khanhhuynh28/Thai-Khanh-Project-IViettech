@@ -13,7 +13,7 @@ export const ProductDetail = () => {
 
   const fetchData = () => {
     setFetching(true);
-    axios.get("http://localhost:3050/api/product")
+    axios.get("http://localhost:3050/api/products/")
       .then((res) => {
         setProductDetail(res.data);
         setFetching(false);
@@ -38,7 +38,7 @@ export const ProductDetail = () => {
             <div className="wrapper row">
               <div className="preview col-md-6">
                 <div className="preview-pic tab-content">
-                  <div className="tab-pane active" id="pic-1"><img className="main-image" src={product.thumbnail} /></div>
+                  <div className="tab-pane active" id="pic-1"><img className="main-image" src={product.srcImage} /></div>
                   <div className="tab-pane" id="pic-2"><img src={product.images} /></div>
                   <div className="tab-pane" id="pic-3"><img src={product.srcImage} /></div>
                   <div className="tab-pane" id="pic-4"><img src={product.srcImage} /></div>
@@ -120,6 +120,7 @@ export const ProductDetail = () => {
             </div>
           </div>
         ))}
+        {fetching && "loading"}
       </div>
     </div>
   )

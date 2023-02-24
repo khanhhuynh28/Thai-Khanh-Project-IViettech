@@ -1,11 +1,6 @@
 import './style/register.scss';
 
-import {
-    Button,
-    Checkbox,
-    Form,
-    Input,
-} from 'antd';
+import { Button, Checkbox, Form, Input } from 'antd';
 import { useState } from 'react';
 import { registerAction } from '../../stores/action/auth.action';
 import { useDispatch, useSelector } from 'react-redux';
@@ -46,11 +41,11 @@ const Register = () => {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.auth.isRegistered);
     const [getDataRegister, setGetDataRegister] = useState({
-        nickname: "",
-        email: "",
-        id: "",
-        password: "",
-    })
+        nickname: '',
+        email: '',
+        id: '',
+        password: '',
+    });
     const [form] = Form.useForm();
 
     if (user) return <Navigate to={'/login'} />
@@ -61,7 +56,6 @@ const Register = () => {
         setGetDataRegister({
             ...getDataRegister,
             [name]: value,
-
         });
     };
 
@@ -79,7 +73,7 @@ const Register = () => {
     return (
         <div className="containerRegister">
             <div className="register">
-                <h3 className='titleRegister'>Đăng ký</h3>
+                <h3 className="titleRegister">Đăng ký</h3>
                 <Form
                     {...formItemLayout}
                     form={form}
@@ -105,7 +99,7 @@ const Register = () => {
                         ]}
                     >
                         <Input
-                            placeholder='Họ và tên'
+                            placeholder="Họ và tên"
                             name="nickname"
                             onChange={handleChangeRegister}
                             width="100%"
@@ -121,11 +115,7 @@ const Register = () => {
                             },
                         ]}
                     >
-                        <Input
-                            placeholder='Email'
-                            name="email"
-                            onChange={handleChangeRegister}
-                        />
+                        <Input placeholder="Email" name="email" onChange={handleChangeRegister} />
                     </Form.Item>
                     <Form.Item
                         name="id"
@@ -137,11 +127,7 @@ const Register = () => {
                             },
                         ]}
                     >
-                        <Input
-                            placeholder='Địa chỉ'
-                            name="id"
-                            onChange={handleChangeRegister}
-                        />
+                        <Input placeholder="Địa chỉ" name="id" onChange={handleChangeRegister} />
                     </Form.Item>
                     {/* <Form.Item
                         name="phone"
@@ -171,7 +157,7 @@ const Register = () => {
                         hasFeedback
                     >
                         <Input.Password
-                            placeholder='Mật khẩu'
+                            placeholder="Mật khẩu"
                             name="password"
                             onChange={handleChangeRegister}
                         />
@@ -220,7 +206,7 @@ const Register = () => {
                         </Checkbox>
                     </Form.Item>
                     <Form.Item {...tailFormItemLayout}>
-                        <Button className='form-submit-register' htmlType="submit">
+                        <Button className="form-submit-register" htmlType="submit">
                             Đăng ký
                         </Button>
                     </Form.Item>

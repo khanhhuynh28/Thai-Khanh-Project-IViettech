@@ -18,9 +18,8 @@ export default function Manage() {
               </div>
             </div>
           </div>
-        </div>
 
-        {/* <Navbar >
+          {/* <Navbar >
           <Container>
             <Nav className="me-auto navbar">
               <Nav.Link className="nav" href="#">BỊ TỪ CHỐI</Nav.Link>
@@ -34,8 +33,9 @@ export default function Manage() {
         </Navbar> */}
 
 
-        <div className="todoList">
-          <p>chưa có thông tin</p>
+          <div className="todoList">
+            <p>chưa có thông tin</p>
+          </div>
         </div>
       </div>
     </div>
