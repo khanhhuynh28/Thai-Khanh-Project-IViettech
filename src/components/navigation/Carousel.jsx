@@ -5,7 +5,7 @@ import {
     MDBCarouselItem,
 } from 'mdb-react-ui-kit';
 
-export default function Carousel() {
+ function Carousel() {
     return (
         <div className="containerCarousel">
             <div className="carousels">
@@ -41,3 +41,4 @@ export default function Carousel() {
         </div>
     );
 }
+export default Carousel;
