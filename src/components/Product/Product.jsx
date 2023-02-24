@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 function Product() {
     const productList = useSelector((state) => state.product.product);
 
-    console.log(productList);
     return (
         <div className="product-list">
             {productList.map((item, index) => {

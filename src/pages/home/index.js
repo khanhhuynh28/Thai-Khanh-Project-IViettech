@@ -21,9 +21,6 @@ function Home() {
             <div className="home">
                 <Carousel />
                 <NavBar />
-                {/* <Shop /> */}
-                {/* <Manage /> */}
-                {/* <PersonalPage /> */}
                 <div className="container-product">
                     <p className="newsfeed">Tin mới đăng</p>
                     <Product />
