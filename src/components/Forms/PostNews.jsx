@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style/postnews.scss';
 
 import {
@@ -15,6 +15,8 @@ import {
 } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import TextArea from 'antd/es/input/TextArea';
+import { useDispatch } from 'react-redux';
+
 // type SizeType = Parameters<typeof Form>[0]['size'];
 
 const abc = [
@@ -69,14 +71,43 @@ const abc = [
 ];
 
 function PostNews() {
-    // const [componentSize, setComponentSize] = (useState < SizeType) | ('default' > 'default');
+    const dispatch = useDispatch()
+    const [getDataFromPostNew, setGetDataFromPostNew] = useState({
+        category: "",
+        title: "",
+        shortDescription: "",
+        price: "",
+    });
+
+    const handleChangePostNew = (e) => {
+        const { name, value } = e.target;
+        setGetDataFromPostNew({
+            ...getDataFromPostNew,
+            [name]: value,
+
+        });
+    };
+
+    const onFinish = () => {
+        const { category, title, shortDescription, price } = getDataFromPostNew;
+        dispatch({
+            category: category,
+            title: title,
+            shortDescription: shortDescription,
+            price: price,
+        })
+        console.log(category)
+        console.log(title)
+        console.log(shortDescription)
+        console.log(price)
+    }
 
     return (
         <div className="container-postnews">
             <div className="main-postnews">
                 <div className="select-photo">
                     <Form.Item label="Ảnh / Video của sản phẩm:" valuePropName="fileList">
-                        <Upload action="/upload.do" listType="picture-card" className="b123">
+                        <Upload action="/upload.do" listType="picture-card" className="b123" name='srcImage'>
                             <div className="a1234">
                                 <PlusOutlined />
                                 <div style={{ marginTop: 8 }}>Tải ảnh lên.</div>
@@ -86,44 +117,51 @@ function PostNews() {
                 </div>
                 <div className="data-input">
                     <Form
+                        onFinish={onFinish}
                         labelCol={{ span: 4 }}
                         wrapperCol={{ span: 14 }}
                         layout="horizontal"
-                        // initialValues={{ size: componentSize }}
-                        // onValuesChange={onFormLayoutChange}
-                        //   size={componentSize as SizeType}
                         style={{ maxWidth: 600 }}
                     >
                         <div>
-                            <Form.Item label="">
-                                <TreeSelect treeData={abc} placeholder="Danh Mục Đăng Tin" />
+                            <Form.Item label="" >
+                                <TreeSelect
+                                    name="category"
+                                    treeData={abc}
+                                    placeholder="Danh Mục Đăng Tin"
+                                    onChange={handleChangePostNew}
+                                />
                             </Form.Item>
                         </div>
                         <div>
-                            <Form.Item>
+                            <Form.Item >
                                 <label>Tên sản phẩm</label>
-                                <Input placeholder="Nhập tên của sản phẩm!" />
+                                <Input
+                                    name="title"
+                                    placeholder="Nhập tên của sản phẩm!"
+                                    onChange={handleChangePostNew}
+                                />
                             </Form.Item>
                         </div>
                         <div>
                             <Form.Item>
                                 <label>Thông tin chi tiết!</label>
-                                <TextArea placeholder="Nhập thông tin của sản phẩm" />
+                                <TextArea
+                                    name="shortDescription"
+                                    placeholder="Nhập thông tin của sản phẩm"
+                                    onChange={handleChangePostNew}
+                                />
                             </Form.Item>
                         </div>
                         <div>
-                            <Form.Item label="">
+                            <Form.Item label="" >
                                 <label>Giá Tiền: </label>
-                                <InputNumber />
+                                <InputNumber
+                                    name="price"
+                                    onChange={handleChangePostNew}
+                                />
                             </Form.Item>
                         </div>
-
-                        {/* <div>
-                            <Form.Item>
-                                <label>Ngày Sản Xuất:</label>
-                                <DatePicker className="ngay-san-xuat" />
-                            </Form.Item>
-                        </div> */}
 
                         <Form.Item label="" valuePropName="checked">
                             <label>Đã qua sử dụng: </label>

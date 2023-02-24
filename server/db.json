@@ -1,122 +1,206 @@
 {
-  "users": [
-    {
-      "email": "khanh28@gmail.com",
-      "password": "$2y$10$syiOmggzmOyOA01AHntRBemmhGmqqMuHZ36b13Ld94rQE400rdZES"
-    },
-    {
-      "email": "Huynhtankhanh281020@gmail.com",
-      "password": "$2a$10$/.gLanTOEQS4SOILlgXg8etTuDC.ySQWOGb099nZjaxkXgn6VZ8re",
-      "nickname": "khanh",
-      "id": "đại an",
-      "createdAt": 1676126838892,
-      "updateAt": 1676126838892
-    },
-    {
-      "email": "khanhhuynh28@gmail.com",
-      "password": "$2a$10$KZNYTRLqBOLEWIbiR.uQ5uWws0.M0Oo6ihiZEhMKLW0bbNB.ADf8a",
-      "nickname": "khanhhuynh",
-      "id": "tam dai",
-      "createdAt": 1676127141614,
-      "updateAt": 1676127141614
-    },
-    {
-      "email": "khanh2810@gmail.com",
-      "password": "$2a$10$dljJDrY2vYB14xCbFx.YUOBYXADLCC6X9XPGUfI9y8J08o2D6iW/y",
-      "nickname": "khanhhuynh28",
-      "id": "phu ninh",
-      "createdAt": 1676127232685,
-      "updateAt": 1676127232685
-    },
-    {
-      "email": "pha@gmail.com",
-      "password": "$2a$10$ytWunM37cw3Q821M1K0C4.K5em6JSGmtUdFDUo2bKGIG3xiLo0q9C",
-      "nickname": "pha",
-      "id": "quang nam",
-      "createdAt": 1676171789274,
-      "updateAt": 1676171789274
-    },
-    {
-      "email": "khanh182020@gmail.com",
-      "password": "$2a$10$WhaFUBpeqCoPtuy.Jk0l0ufqb/NwXQByqTb7o0haNNhQHmVpl2gBq",
-      "nickname": "khanh28",
-      "id": "da nang",
-      "createdAt": 1676172972694,
-      "updateAt": 1676172972694
-    },
-    {
-      "email": "Huynh281020@gmail.com",
-      "password": "$2a$10$/bwGljz950zNY7Ho64omVeIkeubUvrVHwmFDtY0s8.rSfnmdYkBKu",
-      "nickname": "khanhhuynh2810",
-      "id": "hai chau",
-      "createdAt": 1676173030398,
-      "updateAt": 1676173030398
-    },
-    {
-      "email": "tankhanh281020@gmail.com",
-      "password": "$2a$10$tUHffGVaM89aK.ShmikTfeswVZjteWo4U/nyTQHtQtrXIRZFcbc.C",
-      "nickname": "khanhhuynh281020",
-      "id": "tam dai phu ninh",
-      "createdAt": 1676173133591,
-      "updateAt": 1676173133591
-    },
-    {
-      "email": "Huynhtan281020@gmail.com",
-      "password": "$2a$10$kO6eZFNuO0lidvljDKNf6u80mzPFaeyFItU7fTEGaDkTphir47rgu",
-      "nickname": "khanh2800",
-      "id": "đại an tam dai",
-      "createdAt": 1676173281942,
-      "updateAt": 1676173281942
-    },
-    {
-      "email": "vanthien@gmail.com",
-      "password": "$2a$10$NqAwWHUkWyvagPGFY52Bze75VWvaMmOPbzrTogsoOwn.wt8CUrgAC",
-      "nickname": "khanhhuynh28102000",
-      "id": "da nang hai chau",
-      "createdAt": 1676173358767,
-      "updateAt": 1676173358767
-    },
-    {
-      "email": "vanvan@gmail.com",
-      "password": "$2a$10$VC5HwVK//U1IZVQzT6nxEuyfc64fZt9KOhDDBdh2F3Ebx76iiEv7m",
-      "nickname": "khanhhuynh2810200000",
-      "id": "hai chau 2",
-      "createdAt": 1676173409504,
-      "updateAt": 1676173409504
-    },
-    {
-      "email": "khanh2000@gmail.com",
-      "password": "$2a$10$Hzg0YSjYiLD.MsxjgZYxf.E92P3mN/0aYr/jQOr5BXRIltg6Y8DhS",
-      "nickname": "khanh20000",
-      "id": "tam dai quang nam",
-      "createdAt": 1676173495060,
-      "updateAt": 1676173495060
-    },
-    {
-      "email": "pha2300@gmail.com",
-      "password": "$2a$10$UQCmx6hLsBfFStbNxye0We1vODFQLo4BPXwg111Timds0j9rFpPUu",
-      "nickname": "khanhhuynh2810000",
-      "id": "phu ninh quang nam",
-      "createdAt": 1676175730735,
-      "updateAt": 1676175730735
-    },
-    {
-      "email": "pha123234@gmail.com",
-      "password": "$2a$10$4BJUfKvKYyNJw089MuFQBuyTwqAbeAAuDfkynNkm1iAEbIOvYqjRa",
-      "nickname": "khanhhuynh2897898",
-      "id": "đại an jsdgadff",
-      "createdAt": 1676459449036,
-      "updateAt": 1676459449036
-    },
-    {
-      "email": "khanh243478@gmail.com",
-      "password": "$2a$10$e/cFZTPRzjfbiA/jHJXfH.WTVQ6vEgHGyTzyWboXN5XgOhzGHDpQa",
-      "nickname": "khanh64576",
-      "id": "đại an 3564df",
-      "createdAt": 1676459513315,
-      "updateAt": 1676459513315
-    }
-  ],
-  "product": [],
-  "todo": []
+    "users": [
+        {
+            "email": "khanh28@gmail.com",
+            "password": "$2y$10$syiOmggzmOyOA01AHntRBemmhGmqqMuHZ36b13Ld94rQE400rdZES"
+        },
+        {
+            "email": "Huynhtankhanh281020@gmail.com",
+            "password": "$2a$10$/.gLanTOEQS4SOILlgXg8etTuDC.ySQWOGb099nZjaxkXgn6VZ8re",
+            "nickname": "khanh",
+            "id": "đại an",
+            "createdAt": 1676126838892,
+            "updateAt": 1676126838892
+        },
+        {
+            "email": "khanhhuynh28@gmail.com",
+            "password": "$2a$10$KZNYTRLqBOLEWIbiR.uQ5uWws0.M0Oo6ihiZEhMKLW0bbNB.ADf8a",
+            "nickname": "khanhhuynh",
+            "id": "tam dai",
+            "createdAt": 1676127141614,
+            "updateAt": 1676127141614
+        },
+        {
+            "email": "khanh2810@gmail.com",
+            "password": "$2a$10$dljJDrY2vYB14xCbFx.YUOBYXADLCC6X9XPGUfI9y8J08o2D6iW/y",
+            "nickname": "khanhhuynh28",
+            "id": "phu ninh",
+            "createdAt": 1676127232685,
+            "updateAt": 1676127232685
+        },
+        {
+            "email": "pha@gmail.com",
+            "password": "$2a$10$ytWunM37cw3Q821M1K0C4.K5em6JSGmtUdFDUo2bKGIG3xiLo0q9C",
+            "nickname": "pha",
+            "id": "quang nam",
+            "createdAt": 1676171789274,
+            "updateAt": 1676171789274
+        },
+        {
+            "email": "khanh182020@gmail.com",
+            "password": "$2a$10$WhaFUBpeqCoPtuy.Jk0l0ufqb/NwXQByqTb7o0haNNhQHmVpl2gBq",
+            "nickname": "khanh28",
+            "id": "da nang",
+            "createdAt": 1676172972694,
+            "updateAt": 1676172972694
+        },
+        {
+            "email": "Huynh281020@gmail.com",
+            "password": "$2a$10$/bwGljz950zNY7Ho64omVeIkeubUvrVHwmFDtY0s8.rSfnmdYkBKu",
+            "nickname": "khanhhuynh2810",
+            "id": "hai chau",
+            "createdAt": 1676173030398,
+            "updateAt": 1676173030398
+        },
+        {
+            "email": "tankhanh281020@gmail.com",
+            "password": "$2a$10$tUHffGVaM89aK.ShmikTfeswVZjteWo4U/nyTQHtQtrXIRZFcbc.C",
+            "nickname": "khanhhuynh281020",
+            "id": "tam dai phu ninh",
+            "createdAt": 1676173133591,
+            "updateAt": 1676173133591
+        },
+        {
+            "email": "Huynhtan281020@gmail.com",
+            "password": "$2a$10$kO6eZFNuO0lidvljDKNf6u80mzPFaeyFItU7fTEGaDkTphir47rgu",
+            "nickname": "khanh2800",
+            "id": "đại an tam dai",
+            "createdAt": 1676173281942,
+            "updateAt": 1676173281942
+        },
+        {
+            "email": "vanthien@gmail.com",
+            "password": "$2a$10$NqAwWHUkWyvagPGFY52Bze75VWvaMmOPbzrTogsoOwn.wt8CUrgAC",
+            "nickname": "khanhhuynh28102000",
+            "id": "da nang hai chau",
+            "createdAt": 1676173358767,
+            "updateAt": 1676173358767
+        },
+        {
+            "email": "vanvan@gmail.com",
+            "password": "$2a$10$VC5HwVK//U1IZVQzT6nxEuyfc64fZt9KOhDDBdh2F3Ebx76iiEv7m",
+            "nickname": "khanhhuynh2810200000",
+            "id": "hai chau 2",
+            "createdAt": 1676173409504,
+            "updateAt": 1676173409504
+        },
+        {
+            "email": "khanh2000@gmail.com",
+            "password": "$2a$10$Hzg0YSjYiLD.MsxjgZYxf.E92P3mN/0aYr/jQOr5BXRIltg6Y8DhS",
+            "nickname": "khanh20000",
+            "id": "tam dai quang nam",
+            "createdAt": 1676173495060,
+            "updateAt": 1676173495060
+        },
+        {
+            "email": "pha2300@gmail.com",
+            "password": "$2a$10$UQCmx6hLsBfFStbNxye0We1vODFQLo4BPXwg111Timds0j9rFpPUu",
+            "nickname": "khanhhuynh2810000",
+            "id": "phu ninh quang nam",
+            "createdAt": 1676175730735,
+            "updateAt": 1676175730735
+        },
+        {
+            "email": "pha123234@gmail.com",
+            "password": "$2a$10$4BJUfKvKYyNJw089MuFQBuyTwqAbeAAuDfkynNkm1iAEbIOvYqjRa",
+            "nickname": "khanhhuynh2897898",
+            "id": "đại an jsdgadff",
+            "createdAt": 1676459449036,
+            "updateAt": 1676459449036
+        },
+        {
+            "email": "khanh243478@gmail.com",
+            "password": "$2a$10$e/cFZTPRzjfbiA/jHJXfH.WTVQ6vEgHGyTzyWboXN5XgOhzGHDpQa",
+            "nickname": "khanh64576",
+            "id": "đại an 3564df",
+            "createdAt": 1676459513315,
+            "updateAt": 1676459513315
+        },
+        {
+            "email": "khanh28234343@gmail.com",
+            "password": "$2a$10$NHv8OfUx8hRDlIoQfIgdOOH.9Zxas7nsn9baNGWYXhCVvMjApV1Xm",
+            "nickname": "khanhhuynh2823235",
+            "id": "đại ansdgsd",
+            "createdAt": 1676895478037,
+            "updateAt": 1676895478037
+        },
+        {
+            "email": "khanh23253438@gmail.com",
+            "password": "$2a$10$kehzrQA3uleiN8MyVg1uIOUkcB9qMnmg5sBzJXBZT8PWy4dNb9uRG",
+            "nickname": "khanh21143",
+            "id": "đại anegdsss",
+            "createdAt": 1676895562091,
+            "updateAt": 1676895562091
+        },
+        {
+            "email": "khanh2wqerwqe8@gmail.com",
+            "password": "$2a$10$dTeSZjjYlycPrlydlUT/QuC2Kanq5CMz1YhzDgG/s0gELGrm/x.ue",
+            "nickname": "khanhhuynh2834534",
+            "id": "đại anqweew",
+            "createdAt": 1676896126012,
+            "updateAt": 1676896126012
+        },
+        {
+            "email": "khanh2823434@gmail.com",
+            "password": "$2a$10$0sJ8mCMdpRrPEXQIVPm4JOGGIgqaOvNf6jU1eJ7NmGNJtmmdypQky",
+            "nickname": "khanhhuynh28323245",
+            "id": "đại andsasda",
+            "createdAt": 1676896187387,
+            "updateAt": 1676896187387
+        },
+        {
+            "email": "khanhdfdfg28@gmail.com",
+            "password": "$2a$10$0nfKze8WWnxVhf4Gf0glIesUGMLJAgS7RfkglCQWCuk6XBpnea7s.",
+            "nickname": "khanhdfdbf",
+            "id": "đại andfgdf",
+            "createdAt": 1676898585124,
+            "updateAt": 1676898585124
+        },
+        {
+            "email": "khanh345354328@gmail.com",
+            "password": "$2a$10$8hF8FxRGo.f8yL9qo0XgDeMg8BQxsWqcyF4v/ZB2Q9fwqjKAGRIsO",
+            "nickname": "khanh4235",
+            "id": "đại anergege",
+            "createdAt": 1676899067157,
+            "updateAt": 1676899067157
+        }
+    ],
+    "product": [
+        {
+            "id": 10,
+            "title": "HP Pavilion 15-DK1056WM",
+            "description": "HP Pavilion 15-DK1056WM Gaming...",
+            "price": 1099,
+            "discountPercentage": 6.18,
+            "rating": 4.43,
+            "stock": 89,
+            "brand": "HP Pavilion",
+            "category": "laptops",
+            "thumbnail": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
+            "images": ["https://i.dummyjson.com/data/products/10/1.jpg"]
+        }
+    ],
+    "cart": [
+        {
+            "id": "47598379875",
+            "customer_id": "abc",
+            "product_id": "1",
+            "quantity": 4,
+            "price": 100
+        },
+        {
+            "id": "3458903859385",
+            "customer_id": "abc",
+            "product_id": "2",
+            "quantity": 1,
+            "price": 100
+        },
+        {
+            "id": "3458903859385",
+            "customer_id": "abcd",
+            "product_id": "2",
+            "quantity": 1,
+            "price": 100
+        }
+    ]
 }

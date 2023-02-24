@@ -5,6 +5,8 @@ const authInitialState = {
   user: null,
   loadingLogin: false,
   loadingRegister: false,
+  isLogin: false,
+  isRegistered: false
 };
 
 const authSlice = createSlice({
@@ -21,9 +23,11 @@ const authSlice = createSlice({
     builder.addCase(loginAction.fulfilled, (state, action) => {
       state.loadingLogin = false;
       state.user = action.payload.user;
+      state.isLogin = true;
     });
     builder.addCase(registerAction.fulfilled, (state, action) => {
       state.loadingRegister = false;
+      state.isRegistered = true;
     });
 
     builder.addCase(loginAction.rejected, (state, action) => {

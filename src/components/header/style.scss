@@ -1,8 +1,12 @@
 .header-container {
     background-color: #ffba00;
     width: 100vw;
-    height: 6em;
-
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 
     .header-navbar {
         display: flex;
@@ -13,9 +17,7 @@
         .container-logo {
             width: 90px;
             height: 35px;
-            background-color: red;
-            margin: 5px 45px 5px 0;
-
+            margin: 5px 170px 5px 0;
 
             .logo {}
         }
@@ -24,32 +26,28 @@
             display: flex;
             padding-left: 30px;
 
-            .nav-group {
-                margin-top: 10px;
-                padding: 5px 25px 0 7px;
-                font-size: 16px;
-                border: none;
-                background-color: #ffba00;
-            }
+            .all-group {
+                margin-right: 10px;
 
-            .home-logo {
-                .home {}
-            }
+                .nav-group {
+                    margin-top: 20px;
+                    padding: 5px 25px 0 7px;
+                    font-size: 16px;
+                    border: none;
+                    background-color: #ffba00;
+                    position: relative;
+                    top: 3px;
+                }
 
-            .management-logo {
-                .management {}
-            }
 
-            .order-logo {
-                .order {}
-            }
+                .or {
+                    margin: 0 0 10px 0;
+                }
 
-            .chat-logo {
-                .chat {}
-            }
+                svg {
+                    margin-right: 5px;
+                }
 
-            .notification-logo {
-                .notification {}
             }
 
             .account-logo {
@@ -57,6 +55,7 @@
                     background-color: #ffba00;
                     border: none;
                     font-size: 16px;
+                    margin-top: 2px;
                 }
             }
         }
@@ -78,15 +77,18 @@
                 border: none;
                 border-radius: 5px;
                 background-color: #ff8800;
-                right: 19px;
-                bottom: 4px;
+                right: 162px;
+                bottom: 1px;
+                padding: 5px 15px;
             }
 
             input {
-                margin-right: 15px;
-                width: 710px;
+                position: relative;
+                right: 10px;
+                margin-right: 150px;
+                width: 770px;
                 border: none;
-                padding: 5px 0;
+                padding: 7px 0;
                 border-radius: 5px;
                 outline: none;
             }

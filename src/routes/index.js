@@ -1,8 +1,11 @@
-import Home from '../pages/home';
-import LoginPage from '../pages/Login';
-import RegisterPage from '../pages/Register';
-import Post from '../pages/Post';
-import NotFound from '../pages/NotFound';
+import Chat from "../components/header/components/Chat/Chat";
+import Manage from "../components/header/components/Manage/Manage";
+import { Home } from "../pages/home";
+import LoginPage from "../pages/Login";
+import NotFound from "../pages/NotFound";
+import Post from "../pages/Post";
+import RegisterPage from "../pages/Register";
+
 
 //Public Routes
 export const publicRoutes = [
@@ -11,7 +14,12 @@ export const publicRoutes = [
     { path: '/login', component: LoginPage },
     { path: '/register', component: RegisterPage },
     { path: '/*', component: NotFound },
-    
+    { path: '/manage', component: Manage },
+    { path: '/chat', component: Chat },
+
+
+
+
 ];
 //Private Routes
 export const privateRoutes = [];

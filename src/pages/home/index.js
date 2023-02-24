@@ -1,19 +1,19 @@
 import React from "react";
-import Carousel from "../../components/navigation/Carousel";
-import { NavBar } from "../../components/navigation/NavBar";
-import Shop from "../../components/shop/Shop";
+import Carousels from "../../components/navigation/Carousel/Carousel";
+import { Vehicle } from "../../components/navigation/Navbar/components/Vehicle";
+import { NavBar } from "../../components/navigation/Navbar/NavBar";
+import Product from "../../components/Product/Product";
+import { ShoppingCart } from "../../components/Product/product-detail/shopping-cart/ShoppingCart";
 import "./style.scss";
-function Home() {
+export function Home() {
   return (
     <div className="containerHome">
       <div className="home">
-        <Carousel />
+        <Carousels />
         <NavBar />
-        <Shop />
-        {/* <Manage /> */}
-        {/* <PersonalPage /> */}
+        {/* <Vehicle /> */}
+        <Product />
       </div>
     </div>
   );
 }
-export default Home;

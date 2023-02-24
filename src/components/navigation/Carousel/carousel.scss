@@ -2,22 +2,19 @@
   display: flex;
   justify-content: center;
 
+
   .carousels {
     display: flex;
     justify-content: center;
-    width: 52.2em;
-    height: 25em;
+    width: 1030px;
+    height: 473px;
     background-color: white;
 
     .carousel {
-      width: 48em;
-      margin-top: 10px;
+      width: 1000px;
+      margin-top: 15px;
+
     }
 
-    .d-block {
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 20em;
-    }
   }
 }

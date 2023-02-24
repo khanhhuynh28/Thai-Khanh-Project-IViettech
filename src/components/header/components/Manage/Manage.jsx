@@ -1,6 +1,7 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
+import { Container } from "react-bootstrap/dist/react-bootstrap";
 import "./style.scss";
-export function Manage() {
+export default function Manage() {
   return (
     <div className="container-manage">
       <div className="manage">
@@ -19,7 +20,7 @@ export function Manage() {
           </div>
         </div>
 
-        <Navbar >
+        {/* <Navbar >
           <Container>
             <Nav className="me-auto navbar">
               <Nav.Link className="nav" href="#">BỊ TỪ CHỐI</Nav.Link>
@@ -30,7 +31,7 @@ export function Manage() {
               <Nav.Link className="nav" href="#">KHÁC</Nav.Link>
             </Nav>
           </Container>
-        </Navbar>
+        </Navbar> */}
 
 
         <div className="todoList">
