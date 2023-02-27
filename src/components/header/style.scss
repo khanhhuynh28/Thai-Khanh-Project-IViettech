@@ -1,8 +1,12 @@
 .header-container {
     background-color: #ffba00;
     width: 100vw;
-    height: 6em;
-
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 
     .header-navbar {
         display: flex;
@@ -13,43 +17,36 @@
         .container-logo {
             width: 90px;
             height: 35px;
-            background-color: red;
-            margin: 5px 45px 5px 0;
+            margin: 5px 170px 5px 0;
 
-
-            .logo {}
+            .logo {
+            }
         }
 
         .container-nav {
             display: flex;
             padding-left: 30px;
 
-            .nav-group {
-                margin-top: 10px;
-                padding: 5px 25px 0 7px;
-                font-size: 16px;
-                border: none;
-                background-color: #ffba00;
-            }
+            .all-group {
+                margin-right: 10px;
 
-            .home-logo {
-                .home {}
-            }
+                .nav-group {
+                    margin-top: 20px;
+                    padding: 5px 25px 0 7px;
+                    font-size: 16px;
+                    border: none;
+                    background-color: #ffba00;
+                    position: relative;
+                    top: 3px;
+                }
 
-            .management-logo {
-                .management {}
-            }
+                .or {
+                    margin: 0 0 10px 0;
+                }
 
-            .order-logo {
-                .order {}
-            }
-
-            .chat-logo {
-                .chat {}
-            }
-
-            .notification-logo {
-                .notification {}
+                svg {
+                    margin-right: 5px;
+                }
             }
 
             .account-logo {
@@ -57,6 +54,7 @@
                     background-color: #ffba00;
                     border: none;
                     font-size: 16px;
+                    margin-top: 2px;
                 }
             }
         }
@@ -69,29 +67,6 @@
         position: relative;
         top: 7px;
 
-        .search {
-            width: auto;
-            position: relative;
-
-            .search-button {
-                position: absolute;
-                border: none;
-                border-radius: 5px;
-                background-color: #ff8800;
-                right: 19px;
-                bottom: 4px;
-            }
-
-            input {
-                margin-right: 15px;
-                width: 710px;
-                border: none;
-                padding: 5px 0;
-                border-radius: 5px;
-                outline: none;
-            }
-        }
-
         .posts {
             .post {
                 width: 100px;
@@ -101,7 +76,9 @@
                 border: none;
                 left: 135px;
                 right: 100px;
-
+                &:hover {
+                    background-color: #e18112;
+                }
                 .title {
                     color: white;
                     font-size: 16px;

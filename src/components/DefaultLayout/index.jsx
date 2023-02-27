@@ -1,8 +1,8 @@
 import React from 'react';
 import Footer from '../Footer/Footer';
 import { Header } from '../header/Header';
+import "./style.scss";
 
-import './style.scss';
 
 function DefaultLayout(props) {
     const { children } = props;

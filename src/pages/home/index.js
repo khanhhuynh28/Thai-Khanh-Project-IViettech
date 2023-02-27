@@ -1,5 +1,3 @@
-import Carousel from '../../components/navigation/Carousel';
-import { NavBar } from '../../components/navigation/NavBar';
 import Product from '../../components/Product/Product';
 
 import { useEffect } from 'react';
@@ -8,13 +6,15 @@ import { Pagination } from 'antd';
 import { fetchProductList } from '../../stores/action/product.action';
 import { changePagination, filterCategory } from '../../stores/slice/product.slice';
 import './style.scss';
-function Home() {
+import Carousel from '../../components/navigation/Carousel/Carousel';
+import { NavBar } from '../../components/navigation/Navbar/NavBar';
+export function Home() {
     const dispatch = useDispatch();
     const productList = useSelector((state) => state.product.product);
     const productPagination = useSelector((state) => state.product.pagination);
 
     useEffect(() => {
-        dispatch(fetchProductList({ page: 1, limit: 8 }));
+        dispatch(fetchProductList({ page: 1, limit: 12 }));
     }, []);
     return (
         <div className="container-home">
@@ -38,4 +38,3 @@ function Home() {
         </div>
     );
 }
-export default Home;

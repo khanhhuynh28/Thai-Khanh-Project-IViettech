@@ -1,0 +1,82 @@
+.container-chat {
+  display: flex;
+  justify-content: center;
+  height: 85vh;
+
+  .container {
+    width: 1030px;
+    display: flex;
+    background-color: white;
+
+    .chat {
+      display: block;
+      flex: 1 400px;
+      border-right: 1px solid rgb(200, 196, 196);
+
+      .header-chat {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 20px;
+
+        strong {
+          font-size: 14px;
+        }
+
+        .nav-chat {
+
+          .all {
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-left: 5px;
+            font-size: 14px;
+            font-weight: 500;
+          }
+
+          .all:Hover {
+            background-color: #ffe9c2;
+            color: #ffa63a;
+          }
+        }
+      }
+
+      .content-chat {}
+
+      .delete-chat {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        width: 300px;
+        padding: 0 10px 10px;
+
+        .delete {
+          background-color: white;
+        }
+      }
+
+      .delete-chat:hover {
+        color: red;
+      }
+    }
+  }
+
+  button {
+    border: none;
+  }
+
+  .carousel-chat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 2 630px;
+
+    .carousel {
+      width: 430px;
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}

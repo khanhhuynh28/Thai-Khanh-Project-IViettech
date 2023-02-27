@@ -4,7 +4,8 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import { useState } from 'react';
 import { registerAction } from '../../stores/action/auth.action';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { appRoute } from '../../const/routes.const';
 
 const formItemLayout = {
     labelCol: {
@@ -38,7 +39,7 @@ const tailFormItemLayout = {
 };
 const Register = () => {
     const dispatch = useDispatch();
-    const user = useSelector((state) => state.auth.user);
+    const user = useSelector((state) => state.auth.isRegistered);
     const [getDataRegister, setGetDataRegister] = useState({
         nickname: '',
         email: '',
@@ -47,7 +48,8 @@ const Register = () => {
     });
     const [form] = Form.useForm();
 
-    if (user) return <Navigate to={'./login'} />;
+    if (user) return <Navigate to={'/login'} />
+
 
     const handleChangeRegister = (e) => {
         const { value, name } = e.target;
@@ -66,11 +68,7 @@ const Register = () => {
                 id: id,
                 password: password,
             })
-        );
-        console.log(nickname);
-        console.log(email);
-        console.log(id);
-        console.log(password);
+        )
     };
     return (
         <div className="containerRegister">
