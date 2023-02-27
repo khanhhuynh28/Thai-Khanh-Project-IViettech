@@ -39,7 +39,6 @@
                     top: 3px;
                 }
 
-
                 .or {
                     margin: 0 0 10px 0;
                 }
@@ -47,7 +46,6 @@
                 svg {
                     margin-right: 5px;
                 }
-
             }
 
             .account-logo {
@@ -68,32 +66,6 @@
         position: relative;
         top: 7px;
 
-        .search {
-            width: auto;
-            position: relative;
-
-            .search-button {
-                position: absolute;
-                border: none;
-                border-radius: 5px;
-                background-color: #ff8800;
-                right: 162px;
-                bottom: 1px;
-                padding: 1px 10px;
-            }
-
-            input {
-                position: relative;
-                right: 10px;
-                margin-right: 150px;
-                width: 770px;
-                border: none;
-                padding: 3px 0;
-                border-radius: 5px;
-                outline: none;
-            }
-        }
-
         .posts {
             .post {
                 width: 100px;
@@ -103,6 +75,10 @@
                 border: none;
                 left: 135px;
                 right: 100px;
+
+                &:hover {
+                    background-color: #e18112;
+                }
 
                 .title {
                     color: white;

@@ -1,25 +1,26 @@
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Form, Link } from 'react-router-dom';
 import { appRoute } from '../../const/routes.const';
+import Search from './components/Search';
 import './style.scss';
 
 export function Header() {
-    const username = useSelector((state) => state.auth.isRegister);
-    console.log(username)
-
-
     return (
         <div className="header-container">
             <div className="header-navbar">
                 <div className="container-logo">
                     <div className="logo">
                         <Link to={'/'}>
-                            <img src="https://static.chotot.com/storage/marketplace/transparent_logo.png" alt="Chợ Tốt" width={85} height={30} />
+                            <img
+                                src="https://static.chotot.com/storage/marketplace/transparent_logo.png"
+                                alt="Chợ Tốt"
+                                width={85}
+                                height={30}
+                            />
                         </Link>
                     </div>
                 </div>
                 <div className="container-nav">
-                    <div className='all-group'>
+                    <div className="all-group">
                         <Link to={'/'}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -36,9 +37,16 @@ export function Header() {
                         </Link>
                     </div>
 
-                    <div className='all-group'>
+                    <div className="all-group">
                         <Link to={'/manage'}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-kanban" viewBox="0 0 16 16">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                className="bi bi-kanban"
+                                viewBox="0 0 16 16"
+                            >
                                 <path d="M13.5 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h11zm-11-1a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2h-11z" />
                                 <path d="M6.5 3a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3zm-4 0a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3zm8 0a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3z" />
                             </svg>
@@ -81,7 +89,7 @@ export function Header() {
                             <span className="nav-group chat">Chat</span>
                         </Link>
                     </div>
-                    <div className='all-group'>
+                    <div className="all-group">
                         <Link to={'/notification'}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -112,29 +120,13 @@ export function Header() {
                                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
                                 />
                             </svg>
-                            <button className="account">
-                                Tài khoản
-                            </button>
+                            <button className="account">Tài khoản</button>
                         </Link>
                     </div>
                 </div>
             </div>
             <div className="header-search">
-                <div className="search">
-                    <input type="text" placeholder="Tìm kiếm " />
-                    <button className="search-button">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-search"
-                            viewBox="0 0 16 16"
-                        >
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg>
-                    </button>
-                </div>
+                <Search />
                 <div className="posts">
                     <button className="post">
                         <Link to={'/post'} className="title">

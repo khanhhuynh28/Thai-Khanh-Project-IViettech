@@ -6,10 +6,11 @@ const productInitialState = {
     fetchingProductList: true,
     pagination: {
         page: 1,
-        limit: 8,
+        limit: 12,
         total: 0,
-        category: '',
     },
+    textSearch: '',
+    filter: {},
 };
 
 const productSlice = createSlice({
@@ -20,8 +21,8 @@ const productSlice = createSlice({
             state.pagination.page = action.payload.page;
             state.pagination.limit = action.payload.limit;
         },
-        filterCategory: (state, action) => {
-            state.pagination.category = action.payload;
+        filterCategorys: (state, action) => {
+            state.filter = action.payload;
         },
     },
     extraReducers: (builder) => {
@@ -29,9 +30,14 @@ const productSlice = createSlice({
             state.fetchingProductList = true;
         });
         builder.addCase(fetchProductList.fulfilled, (state, action) => {
+            console.log(action);
+
+            const { textSearch, filter } = action.payload;
             state.fetchingProductList = false;
             state.product = action.payload.product;
-            state.pagination.total = action.payload.total;
+            state.pagination = action.payload.pagination;
+            state.textSearch = textSearch;
+            state.filter = filter;
         });
         builder.addCase(fetchProductList.rejected, (state, action) => {
             state.fetchingProductList = false;
@@ -40,4 +46,4 @@ const productSlice = createSlice({
 });
 
 export const productReducer = productSlice.reducer;
-export const { filterCategory, changePagination } = productSlice.actions;
+export const { filterCategorys, changePagination } = productSlice.actions;

@@ -26,7 +26,7 @@ function Product() {
                             <p>{item.title}</p>
                         </div>
                         <div className="price">
-                            <p>{item.price}</p>
+                            <p>{item.price} đ</p>
                         </div>
                         <div className="status">
                             <p>{item.status}</p>

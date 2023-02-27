@@ -45,7 +45,7 @@ export const ProductDetail = () => {
                       <span className="fa fa-star"></span>
                     </div>
                   </div>
-                  <p className="product-description">{productDetail.shortDescription}</p>
+                  <p className="product-description">{productDetail.shortDecription}</p>
                   <h4 className="price">Giá bán: <span> {productDetail.price} VND</span></h4>
                   <div className="product-category all-detail">
                     <p className="detail">Loại:</p>

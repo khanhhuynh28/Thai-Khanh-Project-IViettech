@@ -1,0 +1,38 @@
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 0 1 728px;
+    min-width: 0px;
+    background-color: #fff;
+    color: #ccc;
+    border-radius: 6px;
+    margin-right: 15px;
+
+    .search-button {
+        border: none;
+        border-radius: 5px;
+        padding: 4px 25px;
+
+        &:hover {
+            background-color: #ccc;
+        }
+    }
+
+    .circle-xmark {
+        border: none;
+        background-color: #fff;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    input {
+        width: 680px;
+        border: none;
+        padding: 4px 10px;
+        border-radius: 5px;
+        outline: none;
+    }
+}
