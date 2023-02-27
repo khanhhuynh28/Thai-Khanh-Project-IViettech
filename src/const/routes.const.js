@@ -4,7 +4,7 @@ export const appRoute = {
     home: '/',
     manage: '/manage',
     productDetail: "/product/:id",
-    shoppingCart: "/cart",
+    shoppingCart: "/cart/:id",
     notFound: "/*",
     post: "/post"
 };

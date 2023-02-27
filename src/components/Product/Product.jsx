@@ -1,23 +1,26 @@
 import './style.scss';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { fetchProductList } from '../../stores/action/product.action';
 
 function Product() {
     const productList = useSelector((state) => state.product.product);
+    const navigate = useNavigate();
 
-    console.log(productList);
     return (
         <div className="product-list">
             {productList.map((item, index) => {
                 return (
                     <div className="container-product_item" key={index}>
                         <div className="image">
-                            <a href="">
-                                <img
-                                    className="image-item"
-                                    src={item.srcImage}
-                                    alt={item.srcImage}
-                                />
-                            </a>
+                            {/* <a href=""> */}
+                            <img
+                                className="image-item"
+                                src={item.srcImage}
+                                alt={item.srcImage}
+                            />
+                            {/* </a> */}
                         </div>
                         <div className="name">
                             <p>{item.title}</p>
@@ -29,9 +32,11 @@ function Product() {
                             <p>{item.status}</p>
                         </div>
                         <div className="btn-buy">
-                            <button>
+                            {/* <Navigate to={`/product/${item.id}`}> */}
+                            <button onClick={() => { navigate(`/product/${item.id}`) }}>
                                 <p>Buy Now</p>
                             </button>
+                            {/* </Navigate> */}
                             <button>
                                 <p>Trả góp 0%</p>
                             </button>

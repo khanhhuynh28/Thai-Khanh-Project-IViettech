@@ -12,37 +12,63 @@ import {
   MDBTypography,
 } from "mdb-react-ui-kit";
 import "./style.scss";
-import { Link } from "react-router-dom";
-import { appRoute } from "../../../../const/routes.const";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import Counter from "../counter/Counter";
+import { useDispatch } from "react-redux";
 
 export function ShoppingCart() {
-  const [productDetail, setProductDetail] = useState([]);
-  const [fetching, setFetching] = useState(false);
+  const [cart, setCart] = useState({});
+  const [count, setCount] = useState(1);
+  const [price, setPrice] = useState();
+  const [cartAPI, setCartAPI] = useState();
 
-  const fetchData = () => {
-    setFetching(true);
-    axios.get("http://localhost:3050/api/product")
-      .then((res) => {
-        setProductDetail(res.data);
-        setFetching(false);
-      });
+  // const { id } = useParams();
+
+
+  // async function fetchData() {
+  //   const response = await axios.get(`http://localhost:3050/api/products/${id}`)
+  //     .then((res) => {
+  //       setCart(res.data, { ...cart })
+  //     })
+
+  //   return response;
+  // }
+  // useEffect(() => {
+  //   fetchData()
+  // }, []);
+
+
+  const handleDecrease = () => {
+    if (count > 1) {
+      setCount(count - 1);
+      setPrice(price)
+    } return
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const handleIncrease = () => {
+    setCount(count + 1);
+    setPrice(price)
 
-  const removeProduct = (title) => {
-    const newProductDetail = productDetail.filter((product) => product.title != title);
-    setProductDetail(newProductDetail);
-  }
+  };
+
+  // const check = Object.keys(cart).length === 0;
+  // const newPrice = count * cart.price;
+  // console.log(newPrice)
+
+  // useEffect(() => {
+
+  //   if (price) {
+  //     setPrice(newPrice, { ...price });
+
+  //   } return
+  // }, [count, price]);
+  // console.log(count)
+  // console.log(cart.price)
 
   return (
-    <div className="container-cart">
-      {productDetail.map((cart) => (
-        <div className="cart" key={cart.id}>
+    <>
+      <div className="container-cart">
+        <div className="cart" >
           <section className="h-100 h-custom" style={{ backgroundColor: "#eee" }}>
             <MDBContainer className="h-100 py-5">
               <MDBRow className="justify-content-center align-items-center h-100">
@@ -50,7 +76,7 @@ export function ShoppingCart() {
                   <MDBCard className="shopping-cart" style={{ borderRadius: "15px" }}>
                     <MDBCardBody className="text-black">
                       <MDBRow>
-                        <MDBCol lg="7" className="px-5 py-4">
+                        <MDBCol lg="" className="px-5 py-4">
                           <MDBTypography
                             tag="h3"
                             className="mb-5 pt-2 text-center fw-bold text-uppercase"
@@ -58,10 +84,10 @@ export function ShoppingCart() {
                             Sản phẩm
                           </MDBTypography>
 
-                          <div className="d-flex align-items-center mb-5">
+                          <div className="d-flex mb-5">
                             <div className="flex-shrink-0">
                               <MDBCardImage
-                                src={cart.thumbnail}
+                                src={cart.srcImage}
                                 fluid
                                 style={{ width: "150px" }}
                                 alt="Generic placeholder image"
@@ -73,96 +99,25 @@ export function ShoppingCart() {
                                 <MDBIcon fas icon="times" />
                               </a>
                               <MDBTypography tag="h5" className="text-primary">
-                                {cart.title}
-                              </MDBTypography>
-                              <MDBTypography tag="h6" style={{ color: "#9e9e9e" }}>
-                                Color: white
+                                <p> {cart.title}</p>
                               </MDBTypography>
 
                               <div className="d-flex align-items-center">
-                                <p className="fw-bold mb-0 me-5 pe-3">{cart.price} VND</p>
-
-                                <Counter />
+                                <p className="fw-bold mb-0 me-5 pe-3 price">{cart.price}đ</p>
                               </div>
-                            </div>
-                          </div>
-
-                          {/* <div className="d-flex align-items-center mb-5">
-                            <div className="flex-shrink-0">
-                              <MDBCardImage
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp"
-                                fluid
-                                style={{ width: "150px" }}
-                                alt="Generic placeholder image"
-                              />
-                            </div>
-
-                            <div className="flex-grow-1 ms-3">
-                              <a href="#!" className="float-end text-black">
-                                <MDBIcon fas icon="times" />
-                              </a>
-                              <MDBTypography tag="h5" className="text-primary">
-                                Headphones Bose 35 II
-                              </MDBTypography>
-                              <MDBTypography tag="h6" style={{ color: "#9e9e9e" }}>
-                                Color: red
-                              </MDBTypography>
-
-                              <div className="d-flex align-items-center">
-                                <p className="fw-bold mb-0 me-5 pe-3">239$</p>
-
-                                <div className="def-number-input number-input safari_only">
-                                  <button className="minus"></button>
-                                  <input
-                                    className="quantity fw-bold text-black"
-                                    min={0}
-                                    defaultValue={1}
-                                    type="number"
-                                  />
-                                  <button className="plus"></button>
+                              <div className="container-counter">
+                                <div className="counter">
+                                  <button className="action-btn btn-minus" onClick={() => handleDecrease()}>
+                                    -
+                                  </button>
+                                  <div className="counter-number">{count}</div>
+                                  <button className="action-btn btn-plus" onClick={() => handleIncrease()}>
+                                    +
+                                  </button>
                                 </div>
                               </div>
                             </div>
                           </div>
-
-                          <div className="d-flex align-items-center mb-5">
-                            <div className="flex-shrink-0">
-                              <MDBCardImage
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/1.webp"
-                                fluid
-                                style={{ width: "150px" }}
-                                alt="Generic placeholder image"
-                              />
-                            </div>
-
-                            <div className="flex-grow-1 ms-3">
-                              <a href="#!" className="float-end text-black">
-                                <MDBIcon fas icon="times" />
-                              </a>
-                              <MDBTypography tag="h5" className="text-primary">
-                                iPad 9.7 6-gen WiFi 32GB
-                              </MDBTypography>
-                              <MDBTypography tag="h6" style={{ color: "#9e9e9e" }}>
-                                Color: rose pink
-                              </MDBTypography>
-
-                              <div className="d-flex align-items-center">
-                                <p className="fw-bold mb-0 me-5 pe-3">659$</p>
-
-                                <div className="def-number-input number-input safari_only">
-                                  <button className="minus"></button>
-                                  <input
-                                    className="quantity fw-bold text-black"
-                                    min={0}
-                                    defaultValue={2}
-                                    type="number"
-                                  />
-                                  <button className="plus"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </div> */}
-
                           <hr
                             className="mb-4"
                             style={{
@@ -171,14 +126,7 @@ export function ShoppingCart() {
                               opacity: 1,
                             }}
                           />
-                          <div className="d-flex justify-content-between px-x">
-                            <p className="fw-bold">Giảm giá:</p>
-                            <p className="fw-bold">15.000 VND</p>
-                          </div>
-                          <div className="d-flex justify-content-between px-x">
-                            <p className="fw-bold">Phí chuyển hàng:</p>
-                            <p className="fw-bold"> 25.000 VND</p>
-                          </div>
+
                           <div
                             className="d-flex justify-content-between p-2 mb-2"
                             style={{ backgroundColor: "#e1f5fe" }}
@@ -187,62 +135,12 @@ export function ShoppingCart() {
                               Tổng:
                             </MDBTypography>
                             <MDBTypography tag="h5" className="fw-bold mb-0">
-                              {cart.price + 25000 + 15000} VND
+                              <p>{cart.price}đ</p>
                             </MDBTypography>
                           </div>
-                        </MDBCol>
-                        <MDBCol lg="5" className="px-5 py-4">
-                          <MDBTypography
-                            tag="h3"
-                            className="mb-5 pt-2 text-center fw-bold text-uppercase"
-                          >
-                            Thanh toán
-                          </MDBTypography>
-
-                          <form className="mb-5" style={{ fontSize: "14px" }}>
-                            <MDBInput
-                              className="mb-5"
-                              label="Họ và tên"
-                              type="text"
-                              size="lg"
-
-                            />
-                            <MDBInput
-                              className="mb-5"
-                              label="Địa chỉ"
-                              type="text"
-                              size="lg"
-                            />
-                            <MDBRow>
-
-                              <MDBCol className="mb-5">
-                                <MDBInput
-                                  className="mb-4"
-                                  label="Số điện thoại"
-                                  type="number"
-                                  size="lg"
-                                  minLength="20"
-                                  maxLength="20"
-                                />
-                              </MDBCol>
-                            </MDBRow>
-                            <MDBBtn block size="lg" style={{ background: "#ff8800" }}>
-                              Mua Ngay
-                            </MDBBtn>
-
-                            <MDBTypography
-                              tag="h5"
-                              className="fw-bold mb-5"
-                              style={{ position: "absolute", bottom: "0" }}
-                            >
-                              <a href="#!">
-                                <Link to={appRoute.productDetail}>
-                                  <MDBIcon fas icon="angle-left me-2" />
-                                  Trở về
-                                </Link>
-                              </a>
-                            </MDBTypography>
-                          </form>
+                          <MDBBtn block size="lg" style={{ background: "#ff8800" }}>
+                            Mua Ngay
+                          </MDBBtn>
                         </MDBCol>
                       </MDBRow>
                     </MDBCardBody>
@@ -252,8 +150,7 @@ export function ShoppingCart() {
             </MDBContainer>
           </section>
         </div>
-      ))
-      }
-    </div >
+      </div >
+    </>
   );
 }

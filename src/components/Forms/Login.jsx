@@ -11,7 +11,6 @@ const Login = () => {
     const user = useSelector((state) => state.auth.user);
     const [formLogin, setFormLogin] = useState({
         email: "",
-        nickname: "",
         password: "",
     })
 
@@ -32,7 +31,6 @@ const Login = () => {
         dispatch(
             loginAction({
                 email: email,
-                username: username,
                 password: password
             })
         )
@@ -63,22 +61,6 @@ const Login = () => {
                                 name="email"
                                 prefix={<MailOutlined />}
                                 placeholder="Email"
-                                onChange={handleChangeLogin}
-                            />
-                        </Form.Item>
-                        <Form.Item
-                            name="username"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng nhập họ và tên!',
-                                },
-                            ]}
-                        >
-                            <Input
-                                name="nickname"
-                                prefix={<UserOutlined className="site-form-item-icon" />}
-                                placeholder="Họ và tên"
                                 onChange={handleChangeLogin}
                             />
                         </Form.Item>

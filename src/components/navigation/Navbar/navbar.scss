@@ -1,14 +1,12 @@
 .containerNavBar {
   width: 100vw;
-  height: 17.5em;
+  height: 200px;
   display: flex;
   justify-content: center;
-  position: relative;
-  right: 6px;
 
   .navBar {
     width: 1030px;
-    height: 15.7em;
+    height: 200px;
     margin-top: 10px;
     background-color: white;
 
@@ -20,8 +18,8 @@
       .cards {
         border: none;
         background-color: white;
-        width: 8em;
-        height: 10em;
+        width: 10px;
+        height: 50px;
         flex: 1;
         margin: 5px;
         transition: transform .5s;
@@ -67,11 +65,7 @@
           text-align: center;
           font-size: 13px;
         }
-
-
       }
-
-
     }
 
   }

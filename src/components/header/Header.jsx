@@ -1,7 +1,11 @@
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { appRoute } from '../../const/routes.const';
 import './style.scss';
 
 export function Header() {
+    const username = useSelector((state) => state.auth.isRegister);
+    console.log(username)
 
 
     return (
@@ -43,7 +47,7 @@ export function Header() {
                     </div>
 
                     <div className="all-group">
-                        <Link to={'/order'}>
+                        <Link to={appRoute.shoppingCart}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="16"
@@ -137,6 +141,13 @@ export function Header() {
                             ĐĂNG TIN
                         </Link>
                     </button>
+                    {/* <div className="product-cart">
+                        <button className="cart">
+                            <Link to={appRoute.shoppingCart} className="title">
+                                Giỏ hàng
+                            </Link>
+                        </button>
+                    </div> */}
                 </div>
             </div>
         </div>

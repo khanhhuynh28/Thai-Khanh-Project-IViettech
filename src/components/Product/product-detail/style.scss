@@ -8,7 +8,7 @@
     padding: 3em;
     line-height: 1.5em;
 
-    .container-fliud {
+    .product-detail {
       @media screen and (min-width: 997px) {
         .wrapper {
           display: -webkit-box;
@@ -36,11 +36,12 @@
             -ms-flex-positive: 1;
             flex-grow: 1;
 
-
-            img {
-              max-width: 100%;
+            .active {
+              img {
+                width: 90%;
+                height: 460px;
+              }
             }
-
           }
 
           .preview-thumbnail.nav-tabs {
@@ -170,7 +171,6 @@
 
         .all-detail {
           display: flex;
-          margin: 10px 0;
 
           .detail {
             flex: 1;
