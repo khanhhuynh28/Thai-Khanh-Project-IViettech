@@ -25,7 +25,7 @@ const Login = () => {
         });
     };
 
-    const { email, password, username } = formLogin;
+    const { email, password } = formLogin;
     const onFinish = () => {
 
         dispatch(

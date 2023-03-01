@@ -1,5 +1,3 @@
-import Product from '../../components/Product/Product';
-
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Pagination } from 'antd';
@@ -8,10 +6,12 @@ import { changePagination, filterCategory } from '../../stores/slice/product.sli
 import './style.scss';
 import Carousel from '../../components/navigation/Carousel/Carousel';
 import { NavBar } from '../../components/navigation/Navbar/NavBar';
+import Product from '../../components/Product/Product';
 export function Home() {
     const dispatch = useDispatch();
     const productList = useSelector((state) => state.product.product);
     const productPagination = useSelector((state) => state.product.pagination);
+
 
     useEffect(() => {
         dispatch(fetchProductList({ page: 1, limit: 12 }));
@@ -23,7 +23,15 @@ export function Home() {
                 <NavBar />
                 <div className="container-product">
                     <p className="newsfeed">Tin mới đăng</p>
-                    <Product />
+                    <div className='product'>
+                        {productList.map((item) => (
+                            <>
+                                <div className='product-item'>
+                                    <Product key={item.id} id={item.id} srcImage={item.srcImage} title={item.title} price={item.price} status={item.status} />
+                                </div>
+                            </>
+                        ))}
+                    </div>
                 </div>
                 <Pagination
                     onChange={(page, pageSize) => {

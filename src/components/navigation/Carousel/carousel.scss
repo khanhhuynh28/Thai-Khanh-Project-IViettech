@@ -14,7 +14,11 @@
       width: 1000px;
       margin-top: 15px;
 
-    }
+      .image {
+        object-fit: fill;
+        height: 445px;
+      }
 
+    }
   }
 }
