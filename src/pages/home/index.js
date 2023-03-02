@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Pagination } from 'antd';
 import { fetchProductList } from '../../stores/action/product.action';
 import { changePagination, filterCategory } from '../../stores/slice/product.slice';
-import './style.scss';
 import Carousel from '../../components/navigation/Carousel/Carousel';
 import { NavBar } from '../../components/navigation/Navbar/NavBar';
+import './style.scss';
+
 export function Home() {
     const dispatch = useDispatch();
     const productList = useSelector((state) => state.product.product);
@@ -22,7 +23,12 @@ export function Home() {
                 <Carousel />
                 <NavBar />
                 <div className="container-product">
-                    <p className="newsfeed">Tin mới đăng</p>
+                    <div className="newsfeed-sort">
+                        <p className="newsfeed">Tin mới đăng</p>
+                        <div>
+                            <h2>Sorting Price</h2>
+                        </div>
+                    </div>
                     <Product />
                 </div>
                 <Pagination
