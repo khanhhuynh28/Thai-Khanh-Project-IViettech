@@ -30,8 +30,6 @@ const productSlice = createSlice({
             state.fetchingProductList = true;
         });
         builder.addCase(fetchProductList.fulfilled, (state, action) => {
-            console.log(action);
-
             const { textSearch, filter } = action.payload;
             state.fetchingProductList = false;
             state.product = action.payload.product;

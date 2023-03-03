@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./style.scss";
 import { connect } from "react-redux";
-import { deleteProduct } from "../../../../stores/action/cart.action";
+import { deleteProduct } from "../../../stores/action/cart.action";
+import { Link, Navigate } from "react-router-dom";
+import { Order } from "../order/Order";
+import { appRoute } from "../../../const/routes.const";
 
 function ShoppingCart(props) {
-  const [itemCount, setItemCount] = useState(1);
+  const [cartItem, setCartItem] = useState([]);
+  const [itemCount, setItemCount] = useState(props.cart.map(() => 1));
+
+
 
   const handleDecrease = (index) => {
     if (itemCount[index] > 1) {
@@ -20,11 +26,21 @@ function ShoppingCart(props) {
     setItemCount(newCount);
   };
 
-  const totals = props.cart.reduce((item, product) => {
-    const price = product.quantity === undefined ? product.price : product.price * product.quantity;
+
+
+  const totals = props.cart.reduce((item, product, index) => {
+    const price = product.price * itemCount[index];
     return item + price;
   }, 0);
 
+  useEffect(() => {
+    setCartItem({
+      itemCount: itemCount,
+      totals: totals,
+
+    })
+  }, [])
+  console.log(cartItem)
   return (
 
     <div className="container-product-cart">
@@ -43,23 +59,18 @@ function ShoppingCart(props) {
                   </div>
                   <div className="cart-counter">
                     <div className="counter">
-                      <button className="action-btn btn-minus" onClick={() => handleDecrease()}>
+                      <button className="action-btn btn-minus" onClick={() => handleDecrease(index)}>
                         -
                       </button>
                       <div className="counter-number">{itemCount[index]}</div>
-                      <button className="action-btn btn-plus" onClick={() => handleIncrease()}>
+                      <button className="action-btn btn-plus" onClick={() => handleIncrease(index)}>
                         +
                       </button>
                     </div>
                   </div>
-                  {product.quantity === undefined ? (
-                    <div className="cart-price">
-                      <p>₫{product.price.toLocaleString()}</p>
-                    </div>
-                  ) : <div className="cart-price">
-                    <p>₫{`${product.price.toLocaleString()}`}</p>
+                  <div className="cart-price">
+                    <p>₫{`${product.price.toLocaleString()}x${itemCount[index]}`}</p>
                   </div>
-                  }
                   <div className="delete-cart">
                     <button onClick={() => props.deleteProduct(product)}>Xóa</button>
                   </div>
@@ -72,10 +83,14 @@ function ShoppingCart(props) {
           <div className="total">Tổng cộng:
             <p>₫{totals.toLocaleString()}</p>
           </div>
-          <button className="buy-now">Mua Hàng</button>
+          <Link to={{
+            pathname: `/order`,
+            state: { cartItem: cartItem }
+          }}><button className="buy-now">Mua Hàng</button></Link>
         </div>
       </div>
     </div>
+
 
 
   );

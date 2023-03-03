@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Form, Link } from 'react-router-dom';
 import { appRoute } from '../../const/routes.const';
+import { registerAction } from '../../stores/action/auth.action';
 import Search from './components/Search';
+import logo from '../../assets/images/TK1.png'
 import './style.scss';
 
 export function Header() {
-
+    const username = useSelector((state) => state.auth.user)
     return (
         <>
 
@@ -16,10 +18,10 @@ export function Header() {
                         <div className="logo">
                             <Link to={'/'}>
                                 <img
-                                    src="https://static.chotot.com/storage/marketplace/transparent_logo.png"
+                                    src={logo}
                                     alt="Chợ Tốt"
-                                    width={85}
-                                    height={30}
+                                    width={100}
+                                    height={40}
                                 />
                             </Link>
                         </div>
@@ -124,11 +126,10 @@ export function Header() {
                                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
                                 />
                             </svg>
+                            {username ? <Link to={'/personalPage'}><button className='account'>{username.nickname}</button></Link> :
+                                <Link to={'/login'}><button className="account">Tài khoản</button> </Link>
+                            }
 
-                            {/* <button className="account" >{name}</button> */}
-
-
-                            <Link to={'/login'}><button className="account" >Tài khoản</button> </Link>
 
                         </div>
                     </div>

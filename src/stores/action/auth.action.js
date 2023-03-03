@@ -6,7 +6,6 @@ export const loginAction = createAsyncThunk(
 
     async (payload, thunkAPI) => {
         const response = await authApi.login(payload);
-        console.log(thunkAPI);
         return response.data;
     }
 );
@@ -16,7 +15,6 @@ export const registerAction = createAsyncThunk(
     async (payload, thunkAPI) => {
         const response = await authApi.register(payload);
 
-        console.log(thunkAPI);
         return response.data;
     }
 );

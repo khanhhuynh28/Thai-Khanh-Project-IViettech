@@ -1,9 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { appRoute } from "../../../const/routes.const";
-import { buyProduct } from "../../../stores/action/cart.action";
-import { connect } from 'react-redux';
 import "./style.scss";
 
 export const ProductDetail = () => {
@@ -23,6 +22,7 @@ export const ProductDetail = () => {
     fetchData()
   }, []);
   const { srcImage, title, shortDecription, category, status, price } = productDetail;
+  const product_current = productDetail;
   const check = Object.keys(productDetail).length === 0;
 
   return (
@@ -54,7 +54,7 @@ export const ProductDetail = () => {
                         <span className="information status">{status}</span>
                       </div>
                       <div className="action">
-                        <button className="add-to-cart btn btn-default" >Mua  hàng</button>
+                        <Link to={appRoute.shoppingCart}> <button className="add-to-cart btn btn-default" >Mua  hàng</button></Link>
                         <button className="like btn btn-default" ><span className="fa fa-heart"></span></button>
                       </div>
                     </div>
@@ -69,4 +69,17 @@ export const ProductDetail = () => {
     </>
   )
 }
+// const mapStateToProps = (state) => {
+//   return {
+//       cart: state.cart.cartAr,
+//   };
+// };
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//       buyProduct: (product_current) =>
+//           dispatch(buyProduct(product_current)),
+//   };
+// };
+
+// export default connect(mapStateToProps, mapDispatchToProps);
 

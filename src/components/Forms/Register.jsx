@@ -43,6 +43,7 @@ const Register = () => {
     const [getDataRegister, setGetDataRegister] = useState({
         nickname: '',
         email: '',
+        phone: '',
         id: '',
         password: '',
     });
@@ -60,11 +61,12 @@ const Register = () => {
     };
 
     const onFinish = () => {
-        const { nickname, email, id, password } = getDataRegister;
+        const { nickname, email, id, phone, password } = getDataRegister;
         dispatch(
             registerAction({
                 nickname: nickname,
                 email: email,
+                phone: phone,
                 id: id,
                 password: password,
             })
@@ -129,9 +131,8 @@ const Register = () => {
                     >
                         <Input placeholder="Địa chỉ" name="id" onChange={handleChangeRegister} />
                     </Form.Item>
-                    {/* <Form.Item
+                    <Form.Item
                         name="phone"
-                        label="Số điện thoại"
                         rules={[
                             {
                                 required: true,
@@ -140,11 +141,14 @@ const Register = () => {
                         ]}
                     >
                         <Input
+                            name="phone"
+                            onChange={handleChangeRegister}
+                            placeholder='Số điện thoại'
                             style={{
                                 width: '100%',
                             }}
                         />
-                    </Form.Item> */}
+                    </Form.Item>
 
                     <Form.Item
                         name="password"
@@ -162,31 +166,6 @@ const Register = () => {
                             onChange={handleChangeRegister}
                         />
                     </Form.Item>
-
-                    {/* <Form.Item
-                        name="confirm"
-                        label="Xác nhận"
-                        dependencies={['password']}
-                        hasFeedback
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Vui lòng xác nhận mật khẩu!',
-                            },
-                            ({ getFieldValue }) => ({
-                                validator(_, value) {
-                                    if (!value || getFieldValue('password') === value) {
-                                        return Promise.resolve();
-                                    }
-                                    return Promise.reject(
-                                        new Error('The two passwords that you entered do not match!')
-                                    );
-                                },
-                            }),
-                        ]}
-                    >
-                        <Input.Password />
-                    </Form.Item> */}
 
                     <Form.Item
                         name="agreement"
@@ -210,6 +189,9 @@ const Register = () => {
                             Đăng ký
                         </Button>
                     </Form.Item>
+                    <div className='nav-login'>
+                        <p>Bạn đã có tài khoản?<Link to={appRoute.login}><button className='navigate-login'>Đăng nhập!</button></Link></p>
+                    </div>
                 </Form>
             </div>
         </div>

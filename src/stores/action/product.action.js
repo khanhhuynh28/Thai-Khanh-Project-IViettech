@@ -7,9 +7,6 @@ export const fetchProductList = createAsyncThunk(
         const { page, limit, filter, textSearch } = payload;
 
         const reponse = await productAPI.getProductList(page, limit, filter, textSearch);
-        console.log(reponse);
-        console.log(textSearch);
-        console.log(filter);
         return {
             product: reponse.data,
             textSearch: textSearch,

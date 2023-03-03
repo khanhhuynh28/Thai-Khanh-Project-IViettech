@@ -6,5 +6,6 @@ export const appRoute = {
     productDetail: "/product/:id",
     shoppingCart: "/cart",
     notFound: "/*",
-    post: "/post"
+    post: "/post",
+    order: "/order"
 };
