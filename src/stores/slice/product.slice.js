@@ -11,6 +11,7 @@ const productInitialState = {
     },
     textSearch: '',
     filter: {},
+    sort: {},
 };
 
 const productSlice = createSlice({
@@ -23,6 +24,10 @@ const productSlice = createSlice({
         },
         filterCategorys: (state, action) => {
             state.filter = action.payload;
+        },
+        sortPrice: (state, action) => {
+            state.sort.sort = action.payload.sort;
+            state.sort.order = action.payload.order;
         },
     },
     extraReducers: (builder) => {
@@ -38,6 +43,7 @@ const productSlice = createSlice({
             state.pagination = action.payload.pagination;
             state.textSearch = textSearch;
             state.filter = filter;
+            state.sort = action.payload;
         });
         builder.addCase(fetchProductList.rejected, (state, action) => {
             state.fetchingProductList = false;
@@ -46,4 +52,4 @@ const productSlice = createSlice({
 });
 
 export const productReducer = productSlice.reducer;
-export const { filterCategorys, changePagination } = productSlice.actions;
+export const { filterCategorys, changePagination, sortPrice } = productSlice.actions;

@@ -5,6 +5,7 @@
     border: 1px solid gray;
     border-radius: 5px;
     margin: 10px 0;
+    background-color: #fff;
 
     .formLogin {
         margin: 20px 30px 10px;
@@ -21,7 +22,7 @@
             font-size: 14px;
             color: gray;
             text-align: center;
-            margin-top: 20px;
+            margin: 0 0 5px;
         }
 
         .login-form-forgot {
@@ -39,7 +40,7 @@
         ul {
             display: flex;
             justify-content: space-around;
-            margin: 10px 27px 0 0;
+            margin: 30px 27px 0 0;
 
             li {
                 list-style: none;

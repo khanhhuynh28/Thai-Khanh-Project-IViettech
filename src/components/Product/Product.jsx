@@ -1,45 +1,70 @@
 import './style.scss';
-import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
+import { Link, Navigate } from 'react-router-dom';
+import { buyProduct } from '../../stores/action/cart.action';
 
-function Product() {
-    const productList = useSelector((state) => state.product.product);
+function Product(props) {
+    const product_current = {
+        id: props.id,
+        srcImage: props.srcImage,
+        title: props.title,
+        price: props.price,
+        status: props.status
+    }
 
     return (
+
         <div className="product-list">
-            {productList.map((item, index) => {
-                return (
-                    <div className="container-product_item" key={index}>
+            <div className="container-product_item" >
+                <div className='product-item'>
+                    <Link to={`product/${props.id}`}>
                         <div className="image">
-                            <a href="">
-                                <img
-                                    className="image-item"
-                                    src={item.srcImage}
-                                    alt={item.srcImage}
-                                />
-                            </a>
+                            {/* <a href=""> */}
+                            <img
+                                className="image-item"
+                                src={props.srcImage}
+                                alt={props.srcImage}
+                            />
+                            {/* </a> */}
                         </div>
-                        <div className="name">
-                            <p>{item.title}</p>
+                        <div className='describe'>
+                            <div className="name">
+                                <p>{props.title}</p>
+                            </div>
+                            <div className="price">
+                                <p>₫{props.price.toLocaleString()}</p>
+                            </div>
+                            <div className="status">
+                                <p>{props.status}</p>
+                            </div>
+
                         </div>
-                        <div className="price">
-                            <p>{item.price} đ</p>
-                        </div>
-                        <div className="status">
-                            <p>{item.status}</p>
-                        </div>
-                        <div className="btn-buy">
-                            <button>
-                                <p>Buy Now</p>
-                            </button>
-                            <button>
-                                <p>Trả góp 0%</p>
-                            </button>
-                        </div>
+                    </Link>
+                    <div className="btn-buy">
+                        <button onClick={() => props.buyProduct(product_current)}>
+                            <p>Thêm vào<img src="https://cdn.pixabay.com/photo/2015/10/22/16/42/icon-1001596_960_720.png" alt="" width={25} /></p>
+                        </button>
                     </div>
-                );
-            })}
-        </div>
+                </div>
+
+
+            </div>
+
+
+        </div >
+
     );
 }
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cart.cartAr,
+    };
+};
+const mapDispatchToProps = (dispatch) => {
+    return {
+        buyProduct: (product_current) =>
+            dispatch(buyProduct(product_current)),
+    };
+};
 
-export default Product;
+export default connect(mapStateToProps, mapDispatchToProps)(Product);

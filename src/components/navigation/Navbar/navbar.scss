@@ -1,14 +1,13 @@
 .containerNavBar {
   width: 100vw;
-  height: 17.5em;
+  height: 171px;
   display: flex;
   justify-content: center;
-  position: relative;
-  right: 6px;
+
 
   .navBar {
     width: 1030px;
-    height: 15.7em;
+    height: 171px;
     margin-top: 10px;
     background-color: white;
 
@@ -20,10 +19,10 @@
       .cards {
         border: none;
         background-color: white;
-        width: 8em;
-        height: 10em;
+        width: 10px;
         flex: 1;
         margin: 5px;
+        height: 130px;
         transition: transform .5s;
 
         &::after {
@@ -32,8 +31,6 @@
           left: 0;
           width: 100%;
           height: 30px;
-          transition: opacity 2s cubic-bezier(.165, .84, .44, 1);
-          box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
           content: '';
           opacity: 0;
           z-index: -1;
@@ -41,7 +38,7 @@
 
         &:hover,
         &:focus {
-          transform: scale3d(1.106, 1.106, 1);
+          box-shadow: 1px 2px 9px 0 rgb(0 0 0 / 30%);
 
           &::after {
             opacity: 1;
@@ -54,9 +51,10 @@
           border: none;
 
           img {
-            max-width: 100%;
+            width: 100%;
             height: 100px;
             border: 0;
+            object-fit: contain;
             vertical-align: middle;
             box-sizing: border-box;
 
@@ -67,11 +65,7 @@
           text-align: center;
           font-size: 13px;
         }
-
-
       }
-
-
     }
 
   }

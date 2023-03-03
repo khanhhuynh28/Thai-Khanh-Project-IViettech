@@ -8,6 +8,7 @@
     color: #ccc;
     border-radius: 6px;
     margin-right: 15px;
+
     .search-button {
         border: none;
         border-radius: 5px;
@@ -16,13 +17,16 @@
             background-color: #ccc;
         }
     }
+
     .circle-xmark {
         border: none;
         background-color: #fff;
+
         &:hover {
             cursor: pointer;
         }
     }
+
     input {
         width: 680px;
         border: none;

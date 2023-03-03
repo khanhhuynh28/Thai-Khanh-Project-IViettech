@@ -1,23 +1,6 @@
-// import axios from "axios";
-// import { useEffect, useState } from "react";
-// const [productDetail, setProductDetail] = useState([]);
-// const [fetching, setFetching] = useState(false);
+import { API, BASE_URL } from "./constants.api";
 
-// export const fetchData = () => {
-//   setFetching(true);
-//   axios.get("http://localhost:3050/api/product")
-//     .then((res) => {
-//       setProductDetail(res.data);
-//       setFetching(false);
-//     });
-// };
-
-// useEffect(() => {
-//   fetchData();
-// }, []);
-
-// export const removeProduct = (id) => {
-//   const newProductDetail = productDetail.filter((product) => product.id != id);
-//   setProductDetail(newProductDetail);
-// }
-
+export const cartAPI = {
+  getCartAPI: (data) => API.get(`${BASE_URL}/cart`, data),
+  postCartAPI: (data) => API.post(`${BASE_URL}/cart`, data),
+};

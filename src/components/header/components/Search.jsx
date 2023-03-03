@@ -7,7 +7,7 @@ import { fetchProductList } from '../../../stores/action/product.action';
 import './Search.scss';
 
 function Search() {
-    const ditpatch = useDispatch();
+    const distpatch = useDispatch();
     const [valueSearch, setValeSearch] = useState('');
 
     const debounce = useDebounce(valueSearch, 500);
@@ -22,7 +22,7 @@ function Search() {
             return;
         }
 
-        ditpatch(
+        distpatch(
             fetchProductList({
                 page: 1,
                 limit: 12,

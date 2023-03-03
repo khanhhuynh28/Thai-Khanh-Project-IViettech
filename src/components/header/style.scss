@@ -19,8 +19,7 @@
             height: 35px;
             margin: 5px 170px 5px 0;
 
-            .logo {
-            }
+            .logo {}
         }
 
         .container-nav {
@@ -76,9 +75,11 @@
                 border: none;
                 left: 135px;
                 right: 100px;
+
                 &:hover {
                     background-color: #e18112;
                 }
+
                 .title {
                     color: white;
                     font-size: 16px;
