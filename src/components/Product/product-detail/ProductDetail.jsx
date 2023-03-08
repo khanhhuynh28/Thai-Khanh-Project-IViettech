@@ -2,8 +2,6 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { appRoute } from '../../../const/routes.const';
-import { buyProduct } from '../../../stores/action/cart.action';
-import { connect } from 'react-redux';
 import './style.scss';
 
 export const ProductDetail = () => {
@@ -59,9 +57,12 @@ export const ProductDetail = () => {
                                                 <span className="information status">{status}</span>
                                             </div>
                                             <div className="action">
-                                                <button className="add-to-cart btn btn-default">
-                                                    Mua hàng
-                                                </button>
+                                                <Link to={appRoute.shoppingCart}>
+                                                    {' '}
+                                                    <button className="add-to-cart btn btn-default">
+                                                        Mua hàng
+                                                    </button>
+                                                </Link>
                                                 <button className="like btn btn-default">
                                                     <span className="fa fa-heart"></span>
                                                 </button>

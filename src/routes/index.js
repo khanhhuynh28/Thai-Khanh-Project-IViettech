@@ -1,5 +1,6 @@
 import Chat from "../components/header/components/Chat/Chat";
 import Manage from "../components/header/components/Manage/Manage";
+import { PersonalPage } from "../components/header/components/PersonalPage/PersonalPage";
 import { Home } from "../pages/home";
 import LoginPage from "../pages/Login";
 import NotFound from "../pages/NotFound";
@@ -17,6 +18,8 @@ export const publicRoutes = [
     { path: '/*', component: NotFound },
     { path: '/manage', component: Manage },
     { path: '/chat', component: Chat },
+    { path: '/personalPage', component: PersonalPage },
+
 
 
 

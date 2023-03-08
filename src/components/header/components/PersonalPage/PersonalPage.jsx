@@ -1,5 +1,7 @@
+import { useSelector } from "react-redux";
 import "./style.scss";
 export function PersonalPage() {
+  const user = useSelector((state) => state.auth.user);
   return (
     <div className="container-personal-page">
       <div className="personal-page">
@@ -7,7 +9,10 @@ export function PersonalPage() {
           <div className="personally-left">
             <div className="avatar"></div>
             <div className="nickname">
-              <strong className="name">My self</strong>
+              {user ? <strong className="name">{user.nickname}</strong> :
+                <strong className="name">My self</strong>
+              }
+
               <div className="follow">
                 <a className="followers" href="">Người theo dõi</a>
                 <a className="watching" href="">Đang theo dõi</a>

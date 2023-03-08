@@ -133,28 +133,21 @@
       "updateAt": 1677502741745
     },
     {
-      "email": "khanh282000-@gmail.com",
-      "password": "$2a$10$F2ZiO8caXMcZ66kxJ/nnW.sDZDB7YhodPi7VK1Q9sNn3QHKo.a5jq",
-      "nickname": "khanhhuynh2823",
-      "id": "đại an ab",
-      "createdAt": 1677506964312,
-      "updateAt": 1677506964312
+      "email": "khanh28101010@gmail.com",
+      "password": "$2a$10$NBD8Y/ko18jo7rl.ngtf7eeswGEZcFgj8VEGhdvYYOITUzzZnP3ly",
+      "nickname": "khanhkhanh",
+      "id": "đại an tam đại",
+      "createdAt": 1677721930600,
+      "updateAt": 1677721930600
     },
     {
-      "email": "khanh2820@gmail.com",
-      "password": "$2a$10$5fTdz0EgLCM8Mhg4QH7FFOEvtWxQ2sdOA6yktR40YIiqkCZQhxuVi",
-      "nickname": "khanhhuynh282828",
-      "id": "đại an abb",
-      "createdAt": 1677507119562,
-      "updateAt": 1677507119562
-    },
-    {
-      "email": "khanh2hgfd8xvfd@gmail.com",
-      "password": "$2a$10$ZcVL7aH2wycrtolrSaJfUu2OUBRXcos8zwISwtvGbZKeV6d0G.j/2",
-      "nickname": "khanhhuynh284654654",
-      "id": "đại andfg",
-      "createdAt": 1677507845435,
-      "updateAt": 1677507845435
+      "email": "khanh2830@gmail.com",
+      "password": "$2a$10$yMvgTwZtH/ttk9kT4VkN6OqbwZYHr8CVjLn1Zp55peSpidRUMc9GS",
+      "nickname": "khanh2345",
+      "phone": "0377834115",
+      "id": "đại an phú ninh",
+      "createdAt": 1677819530068,
+      "updateAt": 1677819530068
     }
   ],
   "products": [
@@ -687,5 +680,13 @@
       "id": 48
     }
   ],
-  "todo": []
+  "cart": [
+    {
+      "id": 1,
+      "customer_id": "",
+      "product_id": "",
+      "price": 2000,
+      "quanity": 3
+    }
+  ]
 }

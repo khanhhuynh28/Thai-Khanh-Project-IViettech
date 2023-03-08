@@ -14,7 +14,8 @@ import Manage from './components/header/components/Manage/Manage';
 import Chat from './components/header/components/Chat/Chat';
 import { Header } from './components/header/Header';
 import Footer from './components/Footer/Footer';
-import ShoppingCart from './components/Product/product-detail/shopping-cart/ShoppingCart';
+import ShoppingCart from './components/Product/shopping-cart/ShoppingCart';
+import { Order } from './components/Product/order/Order';
 // import { Header } from './components/Header/Header';
 // import { DatePicker } from 'antd';
 // import { Layout } from './components/Layout/HomeLayout';
@@ -47,6 +48,7 @@ function App() {
                     <Route path={appRoute.notFound} element={<NotFound />} />
                     <Route path={appRoute.manage} element={<Manage />} />
                     <Route path={appRoute.chat} element={<Chat />} />
+                    <Route path={appRoute.order} element={<Order />} />
                 </Routes>
                 {/* <Footer /> */}
             </div>

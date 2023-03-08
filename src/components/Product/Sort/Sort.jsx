@@ -6,7 +6,6 @@ function Sort() {
     const [valueSort, setValueSort] = useState('');
     const ditpatch = useDispatch();
     const productList = useSelector((state) => state.product);
-    console.log(productList);
     const { filter, textSearch } = productList;
     useEffect(() => {
         ditpatch(

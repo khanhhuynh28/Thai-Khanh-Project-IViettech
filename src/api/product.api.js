@@ -34,7 +34,6 @@ export const productAPI = {
             ...(sortString !== '' ? [sortString] : []),
         ].join('&');
 
-        console.log(queryString);
         return API.get(`${BASE_URL}/products?${queryString}`);
     },
     // getProductList: (page, limit) => API.get(`${BASE_URL}/products?_page=${page}&_limit=${limit}`),
