@@ -1,8 +1,7 @@
+import { Footer } from 'antd/es/layout/layout';
 import React from 'react';
-import Footer from '../Footer/Footer';
-import { Header } from '../header/Header';
-import "./style.scss";
-
+import { Header } from '../../components/header/Header';
+import './style.scss';
 
 function DefaultLayout(props) {
     const { children } = props;

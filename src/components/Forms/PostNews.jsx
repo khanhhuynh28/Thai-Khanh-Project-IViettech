@@ -71,22 +71,15 @@ const abc = [
 ];
 
 function PostNews() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const [getDataFromPostNew, setGetDataFromPostNew] = useState({
-        category: "",
-        title: "",
-        shortDescription: "",
-        price: "",
+        category: '',
+        title: '',
+        shortDescription: '',
+        price: '',
     });
-
-    const handleChangePostNew = (e) => {
-        const { name, value } = e.target;
-        setGetDataFromPostNew({
-            ...getDataFromPostNew,
-            [name]: value,
-
-        });
-    };
+    const handleSubmit = () => {};
+    const handleChangePostNew = (e) => {};
 
     const onFinish = () => {
         const { category, title, shortDescription, price } = getDataFromPostNew;
@@ -95,19 +88,25 @@ function PostNews() {
             title: title,
             shortDescription: shortDescription,
             price: price,
-        })
-        console.log(category)
-        console.log(title)
-        console.log(shortDescription)
-        console.log(price)
-    }
+        });
+        console.log(category);
+        console.log(title);
+        console.log(shortDescription);
+        console.log(price);
+    };
 
     return (
         <div className="container-postnews">
             <div className="main-postnews">
                 <div className="select-photo">
                     <Form.Item label="Ảnh / Video của sản phẩm:" valuePropName="fileList">
-                        <Upload action="/upload.do" listType="picture-card" className="b123" name='srcImage'>
+                        <Upload
+                            action="/upload.do"
+                            listType="picture-card"
+                            className="b123"
+                            name="srcImage"
+                            value
+                        >
                             <div className="a1234">
                                 <PlusOutlined />
                                 <div style={{ marginTop: 8 }}>Tải ảnh lên.</div>
@@ -124,7 +123,7 @@ function PostNews() {
                         style={{ maxWidth: 600 }}
                     >
                         <div>
-                            <Form.Item label="" >
+                            <Form.Item label="">
                                 <TreeSelect
                                     name="category"
                                     treeData={abc}
@@ -134,7 +133,7 @@ function PostNews() {
                             </Form.Item>
                         </div>
                         <div>
-                            <Form.Item >
+                            <Form.Item>
                                 <label>Tên sản phẩm</label>
                                 <Input
                                     name="title"
@@ -154,12 +153,9 @@ function PostNews() {
                             </Form.Item>
                         </div>
                         <div>
-                            <Form.Item label="" >
+                            <Form.Item label="">
                                 <label>Giá Tiền: </label>
-                                <InputNumber
-                                    name="price"
-                                    onChange={handleChangePostNew}
-                                />
+                                <InputNumber name="price" onChange={handleChangePostNew} />
                             </Form.Item>
                         </div>
 
@@ -169,7 +165,9 @@ function PostNews() {
                         </Form.Item>
                         <div className="post-news-btn">
                             <Form.Item>
-                                <Button className="post-news-btn-item">Đăng Tin</Button>
+                                <Button className="post-news-btn-item" onClick={handleSubmit}>
+                                    Đăng Tin
+                                </Button>
                             </Form.Item>
                         </div>
                     </Form>

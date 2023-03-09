@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import DefaultLayout from './components/DefaultLayout';
 import { publicRoutes } from './routes';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -13,12 +12,9 @@ import NotFound from './pages/NotFound';
 import Manage from './components/header/components/Manage/Manage';
 import Chat from './components/header/components/Chat/Chat';
 import { Header } from './components/header/Header';
-import Footer from './components/Footer/Footer';
 import ShoppingCart from './components/Product/shopping-cart/ShoppingCart';
 import { Order } from './components/Product/order/Order';
-// import { Header } from './components/Header/Header';
-// import { DatePicker } from 'antd';
-// import { Layout } from './components/Layout/HomeLayout';
+import DefaultLayout from './assets/DefaultLayout';
 
 function App() {
     return (
