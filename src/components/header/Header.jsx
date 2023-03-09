@@ -1,34 +1,26 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Form, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { appRoute } from '../../const/routes.const';
-import { registerAction } from '../../stores/action/auth.action';
 import Search from './components/Search';
-import logo from '../../assets/images/TK1.png'
+import logo from '../../assets/images/TK1.png';
 import './style.scss';
 
 export function Header() {
-    const username = useSelector((state) => state.auth.user)
+    const username = useSelector((state) => state.auth.user);
     return (
         <>
-
             <div className="header-container">
                 <div className="header-navbar">
                     <div className="container-logo">
                         <div className="logo">
-                            <Link to={'/'}>
-                                <img
-                                    src={logo}
-                                    alt="Chợ Tốt"
-                                    width={100}
-                                    height={40}
-                                />
+                            <Link to={appRoute.home}>
+                                <img src={logo} alt="Chợ Tốt" width={100} height={40} />
                             </Link>
                         </div>
                     </div>
                     <div className="container-nav">
                         <div className="all-group">
-                            <Link to={'/'}>
+                            <Link to={appRoute.home}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="16"
@@ -45,7 +37,7 @@ export function Header() {
                         </div>
 
                         <div className="all-group">
-                            <Link to={'/manage'}>
+                            <Link to={appRoute.manage}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="16"
@@ -80,7 +72,7 @@ export function Header() {
                                 <span className="nav-group order">Đơn hàng</span>
                             </Link>
                         </div>
-                        <div className="all-group">
+                        {/* <div className="all-group">
                             <Link to={'/chat'}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +102,7 @@ export function Header() {
                                 </svg>
                                 <span className="nav-group notification">Thông báo</span>
                             </Link>
-                        </div>
+                        </div> */}
                         <div className="account-logo all-group">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -126,11 +118,15 @@ export function Header() {
                                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
                                 />
                             </svg>
-                            {username ? <Link to={'/personalPage'}><button className='account'>{username.nickname}</button></Link> :
-                                <Link to={'/login'}><button className="account">Tài khoản</button> </Link>
-                            }
-
-
+                            {username ? (
+                                <Link to={appRoute.personalPage}>
+                                    <button className="account">{username.nickname}</button>
+                                </Link>
+                            ) : (
+                                <Link to={appRoute.login}>
+                                    <button className="account">Tài khoản</button>{' '}
+                                </Link>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -138,16 +134,13 @@ export function Header() {
                     <Search />
                     <div className="posts">
                         <button className="post">
-                            <Link to={'/post'} className="title">
+                            <Link to={appRoute.post} className="title">
                                 ĐĂNG TIN
                             </Link>
                         </button>
-
-
                     </div>
                 </div>
             </div>
-
         </>
     );
 }

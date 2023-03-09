@@ -4,13 +4,22 @@ import { productAPI } from '../../api/product.api';
 export const fetchProductList = createAsyncThunk(
     'product/fetchProductList',
     async (payload, thunkApi) => {
-        const { page, limit, filter, textSearch } = payload;
+        const { page, limit, filter, textSearch, sort, order } = payload;
 
-        const reponse = await productAPI.getProductList(page, limit, filter, textSearch);
+        const reponse = await productAPI.getProductList(
+            page,
+            limit,
+            filter,
+            textSearch,
+            sort,
+            order
+        );
         return {
             product: reponse.data,
             textSearch: textSearch,
             filter: filter,
+            sort: sort,
+            order: order,
             pagination: {
                 page,
                 limit,

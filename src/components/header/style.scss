@@ -1,7 +1,7 @@
 .header-container {
     background-color: #ffba00;
     width: 100vw;
-    height: 90px;
+    height: 100px;
     position: fixed;
     top: 0;
     left: 0;
@@ -19,12 +19,12 @@
             height: 35px;
             margin: 5px 170px 5px 0;
 
-            .logo {}
+            .logo {
+            }
         }
 
         .container-nav {
             display: flex;
-            padding-left: 30px;
 
             .all-group {
                 margin-right: 10px;
@@ -49,7 +49,6 @@
             }
 
             .account-logo {
-
                 .account {
                     background-color: #ffba00;
                     border: none;

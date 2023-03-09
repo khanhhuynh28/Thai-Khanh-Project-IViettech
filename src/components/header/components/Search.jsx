@@ -14,8 +14,10 @@ function Search() {
     const inputRef = useRef();
 
     const handleChangeSearch = (e) => {
-        const value = e.target.value;
-        setValeSearch(value);
+        const valueSearch = e.target.value;
+        if (!valueSearch.startsWith(' ')) {
+            setValeSearch(valueSearch);
+        }
     };
     useEffect(() => {
         if (!debounce.trim()) {

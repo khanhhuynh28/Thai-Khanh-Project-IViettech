@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import DefaultLayout from './components/DefaultLayout';
 import { publicRoutes } from './routes';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -17,6 +16,7 @@ import Footer from './components/Footer/Footer';
 import ShoppingCart from './components/Product/shopping-cart/ShoppingCart';
 import { Order } from './components/Product/order/Order';
 import CartItem from './components/Product/cartItem/CartItem';
+import DefaultLayout from './assets/DefaultLayout';
 // import { Header } from './components/Header/Header';
 // import { DatePicker } from 'antd';
 // import { Layout } from './components/Layout/HomeLayout';

@@ -3,15 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Pagination } from 'antd';
 import { fetchProductList } from '../../stores/action/product.action';
 import { changePagination, filterCategory } from '../../stores/slice/product.slice';
-import './style.scss';
 import Carousel from '../../components/navigation/Carousel/Carousel';
 import { NavBar } from '../../components/navigation/Navbar/NavBar';
+import './style.scss';
+
 import Product from '../../components/Product/Product';
+import Sort from '../../components/Product/Sort/Sort';
 export function Home() {
     const dispatch = useDispatch();
     const productList = useSelector((state) => state.product.product);
     const productPagination = useSelector((state) => state.product.pagination);
-
 
     useEffect(() => {
         dispatch(fetchProductList({ page: 1, limit: 12 }));
@@ -22,12 +23,26 @@ export function Home() {
                 <Carousel />
                 <NavBar />
                 <div className="container-product">
-                    <p className="newsfeed">Tin mới đăng</p>
-                    <div className='product'>
+                    <div className="newsfeed-sort">
+                        <p className="newsfeed">Tin mới đăng</p>
+                        <div>
+                            <Sort />
+                        </div>
+                    </div>
+                    {/* <Product />
+                    <p className="newsfeed">Tin mới đăng</p> */}
+                    <div className="product">
                         {productList.map((item) => (
                             <>
-                                <div className='product-item'>
-                                    <Product key={item.id} id={item.id} srcImage={item.srcImage} title={item.title} price={item.price} status={item.status} />
+                                <div className="product-item">
+                                    <Product
+                                        key={item.id}
+                                        id={item.id}
+                                        srcImage={item.srcImage}
+                                        title={item.title}
+                                        price={item.price}
+                                        status={item.status}
+                                    />
                                 </div>
                             </>
                         ))}
