@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { connect } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { appRoute } from "../../../const/routes.const";
 import "./style.scss";
@@ -22,7 +21,6 @@ export const ProductDetail = () => {
     fetchData()
   }, []);
   const { srcImage, title, shortDecription, category, status, price } = productDetail;
-  const product_current = productDetail;
   const check = Object.keys(productDetail).length === 0;
 
   return (
@@ -69,17 +67,5 @@ export const ProductDetail = () => {
     </>
   )
 }
-// const mapStateToProps = (state) => {
-//   return {
-//       cart: state.cart.cartAr,
-//   };
-// };
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//       buyProduct: (product_current) =>
-//           dispatch(buyProduct(product_current)),
-//   };
-// };
 
-// export default connect(mapStateToProps, mapDispatchToProps);
 

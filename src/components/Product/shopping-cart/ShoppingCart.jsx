@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./style.scss";
-import { connect } from "react-redux";
-import { deleteProduct } from "../../../stores/action/cart.action";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
-import { Order } from "../order/Order";
+import { postCartItemAction } from "../../../stores/action/cartItem.action";
 import { appRoute } from "../../../const/routes.const";
+import { deleteProduct } from "../../../stores/action/cart.action";
 
 function ShoppingCart(props) {
-  const [cartItem, setCartItem] = useState([]);
+  const userId = useSelector(state => state.auth.user);
+  const dispatch = useDispatch();
   const [itemCount, setItemCount] = useState(props.cart.map(() => 1));
+
 
 
 
@@ -28,83 +30,106 @@ function ShoppingCart(props) {
 
 
 
-  const totals = props.cart.reduce((item, product, index) => {
+  const total = props.cart.reduce((item, product, index) => {
     const price = product.price * itemCount[index];
     return item + price;
   }, 0);
 
-  useEffect(() => {
-    setCartItem({
-      itemCount: itemCount,
-      totals: totals,
+  const totalPayment = total + 35000
 
-    })
-  }, [])
-  console.log(cartItem)
+
+  const handleChange = () => {
+    dispatch(postCartItemAction({
+      items: props.cart.map((item, index) => {
+        return {
+          id: item.id,
+          srcImage: item.srcImage,
+          status: item.status,
+          title: item.title,
+          price: item.price,
+          quantity: itemCount[index],
+        };
+      }),
+      total: total,
+      totalPayment: totalPayment
+    }));
+
+  };
+
   return (
-
-    <div className="container-product-cart">
-      <div className="container-product">
-        <div className="product-cart">
-          <h3 className="title">Đơn hàng</h3>
-          <>
-            {props.cart.map((product, index) => (
-              <div key={index} className="container-cart">
-                <div className="cart" >
-                  <div className="cart-image">
-                    <img src={product.srcImage} alt="" />
-                  </div>
-                  <div className="cart-title">
-                    <p>{product.title}</p>
-                  </div>
-                  <div className="cart-counter">
-                    <div className="counter">
-                      <button className="action-btn btn-minus" onClick={() => handleDecrease(index)}>
-                        -
-                      </button>
-                      <div className="counter-number">{itemCount[index]}</div>
-                      <button className="action-btn btn-plus" onClick={() => handleIncrease(index)}>
-                        +
-                      </button>
+    <>
+      {userId ? (
+        <div className="container-product-cart">
+          <div className="container-product">
+            <div className="product-cart">
+              <div className="title-product">
+                <Link to={appRoute.shoppingCart}> <h3 className="title ">Giỏ Hàng</h3></Link>
+                <Link to={appRoute.order}> <h5 className=" order">Đơn Hàng</h5></Link>
+              </div>
+              <>
+                {props.cart.map((product, index) => (
+                  <div key={index} className="container-cart">
+                    <div className="cart" >
+                      <div className="cart-image">
+                        <img src={product.srcImage} alt="" />
+                      </div>
+                      <div className="cart-title">
+                        <p>{product.title}</p>
+                      </div>
+                      <div className="cart-counter">
+                        <div className="counter">
+                          <button className="action-btn btn-minus" onClick={() => handleDecrease(index)}>
+                            -
+                          </button>
+                          <div className="counter-number">{itemCount[index]}</div>
+                          <button className="action-btn btn-plus" onClick={() => handleIncrease(index)}>
+                            +
+                          </button>
+                        </div>
+                      </div>
+                      <div className="cart-price">
+                        <p>₫{`${product.price.toLocaleString()}x${itemCount[index]}`}</p>
+                      </div>
+                      <div className="delete-cart">
+                        <button onClick={() => dispatch(deleteProduct(product.id))}>Xóa</button>
+                      </div>
                     </div>
+                  </div >
+                ))}
+              </>
+            </div>
+            <div className="total-payment">
+              <div className="total-detail-payment">
+                <div className="detail-payment">
+
+                  <div className="detail-payment-group">
+                    <span className="total-money">Tổng thanh toán:</span>
+                    <p className="money total">₫{totalPayment.toLocaleString()}</p>
                   </div>
-                  <div className="cart-price">
-                    <p>₫{`${product.price.toLocaleString()}x${itemCount[index]}`}</p>
-                  </div>
-                  <div className="delete-cart">
-                    <button onClick={() => props.deleteProduct(product)}>Xóa</button>
+                  <div className="order-detail">
+                    <Link to={appRoute.cartItem}><button onClick={handleChange} className="order-now" >Đặt Hàng</button></Link>
                   </div>
                 </div>
-              </div >
-            ))}
-          </>
-        </div>
-        <div className="buy">
-          <div className="total">Tổng cộng:
-            <p>₫{totals.toLocaleString()}</p>
+              </div>
+            </div>
           </div>
-          <Link to={{
-            pathname: `/order`,
-            state: { cartItem: cartItem }
-          }}><button className="buy-now">Mua Hàng</button></Link>
         </div>
-      </div>
-    </div>
-
+      ) : <Navigate to={appRoute.login} />}
+    </>
 
 
   );
 }
-
 const mapStateToProps = (state) => {
   return {
-    cart: state.cart.cartAr,
+    cart: state.cart.cart,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteProduct: (product_current) =>
+    buyProduct: (product_current) =>
       dispatch(deleteProduct(product_current)),
   };
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCart);

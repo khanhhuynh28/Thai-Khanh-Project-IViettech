@@ -1,5 +1,5 @@
 import './style.scss';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import { buyProduct } from '../../stores/action/cart.action';
 
@@ -12,6 +12,16 @@ function Product(props) {
         status: props.status
     }
 
+    // const handleSubmit = () => {
+    //     dispatch(
+    //         buyProduct({
+    //             address: id,
+    //             srcImage: srcImage,
+    //             title: title,
+    //             price: price,
+    //         })
+    //     )
+    // }
     return (
 
         <div className="product-list">
@@ -57,7 +67,7 @@ function Product(props) {
 }
 const mapStateToProps = (state) => {
     return {
-        cart: state.cart.cartAr,
+        cart: state.cart.cart,
     };
 };
 const mapDispatchToProps = (dispatch) => {

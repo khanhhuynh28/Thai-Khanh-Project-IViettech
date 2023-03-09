@@ -7,5 +7,7 @@ export const appRoute = {
     shoppingCart: "/cart",
     notFound: "/*",
     post: "/post",
-    order: "/order"
+    order: "/order",
+    cartItem: "/cart-item"
+
 };
