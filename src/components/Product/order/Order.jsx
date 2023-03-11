@@ -1,80 +1,142 @@
-import React, { useEffect, useState } from "react";
-import "./style.scss";
-import { connect, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import mapStateToProps from "../shopping-cart/ShoppingCart"
-export function Order(props) {
-  const userId = useSelector((state) => state.auth.user);
+import React from "react";
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCol,
+  MDBContainer,
+  MDBRow
+} from "mdb-react-ui-kit";
+import "./style.scss"
+import { useSelector } from "react-redux";
 
-  console.log(mapStateToProps.state)
+export function Order() {
+  const order = useSelector(state => state.order.order)
+
   return (
-    <div className="container-order">
-      <div className="product-order">
-        <div className="address">
-          <div className="title-id">
-            <img src="https://cdn.pixabay.com/photo/2016/11/28/06/09/map-1864379_960_720.png" alt="" width={25} />
-            <h5 className="title">Địa Chỉ Nhận Hàng</h5>
-          </div>
-          {userId ? (<div className="username">
-            <p className="user">{`${userId.nickname}(+84)${userId.phone}`}</p>
-            <p className="id">{userId.id}</p>
-          </div>) : <div className="username">
-            <p className="user">name</p>
-            <p className="id">id</p>
-          </div>
-          }
-        </div>
-        <div className="order">
-          <div className="title">
-            <p className="order-title">Sản Phẩm</p>
-            <div className="title-right">
-              <span className="title-quantity">Số lượng</span>
-              <span className="title-into-money">Thành tiền</span>
-            </div>
-          </div>
-          {/* {mapStateToProps.map((item, index) => { */}
-          <div className="describe">
-            <div className="image"><img src="https://i1-dulich.vnecdn.net/2021/07/16/3-1-1626444927.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=0nww5sftrDimoUxyn9lM5g" alt="" width={60} /></div>
-            <div className="product-title">galaxy </div>
-            <div className="quantity group">
-              <p>1</p>
-            </div>
-            <div className="into-money group">
-              <p>₫200</p>
-            </div>
-          </div>
-          {/* })} */}
+    <>
+      <section className="h-100 h-custom" style={{ backgroundColor: "#eee" }}>
+        <MDBContainer className="py-5 h-100">
+          <MDBRow className="justify-content-center align-items-center h-100">
+            <MDBCol lg="8" xl="6">
+              <MDBCard className="border-top border-bottom border-3 border-color-custom">
+                <MDBCardBody className="p-5">
+                  <p className="lead fw-bold mb-5" style={{ color: "#f37a27" }}>
+                    Biên lai mua hàng
+                  </p>
+                  {order.map((item) => (
+                    <>
+                      <MDBRow key={item}>
+                        <MDBCol className="mb-3">
+                          <p className="small text-muted mb-1">Họ tên</p>
+                          <p>{item.username}</p>
+                        </MDBCol>
+                        <MDBCol className="mb-3">
+                          <p className="small text-muted mb-1">Địa chỉ</p>
+                          <p>{item.address}</p>
+                        </MDBCol>
+                      </MDBRow>
+                      {item.product.map((i) => (
+                        <div key={i}>
+                          {i.items.map((p) => (
+                            <div key={p}
+                              className="mx-n5 px-5 py-4"
+                              style={{ backgroundColor: "#f2f2f2" }}
+                            >
+                              <MDBRow>
+                                <MDBCol md="8" lg="9">
+                                  <p>{p.title}</p>
+                                </MDBCol>
+                                <MDBCol md="4" lg="3">
+                                  <p>₫{p.price.toLocaleString()}</p>
+                                </MDBCol>
+                              </MDBRow>
+                            </div>
+                          ))}
+                        </div>
+                      ))}
 
-        </div>
+                    </>
+                  ))}
 
-        <div className="total-payment">
-          <div className="payment">
-            <span className="payment-left">Phương thức thanh toán</span>
-            <span className="payment-right">Thanh toán khi nhận hàng</span>
-          </div>
-          <div className="total-detail-payment">
-            <div className="detail-payment">
-              <div className="detail-payment-group">
-                <span className="total-money">Tổng tiền hàng:</span>
-                <p className="money">3000</p>
-              </div>
-              <div className="detail-payment-group">
-                <span className="total-money">Phí vận chuyển:</span>
-                <p className="money">15000</p>
-              </div>
-              <div className="detail-payment-group">
-                <span className="total-money">Tổng thanh toán:</span>
-                <p className="money total">5000</p>
-              </div>
-              <div className="order-detail">
-                <button className="order-now">Đặt hàng</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+
+                  <MDBRow className="my-4">
+                    <MDBCol md="8" lg="8">
+                      <p className="mb-0">Phí vận chuyển</p>
+                    </MDBCol>
+                    <MDBCol md="4" lg="4">
+                      <p className="mb-0">₫35.000</p>
+                    </MDBCol>
+
+                    {order.map((o) => (
+                      <div key={o}>
+                        <MDBCol md="5" lg="5">
+                          <p className="mb-0">Tổng</p>
+                        </MDBCol>
+                        {o.product.map((y) => (
+                          <MDBCol md="4" lg="4" key={y} style={{ fontSize: "18px", color: "red" }}>
+                            <p className="mb-0">{y.totalPayment.toLocaleString()}</p>
+                          </MDBCol>
+                        ))}
+                      </div>
+                    ))}
+                  </MDBRow>
+                  <p
+                    className="lead fw-bold mb-4 pb-2"
+                    style={{ color: "#f37a27" }}
+                  >
+                    Theo dõi đơn hàng
+                  </p>
+
+                  <MDBRow>
+                    <MDBCol lg="12">
+                      <div className="horizontal-timeline">
+                        <ul className="list-inline items d-flex justify-content-between">
+                          <li className="list-inline-item items-list">
+                            <p
+                              className="py-1 px-2 rounded text-white"
+                              style={{ backgroundColor: "#f37a27" }}
+                            >
+                              Đặt hàng
+                            </p>
+                          </li>
+                          <li className="list-inline-item items-list">
+                            <p
+                              className="py-1 px-2 rounded text-white"
+                              style={{ backgroundColor: "#f37a27" }}
+                            >
+                              Vận chuyển
+                            </p>
+                          </li>
+                          <li className="list-inline-item items-list">
+                            <p
+                              className="py-1 px-2 rounded text-white"
+                              style={{ backgroundColor: "#f37a27" }}
+                            >
+                              Trên đường
+                            </p>
+                          </li>
+                          <li
+                            className="list-inline-item items-list text-end"
+                            style={{ marginRight: "-8px" }}
+                          >
+                            <p style={{ marginRight: "-8px" }}>Đã giao hàng</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </MDBCol>
+                  </MDBRow>
+                  <p className="mt-4 pt-2 mb-0">
+                    Bạn cần hỗ trợ?{" "}
+                    <a href="#!" style={{ color: "#f37a27" }}>
+                      Xin vui lòng liên hệ với chúng tôi
+                    </a>
+                  </p>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </section>
+    </>
+  );
 }
-

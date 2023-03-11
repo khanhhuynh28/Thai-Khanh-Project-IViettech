@@ -1,188 +1,34 @@
-.container-order {
-  background-color: #f5f5f5;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-
-  .product-order {
-    margin-top: 100px;
-    width: 1030px;
-
-    .address {
-      height: 100px;
-      background-color: #fff;
-      padding: 20px;
-
-      .title-id {
-        display: flex;
-
-        .title {
-          margin: 0;
-          color: #ee4d2d;
-          font-size: 16px;
-          margin-left: 5px;
-        }
-      }
-
-      .username {
-        display: flex;
-        margin-top: 15px;
-
-        .user {
-          flex: 1;
-          font-weight: bold;
-        }
-
-        .id {
-          flex: 2;
-        }
-      }
-    }
-
-    .order {
-      height: auto;
-      background-color: #fff;
-      margin-top: 10px;
-      padding: 10px;
-
-      .title {
-        display: flex;
-
-        .order-title {
-          font-weight: bold;
-          flex: 1.3;
-        }
-
-        .title-right {
-          display: flex;
-          justify-content: center;
-          flex: 1;
-
-          span {
-            color: rgba(154, 145, 133, 0.66);
-          }
-
-          .title-quantity {
-            flex: 1.6;
-          }
-
-          .title-into-money {
-            flex: 1;
-          }
-        }
-
-      }
-
-      .describe {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        height: auto;
-
-        .image {}
-
-        .product-title {
-          width: 250px;
-          display: flex;
-          align-items: center;
-          flex-wrap: wrap;
-          font-size: 16px;
-        }
-
-        .group {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          p {
-            margin: 0;
-
-          }
-        }
-
-        .quantity {
-          width: 70px;
-        }
-
-        .into-money {
-
-          width: 250px;
-        }
-      }
-
-    }
-
-    .total-payment {
-      height: 250px;
-      background-color: #fff;
-      margin-top: 10px;
-      padding: 10px;
-
-      .payment {
-        display: flex;
-        justify-content: space-between;
-
-        .payment-left {
-          font-weight: bold;
-        }
-
-        .payment-right {
-          font-size: 14px;
-        }
-      }
-
-      .total-detail-payment {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 10px;
-        height: auto;
-        background-color: #fffefb;
-        border-top: 1px solid rgba(154, 145, 133, 0.66);
-
-        .detail-payment {
-          width: 300px;
-          padding: 10px;
-
-          .detail-payment-group {
-            display: flex;
-
-            .total-money {
-              color: rgba(154, 145, 133, 0.66);
-              flex: 2;
-            }
-
-            .money {
-              flex: 1;
-              font-size: 14px;
-              color: rgba(154, 145, 133, 0.66);
-            }
-
-            .total {
-              font-size: 24px;
-              color: red;
-            }
-          }
-
-          .order-detail {
-            display: flex;
-            justify-content: flex-end;
-            margin-right: 20px;
-
-            .order-now {
-              border: none;
-              background-color: #ff8800;
-              color: #fff;
-              padding: 10px 35px;
-              border-radius: 5px;
-            }
-
-            :hover {
-              background-color: red;
-            }
-          }
-        }
-      }
-
-    }
+@media (min-width: 1030px) {
+  .h-custom {
+    margin-top: 50px;
+    height: 100% !important;
   }
+}
+
+.horizontal-timeline .items {
+  border-top: 2px solid #ddd;
+}
+
+.horizontal-timeline .items .items-list {
+  position: relative;
+  margin-right: 0;
+}
+
+.horizontal-timeline .items .items-list:before {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #ddd;
+  top: 0;
+  margin-top: -5px;
+}
+
+.horizontal-timeline .items .items-list {
+  padding-top: 15px;
+}
+
+.border-color-custom {
+  border-color: #f37a27 !important;
 }

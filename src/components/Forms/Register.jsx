@@ -44,12 +44,12 @@ const Register = () => {
         nickname: '',
         email: '',
         phone: '',
-        id: '',
+        address: '',
         password: '',
     });
     const [form] = Form.useForm();
 
-    if (user) return <Navigate to={'/login'} />
+    if (user) return <Navigate to={appRoute.login} />
 
 
     const handleChangeRegister = (e) => {
@@ -61,13 +61,13 @@ const Register = () => {
     };
 
     const onFinish = () => {
-        const { nickname, email, id, phone, password } = getDataRegister;
+        const { nickname, email, address, phone, password } = getDataRegister;
         dispatch(
             registerAction({
                 nickname: nickname,
                 email: email,
                 phone: phone,
-                id: id,
+                address: address,
                 password: password,
             })
         )
@@ -120,7 +120,7 @@ const Register = () => {
                         <Input placeholder="Email" name="email" onChange={handleChangeRegister} />
                     </Form.Item>
                     <Form.Item
-                        name="id"
+                        name="address"
                         rules={[
                             {
                                 required: true,
@@ -129,7 +129,7 @@ const Register = () => {
                             },
                         ]}
                     >
-                        <Input placeholder="Địa chỉ" name="id" onChange={handleChangeRegister} />
+                        <Input placeholder="Địa chỉ" name="address" onChange={handleChangeRegister} />
                     </Form.Item>
                     <Form.Item
                         name="phone"

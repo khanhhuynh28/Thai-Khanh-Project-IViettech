@@ -4,5 +4,3 @@ export const authApi = {
   login: (data) => API.post(`${BASE_URL}/auth/login `, data),
   register: (data) => API.post(`${BASE_URL}/auth/users`, data),
 };
-//  gọi lấy dữ liệu về lưu vào state
-// cho vào redux -> slice -action, -reducer

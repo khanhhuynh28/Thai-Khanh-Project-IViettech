@@ -3,10 +3,11 @@ export const appRoute = {
     register: '/register',
     home: '/',
     manage: '/manage',
-    productDetail: '/product/:id',
-    shoppingCart: '/cart',
-    notFound: '/*',
-    post: '/post',
-    order: '/order',
-    personalPage: '/personalPage',
+    productDetail: "/product/:id",
+    shoppingCart: "/cart",
+    notFound: "/*",
+    post: "/post",
+    order: "/order",
+    cartItem: "/cart-item"
+
 };

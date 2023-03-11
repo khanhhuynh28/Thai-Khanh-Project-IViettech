@@ -1,24 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { notification } from "antd";
 import { BUY_PRODUCT, DELETE_PRODUCT } from "../../const/cart.const";
-import { cartAction } from "../action/cart.action"
+import { buyProduct, cartAction, deleteProduct, getProduct } from "../action/cart.action"
 
 export const cartInitialState = {
-  cartAr: [],
+  cart: [],
 }
 
 const cartReducer = (state = cartInitialState, action) => {
   switch (action.type) {
     case BUY_PRODUCT:
       {
-        const productInCart = state.cartAr.find(
-          (item) => item.id === action.payload.id
+        const productInCart = state.cart.find(
+          (item) => item.id === action.payload.id,
+          notification.success({
+            message: "Đã thêm vào đơn hàng!",
+            style: { border: "2px solid #ffba00" },
+            duration: 3,
+          })
         );
         if (!productInCart) {
           return {
-            cartAr: [...state.cartAr, action.payload],
+            cart: [...state.cart, action.payload],
           }
         } else {
-          let newCart = state.cartAr;
+          let newCart = state.cart;
           const ObjIndex = newCart.findIndex(
             (obj) => obj.id == action.payload.id
           );
@@ -27,7 +33,7 @@ const cartReducer = (state = cartInitialState, action) => {
           } else {
             newCart[ObjIndex].quantity += 1;
           }
-          return { cartAr: [...newCart] }
+          return { cart: [...newCart] }
         }
 
       }
@@ -35,12 +41,17 @@ const cartReducer = (state = cartInitialState, action) => {
 
     case DELETE_PRODUCT:
       {
-        let newCart = state.cartAr;
+        let newCart = state.cart;
         const ObjIndex = newCart.findIndex(
-          (obj) => obj.id == action.payload.id
+          (obj) => obj.id == action.payload.id,
+          notification.error({
+            message: "Đã xóa sản phẩm!",
+            style: { border: "2px solid #ff623d" },
+            duration: 3,
+          })
         );
         newCart.splice(ObjIndex, 1);
-        return { cartAr: [...newCart] }
+        return { cart: [...newCart] }
 
       }
   }

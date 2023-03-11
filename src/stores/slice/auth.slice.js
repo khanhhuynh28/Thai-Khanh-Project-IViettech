@@ -8,7 +8,6 @@ const authInitialState = {
     loadingRegister: false,
     isLogin: false,
     isRegistered: false,
-    register: []
 };
 
 const authSlice = createSlice({
@@ -17,11 +16,9 @@ const authSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(loginAction.pending, (state, action) => {
             state.loadingLogin = true;
-            console.log(action.payload);
         });
         builder.addCase(registerAction.pending, (state, action) => {
             state.loadingRegister = true;
-            console.log(action.payload);
         });
 
         builder.addCase(loginAction.fulfilled, (state, action) => {
@@ -32,7 +29,6 @@ const authSlice = createSlice({
         builder.addCase(registerAction.fulfilled, (state, action) => {
             state.loadingRegister = false;
             state.isRegistered = true;
-            state.register = action.payload.register;
             notification.success({
                 message: "Đăng ký thành công!",
                 description: "Đăng nhập ngay bây giờ",
