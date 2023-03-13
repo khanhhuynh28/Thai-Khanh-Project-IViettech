@@ -29,8 +29,6 @@ export function Home() {
                             <Sort />
                         </div>
                     </div>
-                    {/* <Product />
-                    <p className="newsfeed">Tin mới đăng</p> */}
                     <div className="product">
                         {productList.map((item) => (
                             <>

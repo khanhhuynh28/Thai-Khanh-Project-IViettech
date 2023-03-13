@@ -9,6 +9,16 @@
       "createdAt": 1677980655229,
       "updateAt": 1677980655229,
       "id": 1
+    },
+    {
+      "email": "Thai123@gmail.com",
+      "password": "$2a$10$QOhXwSGPRTbydIVtLzTc/.ZHhJxkeOdPFA/5iTcjPDWMwuOCXzn6q",
+      "nickname": "ThaiDang",
+      "phone": "0984389218",
+      "address": "01 Nguyễn Văn Linh, Đà Nẵng",
+      "createdAt": 1678526385258,
+      "updateAt": 1678526385258,
+      "id": 2
     }
   ],
   "products": [
@@ -539,6 +549,26 @@
       "createdAt": 1676895996541,
       "updateAt": 1676895996541,
       "id": 48
+    },
+    {
+      "srcImage": "https://images.unsplash.com/photo-1627645835237-0743e52b991f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bm8lMjBpbWFnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "category": "pets",
+      "title": "Dogs Alaca",
+      "shortDescription": "01 years ago",
+      "price": "3333333",
+      "createdAt": 1678636280545,
+      "updateAt": 1678636280545,
+      "id": 49
+    },
+    {
+      "srcImage": "https://t4.ftcdn.net/jpg/03/08/68/19/240_F_308681935_VSuCNvhuif2A8JknPiocgGR2Ag7D1ZqN.jpg",
+      "category": "cars",
+      "title": "Toyota",
+      "shortDescription": "Camry 2.5G",
+      "price": "8888888888",
+      "createdAt": 1678636745446,
+      "updateAt": 1678636745446,
+      "id": 50
     }
   ],
   "cartItem": [
@@ -1130,6 +1160,31 @@
       "createdAt": 1678369140844,
       "updateAt": 1678369140844,
       "id": 26
+    },
+    {
+      "items": [
+        {
+          "id": 12,
+          "srcImage": "https://media.istockphoto.com/id/1402891368/fr/photo/teckel-portant-un-collier-bleu-debout-isol%C3%A9-sur-blanc.jpg?b=1&s=170667a&w=0&k=20&c=9r6nicEeh8X9JEZyWGqHCjoPX_52JR_l0W5w1Vbajao=",
+          "status": "New",
+          "title": "Chó Ngao",
+          "price": 600000,
+          "quantity": 1
+        },
+        {
+          "id": 11,
+          "srcImage": "https://media.istockphoto.com/id/1410966682/fr/photo/quatre-chiens-dans-la-for%C3%AAt.jpg?b=1&s=170667a&w=0&k=20&c=8zg-xP310iwdvQdGvT3SxWzb4ghiNwgT1vJFnINzyx4=",
+          "status": "New",
+          "title": "Chó Lai Mỹ",
+          "price": 25000000,
+          "quantity": 2
+        }
+      ],
+      "total": 50600000,
+      "totalPayment": 50635000,
+      "createdAt": 1678526788641,
+      "updateAt": 1678526788641,
+      "id": 27
     }
   ],
   "order": [
@@ -1203,6 +1258,31 @@
       "createdAt": 1678369148896,
       "updateAt": 1678369148896,
       "id": 3
+    },
+    {
+      "username": "Thai Đặng",
+      "address": "01 Nguyễn Văn Linh, Đ",
+      "phone": "0984389218",
+      "email": "Thai123@gmail.com",
+      "product": [
+        {
+          "total": 50600000,
+          "totalPayment": 50635000,
+          "items": [
+            {
+              "title": "Chó Ngao",
+              "price": 600000
+            },
+            {
+              "title": "Chó Lai Mỹ",
+              "price": 25000000
+            }
+          ]
+        }
+      ],
+      "createdAt": 1678527242503,
+      "updateAt": 1678527242503,
+      "id": 4
     }
   ]
 }

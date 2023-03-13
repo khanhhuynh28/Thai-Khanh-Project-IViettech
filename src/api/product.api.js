@@ -1,17 +1,5 @@
 import { API, BASE_URL } from './constants.api';
 
-// const object = {
-//     _sort: 'price',
-//     _order: 'asc',
-//     category: 'pets',
-// };
-
-// object['abc'];
-
-// const keys = ['sort', '_order', 'category'];
-
-// object['_sort'];
-
 export const productAPI = {
     getProductList: (page = 1, limit = 8, filter = {}, textSearch, sort, order) => {
         const paginationString = `_page=${page}&_limit=${limit}`;
@@ -36,5 +24,7 @@ export const productAPI = {
 
         return API.get(`${BASE_URL}/products?${queryString}`);
     },
-    // getProductList: (page, limit) => API.get(`${BASE_URL}/products?_page=${page}&_limit=${limit}`),
+    postProduct: (data) => {
+        return API.post(`${BASE_URL}/products`, data);
+    },
 };

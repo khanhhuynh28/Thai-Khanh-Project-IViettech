@@ -1,98 +1,75 @@
 import React, { useState } from 'react';
 import './style/postnews.scss';
 
-import {
-    Button,
-    // DatePicker,
-    Form,
-    Input,
-    InputNumber,
-    // Radio,
-    // Select,
-    Switch,
-    TreeSelect,
-    Upload,
-} from 'antd';
+import { Button, Form, Input, Switch, Upload } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import TextArea from 'antd/es/input/TextArea';
 import { useDispatch } from 'react-redux';
+import { postProduct } from '../../stores/action/product.action';
+import { Link } from 'react-router-dom';
+import { appRoute } from '../../const/routes.const';
 
-// type SizeType = Parameters<typeof Form>[0]['size'];
-
-const abc = [
+const options = [
     {
-        title: 'Xe Cộ',
-        value: 'xe-co',
-        children: [
-            { title: 'Ô tô', value: 'oto' },
-            { title: 'Xe máy', value: 'xe-may' },
-        ],
+        label: 'Select Category',
+        value: 'DEFAULT',
     },
     {
-        title: 'Đồ điện tử',
-        value: 'do-dien-tu',
-        children: [
-            { title: 'Laptop / Máy tính', value: 'laptop' },
-            { title: 'Điện thoại', value: 'dien-thoai' },
-        ],
+        label: 'Cars',
+        value: 'cars',
     },
     {
-        title: 'Thú cưng',
-        value: 'thu-cung',
-        children: [
-            { title: 'Chó', value: 'cho' },
-            { title: 'Mèo', value: 'meo' },
-        ],
+        label: 'Phones',
+        value: 'phones',
     },
     {
-        title: 'Thực phẩm',
-        value: 'thuc-pham',
-        children: [
-            { title: 'Đồ ăn', value: 'do-an' },
-            { title: 'Đồ uống', value: 'do-uong' },
-        ],
+        label: 'Pets',
+        value: 'pets',
     },
     {
-        title: 'Đồ gia dụng',
-        value: 'do-gia-dung',
-        children: [
-            { title: 'Dụng Cụ Bếp', value: 'dung-cu-bep' },
-            { title: 'Đồ Điện Nước', value: 'do-dien-nuoc' },
-        ],
+        label: 'Foods',
+        value: 'foods',
     },
     {
-        title: 'Tủ Lạnh / Máy Giặt',
-        value: 'tu-lanh-may-giat',
-        children: [
-            { title: 'Tủ Lạnh', value: 'tu-lanh' },
-            { title: 'Máy Giặt', value: 'may-giat' },
-        ],
+        label: 'House-ware(Small)',
+        value: 'house-ware',
+    },
+    {
+        label: 'House-ware(Big)',
+        value: 'house-ware',
     },
 ];
 
 function PostNews() {
     const dispatch = useDispatch();
     const [getDataFromPostNew, setGetDataFromPostNew] = useState({
-        category: '',
+        srcImage: '',
         title: '',
         shortDescription: '',
-        price: '',
+        price: 0,
+        category: '',
     });
     const handleSubmit = () => {};
-    const handleChangePostNew = (e) => {};
+    const handleChangePostNew = (e) => {
+        const { value, name } = e.target;
+
+        setGetDataFromPostNew({ ...getDataFromPostNew, [name]: value });
+    };
 
     const onFinish = () => {
+        console.log(getDataFromPostNew);
+
         const { category, title, shortDescription, price } = getDataFromPostNew;
-        dispatch({
-            category: category,
-            title: title,
-            shortDescription: shortDescription,
-            price: price,
-        });
-        console.log(category);
-        console.log(title);
-        console.log(shortDescription);
-        console.log(price);
+        dispatch(
+            postProduct({
+                srcImage:
+                    'https://t4.ftcdn.net/jpg/03/08/68/19/240_F_308681935_VSuCNvhuif2A8JknPiocgGR2Ag7D1ZqN.jpg',
+                category: category,
+                title: title,
+                shortDescription: shortDescription,
+                price: price,
+            })
+        );
     };
 
     return (
@@ -105,7 +82,6 @@ function PostNews() {
                             listType="picture-card"
                             className="b123"
                             name="srcImage"
-                            value
                         >
                             <div className="a1234">
                                 <PlusOutlined />
@@ -123,13 +99,19 @@ function PostNews() {
                         style={{ maxWidth: 600 }}
                     >
                         <div>
-                            <Form.Item label="">
-                                <TreeSelect
-                                    name="category"
-                                    treeData={abc}
-                                    placeholder="Danh Mục Đăng Tin"
-                                    onChange={handleChangePostNew}
-                                />
+                            <Form.Item label="Select">
+                                <select name="category" onChange={handleChangePostNew}>
+                                    {options.map((option, index) => (
+                                        <option
+                                            key={index}
+                                            name={option.label}
+                                            selected={option.value === 'DEFAULT' ? true : false}
+                                            value={option.value}
+                                        >
+                                            {option.label}
+                                        </option>
+                                    ))}
+                                </select>
                             </Form.Item>
                         </div>
                         <div>
@@ -155,19 +137,20 @@ function PostNews() {
                         <div>
                             <Form.Item label="">
                                 <label>Giá Tiền: </label>
-                                <InputNumber name="price" onChange={handleChangePostNew} />
+                                <Input name="price" onChange={handleChangePostNew} />
                             </Form.Item>
                         </div>
-
                         <Form.Item label="" valuePropName="checked">
                             <label>Đã qua sử dụng: </label>
                             <Switch />
                         </Form.Item>
                         <div className="post-news-btn">
                             <Form.Item>
-                                <Button className="post-news-btn-item" onClick={handleSubmit}>
-                                    Đăng Tin
-                                </Button>
+                                <Link to={appRoute.home}>
+                                    <Button className="post-news-btn-item" onClick={onFinish}>
+                                        Đăng Tin
+                                    </Button>
+                                </Link>
                             </Form.Item>
                         </div>
                     </Form>
