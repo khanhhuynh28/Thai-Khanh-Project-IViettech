@@ -3,7 +3,6 @@ import './style/postnews.scss';
 
 import {
     Button,
-    // DatePicker,
     Form,
     Input,
     InputNumber,

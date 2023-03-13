@@ -1,5 +1,5 @@
 import './style/login-style.scss';
-import { LockOutlined, UserOutlined, MailOutlined } from '@ant-design/icons';
+import { LockOutlined, MailOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -30,11 +30,12 @@ const Login = () => {
 
         dispatch(
             loginAction({
+                accessToken: 'your_access_token_here',
                 email: email,
                 password: password
             })
         )
-    }
+    };
     return (
         <div className="containerLogin">
             <div className="formLogin">

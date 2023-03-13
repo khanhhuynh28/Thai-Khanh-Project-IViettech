@@ -1,16 +1,5 @@
 import { API, BASE_URL } from './constants.api';
 
-// const object = {
-//     _sort: 'price',
-//     _order: 'asc',
-//     category: 'pets',
-// };
-
-// object['abc'];
-
-// const keys = ['sort', '_order', 'category'];
-
-// object['_sort'];
 
 export const productAPI = {
     getProductList: (page = 1, limit = 8, filter = {}, textSearch, sort, order) => {
@@ -21,7 +10,7 @@ export const productAPI = {
                 if (key && key !== '' && filter[key] && filter[key] !== '')
                     return `${key}=${filter[key]}`;
             })
-            .join('&'); // neu ko có  key nào thì trả về ''
+            .join('&');
 
         const textSearchString = textSearch && textSearch !== '' ? `&q=${textSearch}` : '';
 
@@ -36,5 +25,4 @@ export const productAPI = {
 
         return API.get(`${BASE_URL}/products?${queryString}`);
     },
-    // getProductList: (page, limit) => API.get(`${BASE_URL}/products?_page=${page}&_limit=${limit}`),
 };

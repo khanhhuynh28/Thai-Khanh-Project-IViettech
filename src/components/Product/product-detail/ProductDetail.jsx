@@ -1,12 +1,15 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { appRoute } from '../../../const/routes.const';
+import { buyProduct } from '../../../stores/action/cart.action';
 import './style.scss';
 
-export const ProductDetail = () => {
+export const ProductDetail = (props) => {
     const [productDetail, setProductDetail] = useState({});
     const { id } = useParams();
+
 
     async function fetchData() {
         const response = await axios.get(`http://localhost:3050/api/products/${id}`).then((res) => {
@@ -21,7 +24,13 @@ export const ProductDetail = () => {
     }, []);
     const { srcImage, title, shortDecription, category, status, price } = productDetail;
     const check = Object.keys(productDetail).length === 0;
-
+    const product_current = {
+        id: id,
+        srcImage: srcImage,
+        title: title,
+        price: price,
+        status: status
+    }
     return (
         <>
             {check === false && (
@@ -56,10 +65,12 @@ export const ProductDetail = () => {
                                                 <p className="detail">Trạng thái:</p>
                                                 <span className="information status">{status}</span>
                                             </div>
+
                                             <div className="action">
-                                                <Link to={appRoute.shoppingCart}>
-                                                    {' '}
-                                                    <button className="add-to-cart btn btn-default">
+                                                <Link to={appRoute.cartItem}>
+
+
+                                                    <button className="add-to-cart btn btn-default" onClick={() => props.buyProduct(product_current)}>
                                                         Mua hàng
                                                     </button>
                                                 </Link>
@@ -67,6 +78,8 @@ export const ProductDetail = () => {
                                                     <span className="fa fa-heart"></span>
                                                 </button>
                                             </div>
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -78,3 +91,13 @@ export const ProductDetail = () => {
         </>
     );
 };
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        buyProduct: (product_current) =>
+            dispatch(buyProduct(product_current)),
+    };
+};
+
+
+export default connect(mapDispatchToProps)

@@ -5,7 +5,7 @@ export const orderAction = createAsyncThunk(
   'order/fetchOrder',
   async (payload, thunkAPI) => {
     try {
-      const response = await orderApi.order(payload);
+      const response = await orderApi.postOrder(payload);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

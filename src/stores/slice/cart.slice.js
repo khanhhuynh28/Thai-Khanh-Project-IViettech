@@ -14,7 +14,7 @@ const cartReducer = (state = cartInitialState, action) => {
         const productInCart = state.cart.find(
           (item) => item.id === action.payload.id,
           notification.success({
-            message: "Đã thêm vào đơn hàng!",
+            message: "Đã thêm vào giỏ hàng!",
             style: { border: "2px solid #ffba00" },
             duration: 3,
           })

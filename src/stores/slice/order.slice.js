@@ -16,8 +16,9 @@ const orderSlice = createSlice({
       })
 
       .addCase(orderAction.fulfilled, (state, action) => {
-        state.loadingOrder = false;
         state.order.push(action.payload);
+        state.loadingOrder = false;
+        state.order.find((item) => item.id === action.payload.id,)
         notification.success({
           message: "Đã mua",
           style: { border: "2px solid #ffba00" },

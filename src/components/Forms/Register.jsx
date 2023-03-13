@@ -1,5 +1,4 @@
 import './style/register.scss';
-
 import { Button, Checkbox, Form, Input } from 'antd';
 import { useState } from 'react';
 import { registerAction } from '../../stores/action/auth.action';

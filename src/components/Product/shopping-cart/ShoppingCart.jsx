@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./style.scss";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
@@ -63,8 +63,7 @@ function ShoppingCart(props) {
           <div className="container-product">
             <div className="product-cart">
               <div className="title-product">
-                <Link to={appRoute.shoppingCart}> <h3 className="title ">Giỏ Hàng</h3></Link>
-                <Link to={appRoute.order}> <h5 className=" order">Đơn Hàng</h5></Link>
+                <h5 className="title ">Giỏ Hàng</h5>
               </div>
               <>
                 {props.cart.map((product, index) => (
@@ -103,8 +102,8 @@ function ShoppingCart(props) {
                 <div className="detail-payment">
 
                   <div className="detail-payment-group">
-                    <span className="total-money">Tổng thanh toán:</span>
-                    <p className="money total">₫{totalPayment.toLocaleString()}</p>
+                    <span className="total-money">Tổng:</span>
+                    <p className="money total">₫{total.toLocaleString()}</p>
                   </div>
                   <div className="order-detail">
                     <Link to={appRoute.cartItem}><button onClick={handleChange} className="order-now" >Đặt Hàng</button></Link>

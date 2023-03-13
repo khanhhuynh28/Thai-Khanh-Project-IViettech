@@ -6,18 +6,16 @@ import {
   MDBCardImage,
   MDBCol,
   MDBContainer,
-  MDBIcon,
   MDBInput,
   MDBRow,
   MDBTypography,
 } from "mdb-react-ui-kit";
-import { connect, useDispatch, useSelector } from "react-redux";
-import { deleteProduct } from "../../../stores/action/cart.action";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { appRoute } from "../../../const/routes.const";
 import { useState } from "react";
 import { orderAction } from "../../../stores/action/order.action";
-function CartItem(props) {
+function CartItem() {
   const cartItem = useSelector(state => state.cartItem.cartItem);
   const dispatch = useDispatch();
   const [userInfo, setUserInfo] = useState({
@@ -44,21 +42,21 @@ function CartItem(props) {
         address: address,
         phone: phone,
         email: email,
-        product: cartItem.map((item, index) => {
+        product: cartItem.map((item) => {
           return {
             total: item.total,
             totalPayment: item.totalPayment,
             items: item.items.map((product) => {
               return {
                 title: product.title,
-                price: product.price
+                price: product.price,
               }
             })
-          }
+          };
         })
       })
-    )
-  }
+    );
+  };
   return (
     <div className="container-cart-item">
       <div className="cart-item">
@@ -104,7 +102,7 @@ function CartItem(props) {
                                       </div>
                                       <div style={{ width: "80px" }}>
                                         <MDBTypography tag="h5" className="mb-0" style={{ fontSize: "14px", color: "red" }}>
-                                          {product.price.toLocaleString()}₫
+                                          ₫{product.price.toLocaleString()}
                                         </MDBTypography>
                                       </div>
 
@@ -147,17 +145,17 @@ function CartItem(props) {
                               <div key={i}>
                                 <div className="d-flex justify-content-between">
                                   <p className="mb-2">Tổng tiền hàng</p>
-                                  <p className="mb-2">{i.total.toLocaleString()}₫</p>
+                                  <p className="mb-2">₫{i.total.toLocaleString()}</p>
                                 </div>
 
                                 <div className="d-flex justify-content-between">
                                   <p className="mb-2">Phí vận chuyển</p>
-                                  <p className="mb-2">35.000₫</p>
+                                  <p className="mb-2">₫35.000</p>
                                 </div>
 
                                 <div className="d-flex justify-content-between">
                                   <p className="mb-2">Tổng thanh toán</p>
-                                  <p className="mb-2">{i.totalPayment.toLocaleString()}₫</p>
+                                  <p className="mb-2">₫{i.totalPayment.toLocaleString()}</p>
                                 </div>
 
                                 <Link to={appRoute.order}> <MDBBtn onClick={handleChangeOrder} style={{ background: "#ffba00" }} block size="lg">

@@ -1,6 +1,6 @@
 import './style.scss';
-import { connect, useDispatch } from 'react-redux';
-import { Link, Navigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { buyProduct } from '../../stores/action/cart.action';
 
 function Product(props) {
@@ -12,30 +12,17 @@ function Product(props) {
         status: props.status
     }
 
-    // const handleSubmit = () => {
-    //     dispatch(
-    //         buyProduct({
-    //             address: id,
-    //             srcImage: srcImage,
-    //             title: title,
-    //             price: price,
-    //         })
-    //     )
-    // }
     return (
-
         <div className="product-list">
             <div className="container-product_item" >
                 <div className='product-item'>
                     <Link to={`product/${props.id}`}>
                         <div className="image">
-                            {/* <a href=""> */}
                             <img
                                 className="image-item"
                                 src={props.srcImage}
                                 alt={props.srcImage}
                             />
-                            {/* </a> */}
                         </div>
                         <div className='describe'>
                             <div className="name">

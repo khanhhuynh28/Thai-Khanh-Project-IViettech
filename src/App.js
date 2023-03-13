@@ -12,18 +12,15 @@ import NotFound from './pages/NotFound';
 import Manage from './components/header/components/Manage/Manage';
 import Chat from './components/header/components/Chat/Chat';
 import { Header } from './components/header/Header';
-import Footer from './components/Footer/Footer';
 import ShoppingCart from './components/Product/shopping-cart/ShoppingCart';
 import { Order } from './components/Product/order/Order';
 import CartItem from './components/Product/cartItem/CartItem';
 import DefaultLayout from './assets/DefaultLayout';
-// import { Header } from './components/Header/Header';
-// import { DatePicker } from 'antd';
-// import { Layout } from './components/Layout/HomeLayout';
+
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter >
             <div className="App">
                 <Header />
                 <div className='content'>
@@ -55,16 +52,9 @@ function App() {
 
                     </Routes>
                 </div>
-                {/* <Footer /> */}
             </div>
         </BrowserRouter>
     );
 }
 
 export default App;
-// {
-/* <div className="App">
-<Header />
-<Layout />
-</div>; */
-// }

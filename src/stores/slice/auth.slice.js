@@ -8,6 +8,7 @@ const authInitialState = {
     loadingRegister: false,
     isLogin: false,
     isRegistered: false,
+    accessToken: null,
 };
 
 const authSlice = createSlice({
@@ -23,8 +24,14 @@ const authSlice = createSlice({
 
         builder.addCase(loginAction.fulfilled, (state, action) => {
             state.loadingLogin = false;
+            state.accessToken = action.payload.accessToken;
             state.user = action.payload.user;
             state.isLogin = true;
+            notification.success({
+                message: "Đăng nhập thành công!",
+                style: { border: "2px solid #71be34" },
+                duration: 3,
+            });
         });
         builder.addCase(registerAction.fulfilled, (state, action) => {
             state.loadingRegister = false;
@@ -56,6 +63,7 @@ const authSlice = createSlice({
             });
         });
     },
-});
 
+});
+export const logout = authSlice.actions;
 export const authReducer = authSlice.reducer;

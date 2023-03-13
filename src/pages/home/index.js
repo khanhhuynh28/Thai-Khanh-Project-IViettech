@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Pagination } from 'antd';
 import { fetchProductList } from '../../stores/action/product.action';
-import { changePagination, filterCategory } from '../../stores/slice/product.slice';
+import { changePagination } from '../../stores/slice/product.slice';
 import Carousel from '../../components/navigation/Carousel/Carousel';
 import { NavBar } from '../../components/navigation/Navbar/NavBar';
 import './style.scss';
@@ -29,8 +29,7 @@ export function Home() {
                             <Sort />
                         </div>
                     </div>
-                    {/* <Product />
-                    <p className="newsfeed">Tin mới đăng</p> */}
+
                     <div className="product">
                         {productList.map((item) => (
                             <>
