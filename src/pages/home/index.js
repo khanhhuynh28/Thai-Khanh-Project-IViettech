@@ -29,7 +29,6 @@ export function Home() {
                             <Sort />
                         </div>
                     </div>
-
                     <div className="product">
                         {productList.map((item) => (
                             <>

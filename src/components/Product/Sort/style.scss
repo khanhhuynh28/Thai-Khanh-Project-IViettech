@@ -1,0 +1,15 @@
+.sort-item {
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+    border: 2px #ffba00 solid;
+    padding: 5px;
+    border-radius: 3px;
+    label {
+        margin-right: 6px;
+    }
+    select {
+        border-color: #ccc;
+        margin: 2px;
+    }
+}

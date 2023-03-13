@@ -28,3 +28,11 @@ export const fetchProductList = createAsyncThunk(
         };
     }
 );
+
+export const postProduct = createAsyncThunk('product/postProduct', async (payload, thunkApi) => {
+    {
+        const response = await productAPI.postProduct(payload);
+
+        return response.data;
+    }
+});

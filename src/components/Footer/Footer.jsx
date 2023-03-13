@@ -4,7 +4,7 @@ function Footer() {
     return (
         <div className="container-footer">
             <div className="section">
-                <div className='section-item'>
+                <div className="section-item">
                     <p>GOOD MARKET TK</p>
                     <ul>
                         <li>Điện thoại: </li>
@@ -12,7 +12,7 @@ function Footer() {
                         <li>Địa chỉ liên hệ: </li>
                     </ul>
                 </div>
-                <div className='section-item'>
+                <div className="section-item">
                     <p>HỖ TRỢ KHÁCH HÀNG</p>
                     <ul>
                         <li> An toàn mua bán</li>
@@ -21,7 +21,7 @@ function Footer() {
                         <li>Liên hệ hỗ trợ</li>
                     </ul>
                 </div>
-                <div className='section-item'>
+                <div className="section-item">
                     <p>VỀ GOOD MARKET TK</p>
                     <ul>
                         <li>Giới thiệu</li>
@@ -30,7 +30,7 @@ function Footer() {
                         <li>Blog</li>
                     </ul>
                 </div>
-                <div className='section-item'>
+                <div className="section-item">
                     <p>LIÊN KẾT</p>
                     <ul>
                         <li>facebook</li>

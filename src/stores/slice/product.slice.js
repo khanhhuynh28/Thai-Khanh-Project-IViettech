@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchProductList } from '../action/product.action';
+import { fetchProductList, postProduct } from '../action/product.action';
 
 const productInitialState = {
     product: [],
     fetchingProductList: true,
+    loadingPostProduct: true,
     pagination: {
         page: 1,
         limit: 12,
@@ -12,6 +13,15 @@ const productInitialState = {
     textSearch: '',
     filter: {},
     sort: {},
+
+    //post new product
+    newdata: {
+        srcImage: '',
+        category: '',
+        title: '',
+        shortDescription: '',
+        price: 0,
+    },
 };
 
 const productSlice = createSlice({
@@ -28,6 +38,15 @@ const productSlice = createSlice({
         sortPrice: (state, action) => {
             state.sort.sort = action.payload.sort;
             state.sort.order = action.payload.order;
+        },
+        //post new product
+        postNewdata: (state, action) => {
+            // state.newdata = action.payload;
+            state.newdata.srcImage = action.payload.srcImage;
+            state.newdata.category = action.payload.category;
+            state.newdata.title = action.payload.title;
+            state.newdata.shortDescription = action.payload.shortDescription;
+            state.newdata.price = action.payload.price;
         },
     },
     extraReducers: (builder) => {
@@ -46,8 +65,21 @@ const productSlice = createSlice({
         builder.addCase(fetchProductList.rejected, (state, action) => {
             state.fetchingProductList = false;
         });
+
+        //post new product
+        builder.addCase(postProduct.pending, (state, action) => {
+            state.loadingPostProduct = true;
+        });
+        builder.addCase(postProduct.fulfilled, (state, action) => {
+            console.log(action.payload);
+            state.loadingPostProduct = false;
+            state.newdata = action.payload.newdata;
+        });
+        builder.addCase(postProduct.rejected, (state, action) => {
+            state.loadingPostProduct = false;
+        });
     },
 });
 
 export const productReducer = productSlice.reducer;
-export const { filterCategorys, changePagination, sortPrice } = productSlice.actions;
+export const { filterCategorys, changePagination, sortPrice, postNewdata } = productSlice.actions;

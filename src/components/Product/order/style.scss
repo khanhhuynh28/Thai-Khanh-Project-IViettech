@@ -32,3 +32,16 @@
 .border-color-custom {
   border-color: #f37a27 !important;
 }
+
+.total {
+  display: flex;
+
+  .title-total {
+    flex: 2;
+  }
+
+  .num {
+    flex: 1;
+    padding: 0 0 0 40px;
+  }
+}

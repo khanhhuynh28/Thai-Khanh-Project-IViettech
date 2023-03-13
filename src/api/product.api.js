@@ -1,6 +1,5 @@
 import { API, BASE_URL } from './constants.api';
 
-
 export const productAPI = {
     getProductList: (page = 1, limit = 8, filter = {}, textSearch, sort, order) => {
         const paginationString = `_page=${page}&_limit=${limit}`;
@@ -24,5 +23,8 @@ export const productAPI = {
         ].join('&');
 
         return API.get(`${BASE_URL}/products?${queryString}`);
+    },
+    postProduct: (data) => {
+        return API.post(`${BASE_URL}/products`, data);
     },
 };

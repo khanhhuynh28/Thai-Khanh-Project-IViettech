@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductList } from '../../../stores/action/product.action';
+import './style.scss';
 
 function Sort() {
     const [valueSort, setValueSort] = useState('');
@@ -21,7 +22,7 @@ function Sort() {
     }, [valueSort]);
 
     return (
-        <div>
+        <div className="sort-item">
             <label htmlFor="sort"> Sắp xếp theo Giá </label>
             <select
                 name="sort"
@@ -29,6 +30,7 @@ function Sort() {
                 defaultValue={null}
                 onChange={(e) => setValueSort(e.target.value)}
             >
+                <option value="">Mặc định</option>
                 <option value="asc">Giá Tăng Dần</option>
                 <option value="desc">Giá Giảm Dần</option>
             </select>

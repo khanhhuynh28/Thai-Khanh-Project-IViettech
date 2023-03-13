@@ -72,13 +72,13 @@ export function Order() {
                       </MDBCol>
 
                       {order.map((o) => (
-                        <div key={o}>
-                          <MDBCol md="5" lg="5">
-                            <p className="mb-0">Tổng</p>
+                        <div key={o} className="total">
+                          <MDBCol className="title-total">
+                            <p className="mb-0 ">Tổng</p>
                           </MDBCol>
                           {o.product.map((y) => (
-                            <MDBCol md="4" lg="4" key={y} style={{ fontSize: "18px", color: "red" }}>
-                              <p className="mb-0">{y.totalPayment.toLocaleString()}</p>
+                            <MDBCol className="num" key={y} style={{ fontSize: "18px", color: "red" }}>
+                              <p className="mb-0 ">₫{y.totalPayment.toLocaleString()}</p>
                             </MDBCol>
                           ))}
                         </div>

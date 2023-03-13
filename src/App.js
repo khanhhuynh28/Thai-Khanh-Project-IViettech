@@ -23,7 +23,7 @@ function App() {
         <BrowserRouter >
             <div className="App">
                 <Header />
-                <div className='content'>
+                <div className="content">
                     <Routes>
                         {publicRoutes.map((route, index) => {
                             const Layout = route.layout === null ? Fragment : DefaultLayout;
@@ -49,7 +49,6 @@ function App() {
                         <Route path={appRoute.chat} element={<Chat />} />
                         <Route path={appRoute.order} element={<Order />} />
                         <Route path={appRoute.cartItem} element={<CartItem />} />
-
                     </Routes>
                 </div>
             </div>
