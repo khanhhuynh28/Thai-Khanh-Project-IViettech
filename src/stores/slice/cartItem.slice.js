@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { notification } from "antd";
 import { getCartItemAction, postCartItemAction } from "../action/cartItem.action";
 
 const cartItemInitState = {

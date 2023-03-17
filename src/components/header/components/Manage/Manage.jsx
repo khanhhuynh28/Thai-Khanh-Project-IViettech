@@ -1,5 +1,3 @@
-import { Nav, Navbar } from "react-bootstrap";
-import { Container } from "react-bootstrap/dist/react-bootstrap";
 import "./style.scss";
 export default function Manage() {
   return (
