@@ -19,6 +19,36 @@
       "createdAt": 1678526385258,
       "updateAt": 1678526385258,
       "id": 2
+    },
+    {
+      "email": "Huynhtankhanh28102000@gmail.com",
+      "password": "$2a$10$w4Q9v0Jm3s5KRrPttt.Sl.boQssBUoEWNcaCh.3ev9uXMgmBspHjK",
+      "nickname": "Huỳnh Tấn Khánh",
+      "phone": "0377834115",
+      "address": "Tam Đại - Phú Ninh - Quảng Nam",
+      "createdAt": 1678878657500,
+      "updateAt": 1678878657500,
+      "id": 3
+    },
+    {
+      "email": "anh.ninh.maps@gmail.com",
+      "password": "$2a$10$Re5gIlCzZpAzuSEmxN4cjeUviXUP/bqdvnFJcXsG/PGYNi7k/I1Ny",
+      "nickname": "khanhhuynh28",
+      "phone": "0377834115",
+      "address": "phú ninh",
+      "createdAt": 1678878955220,
+      "updateAt": 1678878955220,
+      "id": 4
+    },
+    {
+      "email": "khanh28@gmail.com",
+      "password": "$2a$10$90F8eYqEajixnnGLRAmhseZLf0kvZTzQmA6ilSmXK.S9.P4hDdwOa",
+      "nickname": "Huỳnh Tấn Khánh",
+      "phone": "0377834115",
+      "address": "Tam Đại - Phú Ninh - Quảng Nam",
+      "createdAt": 1678881903831,
+      "updateAt": 1678881903831,
+      "id": 5
     }
   ],
   "products": [
@@ -569,6 +599,36 @@
       "createdAt": 1678636745446,
       "updateAt": 1678636745446,
       "id": 50
+    },
+    {
+      "srcImage": "https://t4.ftcdn.net/jpg/03/08/68/19/240_F_308681935_VSuCNvhuif2A8JknPiocgGR2Ag7D1ZqN.jpg",
+      "category": "",
+      "title": "hf",
+      "shortDescription": "xfhf",
+      "price": "5667",
+      "createdAt": 1678716183736,
+      "updateAt": 1678716183736,
+      "id": 51
+    },
+    {
+      "srcImage": "https://t4.ftcdn.net/jpg/03/08/68/19/240_F_308681935_VSuCNvhuif2A8JknPiocgGR2Ag7D1ZqN.jpg",
+      "category": "house-ware",
+      "title": "khu chung cư",
+      "shortDescription": "gồm 15 tầng và 25 phòng ",
+      "price": "10000000",
+      "createdAt": 1678797394044,
+      "updateAt": 1678797394044,
+      "id": 52
+    },
+    {
+      "srcImage": "https://t4.ftcdn.net/jpg/03/08/68/19/240_F_308681935_VSuCNvhuif2A8JknPiocgGR2Ag7D1ZqN.jpg",
+      "category": "phones",
+      "title": "Oppo 777",
+      "shortDescription": "Color\" Black",
+      "price": "5000000",
+      "createdAt": 1678882446495,
+      "updateAt": 1678882446495,
+      "id": 53
     }
   ],
   "cart": [
@@ -1354,6 +1414,107 @@
       "createdAt": 1678715495597,
       "updateAt": 1678715495597,
       "id": 33
+    },
+    {
+      "items": [
+        {
+          "id": 51,
+          "srcImage": "https://t4.ftcdn.net/jpg/03/08/68/19/240_F_308681935_VSuCNvhuif2A8JknPiocgGR2Ag7D1ZqN.jpg",
+          "title": "hf",
+          "price": "5667",
+          "quantity": 1
+        }
+      ],
+      "total": 5667,
+      "totalPayment": 40667,
+      "createdAt": 1678797665178,
+      "updateAt": 1678797665178,
+      "id": 34
+    },
+    {
+      "items": [
+        {
+          "id": 2,
+          "srcImage": "https://salt.tikicdn.com/cache/280x280/ts/product/0c/dd/e7/e6431984901119a1f8166cc4e579da93.png.webp",
+          "status": "New",
+          "title": "Apple Iphone 14 Pro Max",
+          "price": 25000000,
+          "quantity": 1
+        }
+      ],
+      "total": 25000000,
+      "totalPayment": 25035000,
+      "createdAt": 1678877888231,
+      "updateAt": 1678877888231,
+      "id": 35
+    },
+    {
+      "items": [
+        {
+          "id": 4,
+          "srcImage": "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGRvZ3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+          "status": "New",
+          "title": "Chó Phú Quốc",
+          "price": 600000,
+          "quantity": 1
+        }
+      ],
+      "total": 600000,
+      "totalPayment": 635000,
+      "createdAt": 1678879064661,
+      "updateAt": 1678879064661,
+      "id": 36
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "srcImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLAQCntR0hu8q1sh9DAq_99-eK3feZn9d_YQ&usqp=CAU",
+          "status": "Like New",
+          "title": "Apple Iphone 14 Pro (Like New)",
+          "price": 22000000,
+          "quantity": 1
+        }
+      ],
+      "total": 22000000,
+      "totalPayment": 22035000,
+      "createdAt": 1678880510875,
+      "updateAt": 1678880510875,
+      "id": 37
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "srcImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLAQCntR0hu8q1sh9DAq_99-eK3feZn9d_YQ&usqp=CAU",
+          "status": "Like New",
+          "title": "Apple Iphone 14 Pro (Like New)",
+          "price": 22000000,
+          "quantity": 2
+        }
+      ],
+      "total": 44000000,
+      "totalPayment": 44035000,
+      "createdAt": 1678880976110,
+      "updateAt": 1678880976110,
+      "id": 38
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "srcImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLAQCntR0hu8q1sh9DAq_99-eK3feZn9d_YQ&usqp=CAU",
+          "status": "Like New",
+          "title": "Apple Iphone 14 Pro (Like New)",
+          "price": 22000000,
+          "quantity": 1
+        }
+      ],
+      "total": 22000000,
+      "totalPayment": 22035000,
+      "createdAt": 1678882026680,
+      "updateAt": 1678882026680,
+      "id": 39
     }
   ],
   "order": [
@@ -1469,6 +1630,111 @@
       "createdAt": 1678715496565,
       "updateAt": 1678715496565,
       "id": 5
+    },
+    {
+      "username": "khanh",
+      "address": "30 tran ke xong",
+      "phone": "0377834115",
+      "email": "Huynhtankhanh281020@gmail.com",
+      "product": [
+        {
+          "total": 5667,
+          "totalPayment": 40667,
+          "items": [
+            {
+              "title": "hf",
+              "price": "5667"
+            }
+          ]
+        }
+      ],
+      "createdAt": 1678797682624,
+      "updateAt": 1678797682624,
+      "id": 6
+    },
+    {
+      "username": "khanh",
+      "address": "Tam Đại - Phú Ninh - Quảng Nam",
+      "phone": "0377834115",
+      "email": "Huynhtankhanh281020@gmail.com",
+      "product": [
+        {
+          "total": 25000000,
+          "totalPayment": 25035000,
+          "items": [
+            {
+              "title": "Apple Iphone 14 Pro Max",
+              "price": 25000000
+            }
+          ]
+        }
+      ],
+      "createdAt": 1678877906072,
+      "updateAt": 1678877906072,
+      "id": 7
+    },
+    {
+      "username": "",
+      "address": "",
+      "phone": "",
+      "email": "",
+      "product": [
+        {
+          "total": 600000,
+          "totalPayment": 635000,
+          "items": [
+            {
+              "title": "Chó Phú Quốc",
+              "price": 600000
+            }
+          ]
+        }
+      ],
+      "createdAt": 1678879066142,
+      "updateAt": 1678879066142,
+      "id": 8
+    },
+    {
+      "username": "khanh",
+      "address": "Tam Đại - Phú Ninh - Quảng Nam",
+      "phone": "0377834115",
+      "email": "Huynhtankhanh281020@gmail.com",
+      "product": [
+        {
+          "total": 22000000,
+          "totalPayment": 22035000,
+          "items": [
+            {
+              "title": "Apple Iphone 14 Pro (Like New)",
+              "price": 22000000
+            }
+          ]
+        }
+      ],
+      "createdAt": 1678880525330,
+      "updateAt": 1678880525330,
+      "id": 9
+    },
+    {
+      "username": "khanh",
+      "address": "phú ninh",
+      "phone": "0377834115",
+      "email": "Huynhtankhanh281020@gmail.com",
+      "product": [
+        {
+          "total": 22000000,
+          "totalPayment": 22035000,
+          "items": [
+            {
+              "title": "Apple Iphone 14 Pro (Like New)",
+              "price": 22000000
+            }
+          ]
+        }
+      ],
+      "createdAt": 1678882051896,
+      "updateAt": 1678882051896,
+      "id": 10
     }
   ]
 }

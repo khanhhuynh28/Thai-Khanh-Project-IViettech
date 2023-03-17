@@ -148,3 +148,19 @@
         cursor: pointer;
     }
 }
+
+@media only screen and (max-width: 960px) {
+    .header-container {
+        width: 1005;
+
+        .header-navbar {
+            .container-logo {}
+
+            .container-nav {
+                .all-group {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

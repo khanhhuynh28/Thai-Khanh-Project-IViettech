@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { notification } from "antd";
+import { message, notification } from "antd";
 import { orderAction } from "../action/order.action";
 
 export const orderInitState = {
@@ -19,11 +19,13 @@ const orderSlice = createSlice({
         state.order.push(action.payload);
         state.loadingOrder = false;
         state.order.find((item) => item.id === action.payload.id,)
-        notification.success({
-          message: "Đã mua",
-          style: { border: "2px solid #ffba00" },
-          duration: 3,
-        })
+        message
+          .open({
+            type: 'loading',
+            content: 'Đang tải',
+            duration: 0.3,
+          })
+          .then(() => message.success('Đã mua', 2.5))
       })
 
       .addCase(orderAction.rejected, (state, action) => {

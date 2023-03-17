@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { notification } from "antd";
+import { message, notification } from "antd";
 import { BUY_PRODUCT, DELETE_PRODUCT } from "../../const/cart.const";
 import { buyProduct, cartAction, deleteProduct, getProduct } from "../action/cart.action"
 
@@ -13,11 +13,13 @@ const cartReducer = (state = cartInitialState, action) => {
       {
         const productInCart = state.cart.find(
           (item) => item.id === action.payload.id,
-          notification.success({
-            message: "Đã thêm vào giỏ hàng!",
-            style: { border: "2px solid #ffba00" },
-            duration: 3,
-          })
+          message
+            .open({
+              type: 'loading',
+              content: 'Đang tải',
+              duration: 0.3,
+            })
+            .then(() => message.success('Đã thêm vào giỏ hàng', 2.5))
         );
         if (!productInCart) {
           return {
@@ -44,11 +46,13 @@ const cartReducer = (state = cartInitialState, action) => {
         let newCart = state.cart;
         const ObjIndex = newCart.findIndex(
           (obj) => obj.id == action.payload.id,
-          notification.error({
-            message: "Đã xóa sản phẩm!",
-            style: { border: "2px solid #ff623d" },
-            duration: 3,
-          })
+          message
+            .open({
+              type: 'loading',
+              content: 'Đang tải',
+              duration: 0.3,
+            })
+            .then(() => message.error('Đã xóa sản phẩm', 2.5))
         );
         newCart.splice(ObjIndex, 1);
         return { cart: [...newCart] }
