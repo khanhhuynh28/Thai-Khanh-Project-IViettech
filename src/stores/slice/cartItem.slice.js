@@ -12,14 +12,14 @@ const cartItemSlice = createSlice({
   name: 'cartItem',
   initialState: cartItemInitState,
   extraReducers: (builder) => {
-    builder.addCase(getCartItemAction.pending, (state, action) => {
+    builder.addCase(getCartItemAction.pending, (state) => {
       state.loadingGetCartItem = true;
     });
-    builder.addCase(postCartItemAction.pending, (state, action) => {
+    builder.addCase(postCartItemAction.pending, (state) => {
       state.loadingPostCartItem = true;
     });
 
-    builder.addCase(getCartItemAction.fulfilled, (state, action) => {
+    builder.addCase(getCartItemAction.fulfilled, (state) => {
       state.loadingGetCartItem = false;
 
     });
@@ -30,10 +30,10 @@ const cartItemSlice = createSlice({
       );
     });
 
-    builder.addCase(getCartItemAction.rejected, (state, action) => {
+    builder.addCase(getCartItemAction.rejected, (state) => {
       state.loadingGetCartItem = true;
     });
-    builder.addCase(postCartItemAction.rejected, (state, action) => {
+    builder.addCase(postCartItemAction.rejected, (state) => {
       state.loadingPostCartItem = true;
     });
   }

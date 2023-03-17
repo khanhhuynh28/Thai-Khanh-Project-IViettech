@@ -5,11 +5,11 @@ import './style.scss';
 
 function Sort() {
     const [valueSort, setValueSort] = useState('');
-    const ditpatch = useDispatch();
+    const dispatch = useDispatch();
     const productList = useSelector((state) => state.product);
     const { filter, textSearch } = productList;
     useEffect(() => {
-        ditpatch(
+        dispatch(
             fetchProductList({
                 page: 1,
                 limit: 12,

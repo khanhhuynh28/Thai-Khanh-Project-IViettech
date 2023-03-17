@@ -1,7 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit"
-import { message, notification } from "antd";
+import { message } from "antd";
 import { BUY_PRODUCT, DELETE_PRODUCT } from "../../const/cart.const";
-import { buyProduct, cartAction, deleteProduct, getProduct } from "../action/cart.action"
 
 export const cartInitialState = {
   cart: [],

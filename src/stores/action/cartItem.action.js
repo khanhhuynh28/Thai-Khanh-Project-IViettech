@@ -5,7 +5,7 @@ import { cartItemAPI } from "../../api/cartItem.api";
 export const postCartItemAction = createAsyncThunk(
   'postCartItem/fetchPostCartItem',
 
-  async (payload, thunkAPI) => {
+  async (payload) => {
     const response = await cartItemAPI.postCartItem(payload);
     return response.data;
   }
@@ -13,7 +13,7 @@ export const postCartItemAction = createAsyncThunk(
 export const getCartItemAction = createAsyncThunk(
   'getCartItem/fetchGetCartItem',
 
-  async (payload, thunkAPI) => {
+  async (payload) => {
     const response = await cartItemAPI.getCartItem(payload);
     return response.data;
   }

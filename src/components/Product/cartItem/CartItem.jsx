@@ -42,7 +42,7 @@ function CartItem() {
         address: address,
         phone: phone,
         email: email,
-        product: cartItem.map((item, index) => {
+        product: cartItem.map((item) => {
           return {
             total: item.total,
             totalPayment: item.totalPayment,

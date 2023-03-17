@@ -49,7 +49,7 @@ function PostNews() {
         price: 0,
         category: '',
     });
-    const handleSubmit = () => { };
+    // const handleSubmit = () => { };
     const handleChangePostNew = (e) => {
         const { value, name } = e.target;
 

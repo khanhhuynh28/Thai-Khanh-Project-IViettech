@@ -50,7 +50,7 @@ const productSlice = createSlice({
         },
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchProductList.pending, (state, action) => {
+        builder.addCase(fetchProductList.pending, (state) => {
             state.fetchingProductList = true;
         });
         builder.addCase(fetchProductList.fulfilled, (state, action) => {
@@ -62,12 +62,12 @@ const productSlice = createSlice({
             state.filter = filter;
             state.sort = action.payload;
         });
-        builder.addCase(fetchProductList.rejected, (state, action) => {
+        builder.addCase(fetchProductList.rejected, (state) => {
             state.fetchingProductList = false;
         });
 
         //post new product
-        builder.addCase(postProduct.pending, (state, action) => {
+        builder.addCase(postProduct.pending, (state) => {
             state.loadingPostProduct = true;
         });
         builder.addCase(postProduct.fulfilled, (state, action) => {
@@ -75,7 +75,7 @@ const productSlice = createSlice({
             state.loadingPostProduct = false;
             state.newdata = action.payload.newdata;
         });
-        builder.addCase(postProduct.rejected, (state, action) => {
+        builder.addCase(postProduct.rejected, (state) => {
             state.loadingPostProduct = false;
         });
     },

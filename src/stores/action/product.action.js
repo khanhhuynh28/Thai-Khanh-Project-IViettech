@@ -29,7 +29,7 @@ export const fetchProductList = createAsyncThunk(
     }
 );
 
-export const postProduct = createAsyncThunk('product/postProduct', async (payload, thunkApi) => {
+export const postProduct = createAsyncThunk('product/postProduct', async (payload) => {
     {
         const response = await productAPI.postProduct(payload);
 

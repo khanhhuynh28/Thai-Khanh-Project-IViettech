@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { message, notification } from "antd";
+import { message } from "antd";
 import { orderAction } from "../action/order.action";
 
 export const orderInitState = {
@@ -28,7 +28,7 @@ const orderSlice = createSlice({
           .then(() => message.success('Đã mua', 2.5))
       })
 
-      .addCase(orderAction.rejected, (state, action) => {
+      .addCase(orderAction.rejected, (state) => {
         state.loadingOrder = true;
       })
 

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { message, notification } from 'antd';
+import { message } from 'antd';
 import { loginAction, registerAction } from '../action/auth.action';
 
 const authInitialState = {
@@ -15,10 +15,10 @@ const authSlice = createSlice({
     name: 'auth',
     initialState: authInitialState,
     extraReducers: (builder) => {
-        builder.addCase(loginAction.pending, (state, action) => {
+        builder.addCase(loginAction.pending, (state) => {
             state.loadingLogin = true;
         });
-        builder.addCase(registerAction.pending, (state, action) => {
+        builder.addCase(registerAction.pending, (state) => {
             state.loadingRegister = true;
         });
 
@@ -36,7 +36,7 @@ const authSlice = createSlice({
                 .then(() => message.success('Đăng nhập thành công', 2.5))
 
         });
-        builder.addCase(registerAction.fulfilled, (state, action) => {
+        builder.addCase(registerAction.fulfilled, (state) => {
             state.loadingRegister = false;
             state.isRegistered = true;
             message
@@ -48,7 +48,7 @@ const authSlice = createSlice({
                 .then(() => message.success('Đăng ký thành công', 2.5))
         });
 
-        builder.addCase(loginAction.rejected, (state, action) => {
+        builder.addCase(loginAction.rejected, (state) => {
             state.loadingLogin = false;
             message
                 .open({
@@ -58,7 +58,7 @@ const authSlice = createSlice({
                 })
                 .then(() => message.error('Đăng nhập thất bại', 2.5))
         });
-        builder.addCase(registerAction.rejected, (state, action) => {
+        builder.addCase(registerAction.rejected, (state) => {
             state.loadingRegister = false;
             message
                 .open({
