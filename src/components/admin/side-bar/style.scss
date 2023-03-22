@@ -1,0 +1,44 @@
+.container-side-bar {
+  background-color: #ff8800;
+
+  height: 100%;
+  display: flex;
+  flex: 1;
+
+  .side-bar {
+    width: 100%;
+
+    .navigate {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid red;
+      font-size: 18px;
+
+      a {
+        color: #fff;
+        border: none;
+        padding: 15px 20px;
+      }
+    }
+
+    .navigate:hover {
+      opacity: 0.8;
+      background-color: red;
+    }
+
+
+    .overview {
+      border-top: 1px solid red;
+    }
+
+    .client {}
+
+    .orderAdmin {}
+
+    .productList {}
+
+    .report {}
+
+    .setting {}
+  }
+}

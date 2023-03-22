@@ -9,4 +9,11 @@ export const appRoute = {
     post: '/post',
     order: '/order',
     cartItem: '/cart-item',
+    admin: '/admin',
+    client: "/client",
+    orderAdmin: "/order-admin",
+    overview: "/overview",
+    productList: "/product-list",
+    report: "/report",
+    setting: "/setting"
 };

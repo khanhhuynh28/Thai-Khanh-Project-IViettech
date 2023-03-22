@@ -17,6 +17,7 @@ const authSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(loginAction.pending, (state) => {
             state.loadingLogin = true;
+
         });
         builder.addCase(registerAction.pending, (state) => {
             state.loadingRegister = true;
@@ -33,7 +34,7 @@ const authSlice = createSlice({
                     content: 'Đang tải',
                     duration: 0.3,
                 })
-                .then(() => message.success('Đăng nhập thành công', 2.5))
+                .then(() => message.success('Đăng nhập thành công', 1.5))
 
         });
         builder.addCase(registerAction.fulfilled, (state) => {
@@ -45,7 +46,7 @@ const authSlice = createSlice({
                     content: 'Đang tải',
                     duration: 0.3,
                 })
-                .then(() => message.success('Đăng ký thành công', 2.5))
+                .then(() => message.success('Đăng ký thành công', 1.5))
         });
 
         builder.addCase(loginAction.rejected, (state) => {
@@ -56,7 +57,7 @@ const authSlice = createSlice({
                     content: 'Đang tải',
                     duration: 0.3,
                 })
-                .then(() => message.error('Đăng nhập thất bại', 2.5))
+                .then(() => message.error('Đăng nhập thất bại', 1.5))
         });
         builder.addCase(registerAction.rejected, (state) => {
             state.loadingRegister = false;
@@ -66,10 +67,9 @@ const authSlice = createSlice({
                     content: 'Đang tải',
                     duration: 0.3,
                 })
-                .then(() => message.error('Đăng ký thất bại', 2.5))
+                .then(() => message.error('Đăng ký thất bại', 1.5))
         });
     },
 
 });
-export const logout = authSlice.actions;
 export const authReducer = authSlice.reducer;
